@@ -25,7 +25,7 @@ msgstr ""
 "노트는 현재의 노트북에 복제됩니다."
 
 #: CliClient/app/command-cp.js:24 CliClient/app/command-cp.js:27
-#: CliClient/app/command-import.js:30 CliClient/app/command-mv.js:22
+#: CliClient/app/command-import.js:34 CliClient/app/command-mv.js:22
 #: CliClient/app/command-mv.js:25 CliClient/app/command-use.js:21
 #: CliClient/app/command-ren.js:23 CliClient/app/command-rmbook.js:25
 #: CliClient/app/command-cat.js:25 CliClient/app/command-rmnote.js:25
@@ -93,50 +93,55 @@ msgstr "노트북을 먼저 선택해주세요."
 msgid "Imports data into Joplin."
 msgstr "데이터를 Joplin으로 가져옵니다."
 
-#: CliClient/app/command-import.js:24
+#: CliClient/app/command-import.js:25
 #, javascript-format
 msgid "Source format: %s"
 msgstr "원본 포맷: %s"
 
-#: CliClient/app/command-import.js:24
+#: CliClient/app/command-import.js:26
 msgid "Do not ask for confirmation."
 msgstr "더 이상 확인을 묻지 않습니다."
 
-#: CliClient/app/command-import.js:43 ElectronClient/gui/ImportScreen.min.js:69
+#: CliClient/app/command-import.js:27
+#, fuzzy, javascript-format
+msgid "Output format: %s"
+msgstr "원본 포맷: %s"
+
+#: CliClient/app/command-import.js:47 ElectronClient/gui/ImportScreen.min.js:69
 #, javascript-format
 msgid "Found: %d."
 msgstr "발견됨: %d."
 
-#: CliClient/app/command-import.js:44 ElectronClient/gui/ImportScreen.min.js:70
+#: CliClient/app/command-import.js:48 ElectronClient/gui/ImportScreen.min.js:70
 #, javascript-format
 msgid "Created: %d."
 msgstr "생성됨: %d."
 
-#: CliClient/app/command-import.js:45 ElectronClient/gui/ImportScreen.min.js:71
+#: CliClient/app/command-import.js:49 ElectronClient/gui/ImportScreen.min.js:71
 #, javascript-format
 msgid "Updated: %d."
 msgstr "업데이트됨: %d."
 
-#: CliClient/app/command-import.js:46 ElectronClient/gui/ImportScreen.min.js:72
+#: CliClient/app/command-import.js:50 ElectronClient/gui/ImportScreen.min.js:72
 #, javascript-format
 msgid "Skipped: %d."
 msgstr "넘겨짐: %d."
 
-#: CliClient/app/command-import.js:47 ElectronClient/gui/ImportScreen.min.js:73
+#: CliClient/app/command-import.js:51 ElectronClient/gui/ImportScreen.min.js:73
 #, javascript-format
 msgid "Resources: %d."
 msgstr "리소스: %d."
 
-#: CliClient/app/command-import.js:48 ElectronClient/gui/ImportScreen.min.js:74
+#: CliClient/app/command-import.js:52 ElectronClient/gui/ImportScreen.min.js:74
 #, javascript-format
 msgid "Tagged: %d."
 msgstr "태그됨: %d."
 
-#: CliClient/app/command-import.js:61
+#: CliClient/app/command-import.js:65
 msgid "Importing notes..."
 msgstr "노트를 가져오는 중..."
 
-#: CliClient/app/command-import.js:66 ElectronClient/gui/ImportScreen.min.js:89
+#: CliClient/app/command-import.js:70 ElectronClient/gui/ImportScreen.min.js:89
 #, javascript-format
 msgid "The notes have been imported: %s"
 msgstr "노트를 가져왔습니다: %s"
@@ -244,7 +249,7 @@ msgstr "사용함"
 
 #: CliClient/app/command-e2ee.js:108
 #: ElectronClient/gui/EncryptionConfigScreen.min.js:442
-#: ReactNativeClient/lib/models/Setting.js:565
+#: ReactNativeClient/lib/models/Setting.js:607
 #: ReactNativeClient/lib/components/screens/encryption-config.js:280
 msgid "Disabled"
 msgstr "사용하지 않음"
@@ -310,20 +315,20 @@ msgstr "인증이 완료되지 않았습니다 (인증 토큰을 받을 수 없�
 
 #: CliClient/app/command-sync.js:86
 #: ElectronClient/gui/DropboxLoginScreen.min.js:42
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:54
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:58
 msgid ""
 "To allow Joplin to synchronise with Dropbox, please follow the steps below:"
 msgstr "Joplin을 Dropbox와 동기화하려면 다음 절차를 따라주세요:"
 
 #: CliClient/app/command-sync.js:87
 #: ElectronClient/gui/DropboxLoginScreen.min.js:47
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:55
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:59
 msgid "Step 1: Open this URL in your browser to authorise the application:"
 msgstr "1단계: 브라우저에서 이 URL에 접근하여 애플리케이션을 허가합니다:"
 
 #: CliClient/app/command-sync.js:89
 #: ElectronClient/gui/DropboxLoginScreen.min.js:57
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:61
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:65
 msgid "Step 2: Enter the code provided by Dropbox:"
 msgstr "2단계: Dropbox에서 제공하는 코드를 입력합니다:"
 
@@ -352,7 +357,8 @@ msgid "Synchronisation target: %s (%s)"
 msgstr "동기화 대상: %s (%s)"
 
 #: CliClient/app/command-sync.js:177
-msgid "Cannot initialize synchroniser."
+#, fuzzy
+msgid "Cannot initialise synchroniser."
 msgstr "동기화를 시작할 수 없습니다."
 
 #: CliClient/app/command-sync.js:179
@@ -450,7 +456,7 @@ msgid "%d notes match this pattern. Delete them?"
 msgstr "%d개의 노트가 이 패턴과 일치합니다. 이를 삭제할까요?"
 
 #: CliClient/app/command-rmnote.js:27
-#: ReactNativeClient/lib/components/screens/note.js:457
+#: ReactNativeClient/lib/components/screens/note.js:461
 msgid "Delete note?"
 msgstr "이 노트를 삭제할까요?"
 
@@ -496,11 +502,11 @@ msgstr "특정 노트북만을 내보냅니다."
 msgid "Creates a new note."
 msgstr "새 노트를 만듭니다."
 
-#: CliClient/app/main.js:82
+#: CliClient/app/main.js:80
 msgid "Type `joplin help` for usage information."
 msgstr "사용법에 대한 정보를 알고 싶으시다면 `joplin help`를 입력해주세요."
 
-#: CliClient/app/main.js:84
+#: CliClient/app/main.js:82
 msgid "Fatal error:"
 msgstr "치명적인 오류:"
 
@@ -750,7 +756,7 @@ msgstr "노트는 '할 일' 항목이 아닙니다: \"%s\""
 #: ElectronClient/gui/DialogButtonRow.min.js:30
 #: ElectronClient/gui/PromptDialog.min.js:235
 #: ElectronClient/gui/ConfigScreen.min.js:185
-#: ElectronClient/gui/ConfigScreen.min.js:754 ElectronClient/app.js:699
+#: ElectronClient/gui/ConfigScreen.min.js:754 ElectronClient/app.js:618
 #: ReactNativeClient/lib/components/ModalDialog.js:67
 #: ReactNativeClient/lib/components/CameraView.js:182
 #: ReactNativeClient/lib/components/side-menu-content.js:150
@@ -759,11 +765,14 @@ msgstr "확인"
 
 #: ElectronClient/bridge.js:112 ElectronClient/bridge.js:125
 #: ElectronClient/gui/DialogButtonRow.min.js:38
+#: ElectronClient/gui/SideBar/SideBar.min.js:296
+#: ElectronClient/gui/SideBar/SideBar.min.js:660
 #: ElectronClient/gui/SideBar.min.js:319 ElectronClient/gui/SideBar.min.js:724
 #: ElectronClient/gui/NoteList.min.js:148
-#: ElectronClient/gui/utils/NoteListUtils.js:227
+#: ElectronClient/gui/utils/NoteListUtils.js:184
 #: ElectronClient/gui/PromptDialog.min.js:242
 #: ElectronClient/gui/ConfigScreen.min.js:744
+#: ElectronClient/gui/NoteList/NoteList.min.js:153
 #: ElectronClient/gui/ResourceScreen.js:94
 #: ReactNativeClient/lib/shim-init-node.js:91
 #: ReactNativeClient/lib/components/select-date-time-dialog.js:70
@@ -775,11 +784,11 @@ msgstr "확인"
 #: ReactNativeClient/lib/components/side-menu-content.js:338
 #: ReactNativeClient/lib/components/screens/encryption-config.js:185
 #: ReactNativeClient/lib/components/screens/note.js:97
-#: ReactNativeClient/lib/components/screens/note.js:522
+#: ReactNativeClient/lib/components/screens/note.js:526
 msgid "Cancel"
 msgstr "취소"
 
-#: ElectronClient/plugins/GotoAnything.min.js:436
+#: ElectronClient/plugins/GotoAnything.min.js:454
 #, fuzzy
 msgid ""
 "Type a note title or part of its content to jump to it. Or type # followed "
@@ -788,16 +797,16 @@ msgstr ""
 "노트 제목을 적으시거나 혹은 건너 뛰세요. 혹은 # 를 적고 태그 이름을 붙이거"
 "나, @뒤에 노트북 이름을 적으세요."
 
-#: ElectronClient/plugins/GotoAnything.min.js:474
+#: ElectronClient/plugins/GotoAnything.min.js:493
 msgid "Goto Anything..."
 msgstr "가고자 하는 곳으로 이동..."
 
-#: ElectronClient/InteropServiceHelper.js:142
+#: ElectronClient/InteropServiceHelper.js:147
 #, javascript-format
 msgid "Exporting to \"%s\" as \"%s\" format. Please wait..."
 msgstr "\"%s\"에 \"%s\" 포맷으로 내보내는 중입니다. 잠시만 기다려주세요..."
 
-#: ElectronClient/InteropServiceHelper.js:160
+#: ElectronClient/InteropServiceHelper.js:164
 #, fuzzy, javascript-format
 msgid "Could not export notes: %s"
 msgstr "내보낼 노트를 찾을수 없습니다: %s"
@@ -825,15 +834,15 @@ msgstr "현재 버전: %s"
 msgid "New version: %s"
 msgstr "새 버전: %s"
 
-#: ElectronClient/checkForUpdates.js:153 ElectronClient/app.js:689
+#: ElectronClient/checkForUpdates.js:153 ElectronClient/app.js:608
 #: ReactNativeClient/lib/shim-init-node.js:91
-#: ReactNativeClient/lib/components/screens/note.js:520
+#: ReactNativeClient/lib/components/screens/note.js:524
 msgid "Yes"
 msgstr "예"
 
-#: ElectronClient/checkForUpdates.js:153 ElectronClient/app.js:689
+#: ElectronClient/checkForUpdates.js:153 ElectronClient/app.js:608
 #: ReactNativeClient/lib/shim-init-node.js:91
-#: ReactNativeClient/lib/components/screens/note.js:521
+#: ReactNativeClient/lib/components/screens/note.js:525
 msgid "No"
 msgstr "아니오"
 
@@ -871,34 +880,130 @@ msgstr ""
 "입니다. 현재 버전의 노트는 이동하거나 수정되지 않습니다."
 
 #: ElectronClient/gui/NoteRevisionViewer.min.js:187
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:24
 #: ElectronClient/gui/NoteText.min.js:1671
 #: ElectronClient/gui/ConfigScreen.min.js:744
 #: ElectronClient/gui/Header.min.js:316
+#: ElectronClient/gui/Header/Header.min.js:302
+#: ReactNativeClient/lib/commands/historyBackward.js:16
 msgid "Back"
 msgstr "뒤로 가기"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:153
+#: ElectronClient/gui/SideBar/SideBar.min.js:269
+#: ElectronClient/gui/SideBar.min.js:283
+msgid "Remove"
+msgstr "삭제"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:272
+#: ElectronClient/gui/SideBar.min.js:286
+#: ReactNativeClient/lib/components/side-menu-content.js:148
+#, javascript-format
+msgid ""
+"Delete notebook \"%s\"?\n"
+"\n"
+"All notes and sub-notebooks within this notebook will also be deleted."
+msgstr ""
+"“%s” 노트북을 삭제할까요?\n"
+"\n"
+"이 노트북 안에 있는 모든 노트와 더불어 하위 노트북들도 함께 삭제됩니다."
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:273
+#: ElectronClient/gui/SideBar.min.js:287
+#: ElectronClient/gui/utils/NoteListUtils.js:161
+#: ElectronClient/gui/utils/NoteListUtils.js:184
+#: ElectronClient/gui/ResourceScreen.js:46
+#: ElectronClient/gui/ResourceScreen.js:94
+#: ReactNativeClient/lib/components/screen-header.js:356
+#: ReactNativeClient/lib/components/side-menu-content.js:146
+#: ReactNativeClient/lib/components/screens/note.js:868
+msgid "Delete"
+msgstr "삭제"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:276
+#, fuzzy, javascript-format
+msgid "Remove tag \"%s\" and its descendant tags from all notes?"
+msgstr "모든 노트에서 “%s” 태그를 제거할까요?"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:278
+#: ElectronClient/gui/SideBar.min.js:292
+msgid "Remove this search from the sidebar?"
+msgstr "사이드바에서 이 검색 항목을 제거할까요?"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:337
+#: ElectronClient/gui/SideBar.min.js:382
+#: ElectronClient/gui/utils/NoteListUtils.js:154 ElectronClient/app.js:677
+#: ElectronClient/app.js:727
+msgid "Export"
+msgstr "내보내기"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:660
+#: ElectronClient/gui/SideBar.min.js:724
+#: ReactNativeClient/lib/components/side-menu-content.js:338
+msgid "Synchronise"
+msgstr "동기화"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:694
+#: ElectronClient/gui/SideBar.min.js:757
+#: ReactNativeClient/lib/components/side-menu-content.js:360
+#: ReactNativeClient/lib/components/screens/notes.js:189
+msgid "All notes"
+msgstr "모든 노트"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:699
+#: ElectronClient/gui/SideBar.min.js:762
+#: ReactNativeClient/lib/components/side-menu-content.js:364
+msgid "Notebooks"
+msgstr "노트북"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:716
+#: ElectronClient/gui/MainScreen/commands/setTags.js:17
+#: ElectronClient/gui/SideBar.min.js:779
+#: ElectronClient/gui/NoteText.min.js:1634
+#: ElectronClient/gui/NoteText.min.js:1810
+#: ReactNativeClient/lib/components/side-menu-content.js:314
+#: ReactNativeClient/lib/components/screens/tags.js:101
+#: ReactNativeClient/lib/components/screens/note.js:841
+msgid "Tags"
+msgstr "태그"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:735
+#: ElectronClient/gui/SideBar.min.js:797
+#: ReactNativeClient/lib/components/side-menu-content.js:325
+#, javascript-format
+msgid "Decrypting items: %d/%d"
+msgstr "복호화 항목: %d/%d"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:740
+#: ElectronClient/gui/SideBar.min.js:802
+#: ReactNativeClient/lib/components/side-menu-content.js:330
+#, javascript-format
+msgid "Fetching resources: %d/%d"
+msgstr "리소스 가져오는 중: %d/%d"
+
+#: ElectronClient/gui/SideBar/commands/focusElementSideBar.js:15
+msgid "Sidebar"
+msgstr "사이드바"
+
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:144
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:260
 #: ElectronClient/gui/NoteText.min.js:1547
 msgid "strong text"
 msgstr "굵게"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:154
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:145
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:261
-#: ElectronClient/gui/NoteText.min.js:1551
-msgid "emphasized text"
+#, fuzzy
+msgid "emphasised text"
 msgstr "강조"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:156
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:147
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:263
 #: ElectronClient/gui/NoteText.min.js:1616
 msgid "Insert Hyperlink"
 msgstr "하이퍼링크 삽입"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:189
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:191
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:192
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:180
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:182
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:183
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:298
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:300
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:301
@@ -908,34 +1013,34 @@ msgstr "하이퍼링크 삽입"
 msgid "List item"
 msgstr "목록 추가"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:245
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:236
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:354
-#: ElectronClient/app.js:847
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:15
 msgid "Cut"
 msgstr "잘라내기"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:252
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:243
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:361
 #: ElectronClient/gui/NoteEditor/utils/contextMenu.js:81
-#: ElectronClient/gui/NoteText.min.js:804 ElectronClient/app.js:699
-#: ElectronClient/app.js:842
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:10
+#: ElectronClient/gui/NoteText.min.js:804 ElectronClient/app.js:618
 msgid "Copy"
 msgstr "복사"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:259
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:250
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:368
-#: ElectronClient/app.js:852
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:20
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:300
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:463
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:291
+#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:457
 #: ElectronClient/gui/NoteText.min.js:1085
 msgid "Layout"
 msgstr "배치"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:300
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:463
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:291
+#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:457
 #: ElectronClient/gui/NoteText.min.js:1085
 #, javascript-format
 msgid ""
@@ -945,104 +1050,49 @@ msgstr ""
 "비어있는 노트입니다. \"%s\" 항목을 선택해서 편집기를 전환하고 노트를 편집하세"
 "요."
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:24
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:24
-#: ElectronClient/gui/NoteText.min.js:1690 ElectronClient/app.js:865
-msgid "Bold"
-msgstr "굵게"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:34
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:34
-#: ElectronClient/gui/NoteText.min.js:1698 ElectronClient/app.js:876
-msgid "Italic"
-msgstr "기울임"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:47
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:47
-#: ElectronClient/gui/NoteText.min.js:1710
-msgid "Hyperlink"
-msgstr "하이퍼링크"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:57
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:57
-#: ElectronClient/gui/NoteText.min.js:1718 ElectronClient/app.js:898
-msgid "Code"
-msgstr "코드"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:67
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:525
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:67
-#: ElectronClient/gui/NoteText.min.js:1627
-#: ElectronClient/gui/NoteText.min.js:1726
-msgid "Attach file"
-msgstr "파일 첨부"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:80
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:80
-#: ElectronClient/gui/NoteText.min.js:1738
-msgid "Numbered List"
-msgstr "숫자가 매겨진 목록"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:90
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:90
-#: ElectronClient/gui/NoteText.min.js:1746
-msgid "Bulleted List"
-msgstr "글머리 기호 목록"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:100
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:100
-#: ElectronClient/gui/NoteText.min.js:1754
-msgid "Checkbox"
-msgstr "체크박스"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:110
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:110
-#: ElectronClient/gui/NoteText.min.js:1762
-msgid "Heading"
-msgstr "표제"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:120
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:120
-#: ElectronClient/gui/NoteText.min.js:1770
-msgid "Horizontal Rule"
-msgstr "수평줄"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:130
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:558
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:130
-#: ElectronClient/gui/NoteText.min.js:1778 ElectronClient/app.js:912
-msgid "Insert Date Time"
-msgstr "날짜와 시간 입력"
-
 #: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/plugins/lists.js:2151
 #, fuzzy
 msgid "Checkbox list"
 msgstr "체크박스"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:469
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:470
 #: ElectronClient/gui/ConfigScreen.min.js:642
-#: ReactNativeClient/lib/components/screens/note.js:1106
+#: ReactNativeClient/lib/components/screens/note.js:1110
 msgid "Edit"
 msgstr "편집"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:534
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:526
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:50
+#: ElectronClient/gui/NoteText.min.js:1627
+#: ElectronClient/gui/NoteText.min.js:1726
+msgid "Attach file"
+msgstr "파일 첨부"
+
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:535
 msgid "Code Block"
 msgstr ""
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:543
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:544
 msgid "Inline Code"
 msgstr ""
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:901
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:559
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:80
+#: ElectronClient/gui/NoteText.min.js:1778
+msgid "Insert Date Time"
+msgstr "날짜와 시간 입력"
+
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:903
 msgid "Drop notes or files here"
 msgstr ""
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:901
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:903
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:401
 #, fuzzy
 msgid "Code View"
 msgstr "코드"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:901
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:903
 #, javascript-format
 msgid ""
 "Please wait for all attachments to be downloaded and decrypted. You may also "
@@ -1084,21 +1134,82 @@ msgstr "경로를 클립보드에 복사"
 msgid "Copy Link Address"
 msgstr "링크 주소 복사"
 
-#: ElectronClient/gui/NoteEditor/NoteEditor.js:316
+#: ElectronClient/gui/NoteEditor/NoteEditor.js:283
 #: ElectronClient/gui/NoteText.min.js:2121
 msgid "to-do"
 msgstr "할일"
 
-#: ElectronClient/gui/NoteEditor/NoteEditor.js:316
+#: ElectronClient/gui/NoteEditor/NoteEditor.js:283
 #: ElectronClient/gui/NoteText.min.js:2121
 msgid "note"
 msgstr "노트"
 
-#: ElectronClient/gui/NoteEditor/NoteEditor.js:316
+#: ElectronClient/gui/NoteEditor/NoteEditor.js:283
 #: ElectronClient/gui/NoteText.min.js:2121
 #, javascript-format
 msgid "Creating new %s..."
 msgstr "%s 새로 만들기..."
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:25
+msgid "Select all"
+msgstr "모두 선택"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:30
+#: ElectronClient/gui/NoteText.min.js:1690
+msgid "Bold"
+msgstr "굵게"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:35
+#: ElectronClient/gui/NoteText.min.js:1698
+msgid "Italic"
+msgstr "기울임"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:40
+#: ElectronClient/gui/NoteText.min.js:1710
+msgid "Hyperlink"
+msgstr "하이퍼링크"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:45
+#: ElectronClient/gui/NoteText.min.js:1718
+msgid "Code"
+msgstr "코드"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:55
+#: ElectronClient/gui/NoteText.min.js:1738
+msgid "Numbered List"
+msgstr "숫자가 매겨진 목록"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:60
+#: ElectronClient/gui/NoteText.min.js:1746
+msgid "Bulleted List"
+msgstr "글머리 기호 목록"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:65
+#: ElectronClient/gui/NoteText.min.js:1754
+msgid "Checkbox"
+msgstr "체크박스"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:70
+#: ElectronClient/gui/NoteText.min.js:1762
+msgid "Heading"
+msgstr "표제"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:75
+#: ElectronClient/gui/NoteText.min.js:1770
+msgid "Horizontal Rule"
+msgstr "수평줄"
+
+#: ElectronClient/gui/NoteEditor/commands/focusElementNoteTitle.js:15
+msgid "Note title"
+msgstr "노트 제목"
+
+#: ElectronClient/gui/NoteEditor/commands/showLocalSearch.js:15
+msgid "Search in current note"
+msgstr "현재 노트에서 검색"
+
+#: ElectronClient/gui/NoteEditor/commands/focusElementNoteBody.js:15
+msgid "Note body"
+msgstr "노트 본문"
 
 #: ElectronClient/gui/NotePropertiesDialog.min.js:26
 #: ElectronClient/gui/FolderPropertiesDialog.min.js:21
@@ -1128,7 +1239,7 @@ msgid "URL"
 msgstr "URL"
 
 #: ElectronClient/gui/NotePropertiesDialog.min.js:32
-#: ReactNativeClient/lib/models/Setting.js:1211
+#: ReactNativeClient/lib/models/Setting.js:1253
 msgid "Note History"
 msgstr "노트 역사"
 
@@ -1141,132 +1252,178 @@ msgid "Previous versions of this note"
 msgstr "노트의 이전 버전들"
 
 #: ElectronClient/gui/NotePropertiesDialog.min.js:382
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:61
+#: ElectronClient/gui/MainScreen/commands/showNoteProperties.js:16
 #: ElectronClient/gui/NoteText.min.js:1834
 msgid "Note properties"
 msgstr "노트 속성"
 
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:36
-msgid "Forward"
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:295
+msgid "Some items cannot be synchronised."
+msgstr "일부 항목들은 동기화할 수 없습니다."
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:300
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:312
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:336
+msgid "View them now"
+msgstr "지금 나타내기"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:307
+msgid "Some items cannot be decrypted."
+msgstr "일부 항목들은 암호화할 수 없습니다."
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:319
+msgid "One or more master keys need a password."
+msgstr "하나 혹은 그 이상의 마스터 키 비밀번호를 입력해주세요."
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:324
+msgid "Set the password"
+msgstr "암호 설정"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:331
+#, fuzzy
+msgid "One of your master keys use an obsolete encryption method."
+msgstr "하나 혹은 그 이상의 마스터 키 비밀번호를 입력해주세요."
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:343
+msgid ""
+"The default encryption method has been changed, you should re-encrypt your "
+"data."
+msgstr "기본 암호과 구문이 변경 되었습니다. 데이타를 재암호화 해야합니다."
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:348
+#, fuzzy
+msgid "More info"
+msgstr "더 많은 정보"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:419
+msgid "Search..."
+msgstr "찾기..."
+
+#: ElectronClient/gui/MainScreen/commands/showNoteContentProperties.js:16
+msgid "Statistics..."
 msgstr ""
 
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:49
+#: ElectronClient/gui/MainScreen/commands/renameFolder.js:17
+#: ElectronClient/gui/MainScreen/commands/renameTag.js:17
+#: ElectronClient/gui/SideBar.min.js:339 ElectronClient/gui/SideBar.min.js:389
+#: ReactNativeClient/lib/components/side-menu-content.js:129
+msgid "Rename"
+msgstr "이름 바꾸기"
+
+#: ElectronClient/gui/MainScreen/commands/renameFolder.js:26
+#: ElectronClient/gui/MainScreen.min.js:292
+msgid "Rename notebook:"
+msgstr "노트북 이름 바꾸기:"
+
+#: ElectronClient/gui/MainScreen/commands/newTodo.js:16
+#: ElectronClient/gui/MainScreen/commands/newTodo.js:28
+#: ReactNativeClient/lib/components/action-button.js:64
+#: ReactNativeClient/setUpQuickActions.js:15
+msgid "New to-do"
+msgstr "새 '할 일'"
+
+#: ElectronClient/gui/MainScreen/commands/toggleNoteList.js:15
+#: ElectronClient/gui/MainScreen/commands/toggleNoteList.js:26
+msgid "Toggle note list"
+msgstr "노트 목록 전환"
+
+#: ElectronClient/gui/MainScreen/commands/toggleSidebar.js:15
+#: ElectronClient/gui/MainScreen/commands/toggleSidebar.js:26
+msgid "Toggle sidebar"
+msgstr "사이드바 표시 전환"
+
+#: ElectronClient/gui/MainScreen/commands/editAlarm.js:19
+#: ElectronClient/gui/NoteText.min.js:1642
+#: ElectronClient/gui/NoteText.min.js:1828
+#: ReactNativeClient/lib/components/screens/note.js:826
+msgid "Set alarm"
+msgstr "알람 설정"
+
+#: ElectronClient/gui/MainScreen/commands/editAlarm.js:31
+#: ElectronClient/gui/MainScreen.min.js:417
+msgid "Set alarm:"
+msgstr "알람 설정:"
+
+#: ElectronClient/gui/MainScreen/commands/exportPdf.js:19
+#: ElectronClient/gui/MainScreen/commands/exportPdf.js:30
+#: ElectronClient/gui/MainScreen.min.js:549
+msgid "PDF File"
+msgstr "PDF 파일"
+
+#: ElectronClient/gui/MainScreen/commands/newNote.js:20
+#: ElectronClient/gui/MainScreen/commands/newNote.js:47
+#: ReactNativeClient/lib/components/action-button.js:73
+#: ReactNativeClient/setUpQuickActions.js:14
+msgid "New note"
+msgstr "새 노트"
+
+#: ElectronClient/gui/MainScreen/commands/moveToFolder.js:17
+#, fuzzy
+msgid "Move to notebook"
+msgstr "노트북으로 옮기기..."
+
+#: ElectronClient/gui/MainScreen/commands/moveToFolder.js:36
+#: ElectronClient/gui/MainScreen.min.js:272
+#, fuzzy
+msgid "Move to notebook:"
+msgstr "노트북으로 옮기기..."
+
+#: ElectronClient/gui/MainScreen/commands/toggleVisiblePanes.js:15
+msgid "Toggle editor layout"
+msgstr "편집기 배치 형태 전환"
+
+#: ElectronClient/gui/MainScreen/commands/renameTag.js:26
+#: ElectronClient/gui/MainScreen.min.js:313
+msgid "Rename tag:"
+msgstr "태그 이름 바꾸기:"
+
+#: ElectronClient/gui/MainScreen/commands/newNotebook.js:17
+#: ElectronClient/gui/MainScreen/commands/newNotebook.js:57
+msgid "New notebook"
+msgstr "새 노트북"
+
+#: ElectronClient/gui/MainScreen/commands/newNotebook.js:25
+#: ElectronClient/gui/MainScreen.min.js:178
+msgid "Notebook title:"
+msgstr "노트북 제목:"
+
+#: ElectronClient/gui/MainScreen/commands/showShareNoteDialog.js:15
+msgid "Share note..."
+msgstr "노트 공유..."
+
+#: ElectronClient/gui/MainScreen/commands/selectTemplate.js:23
+#: ElectronClient/gui/MainScreen.min.js:448
+msgid "Template file:"
+msgstr "템플릿 파일:"
+
+#: ElectronClient/gui/MainScreen/commands/setTags.js:44
+#: ElectronClient/gui/MainScreen.min.js:221
+msgid "Add or remove tags:"
+msgstr "태그 추가 및 제거:"
+
+#: ElectronClient/gui/MainScreen/commands/print.js:16
+msgid "Print"
+msgstr "인쇄"
+
+#: ElectronClient/gui/MainScreen/commands/print.js:25
+#: ElectronClient/gui/NoteText.min.js:1321
+msgid "Only one note can be printed at a time."
+msgstr "한 번에 오직 하나의 노트만 출력할 수 있습니다."
+
+#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:32
 #: ElectronClient/gui/NoteText.min.js:1656
 #, javascript-format
 msgid "In: %s"
 msgstr "내부: %s"
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:76
-#: ElectronClient/gui/NoteText.min.js:1792
-msgid "Click to stop external editing"
-msgstr "외부 편집을 그만 두시려면 클릭하세요"
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:77
-#: ElectronClient/gui/NoteText.min.js:1793
-msgid "Watching..."
-msgstr "외부 보기..."
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:86
-#: ElectronClient/gui/utils/NoteListUtils.js:68
-#: ElectronClient/gui/NoteText.min.js:1801 ElectronClient/app.js:1067
-msgid "Edit in external editor"
-msgstr "외부 편집기에서 편집하기"
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:105
-#: ElectronClient/gui/NoteText.min.js:1642
-#: ElectronClient/gui/NoteText.min.js:1828
-#: ReactNativeClient/lib/components/screens/note.js:822
-msgid "Set alarm"
-msgstr "알람 설정"
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:110
-#: ElectronClient/gui/SideBar.min.js:779
-#: ElectronClient/gui/NoteText.min.js:1634
-#: ElectronClient/gui/NoteText.min.js:1810 ElectronClient/app.js:1078
-#: ReactNativeClient/lib/components/side-menu-content.js:314
-#: ReactNativeClient/lib/components/screens/tags.js:101
-#: ReactNativeClient/lib/components/screens/note.js:837
-msgid "Tags"
-msgstr "태그"
-
-#: ElectronClient/gui/SideBar.min.js:283
-msgid "Remove"
-msgstr "삭제"
-
-#: ElectronClient/gui/SideBar.min.js:286
-#: ReactNativeClient/lib/components/side-menu-content.js:148
-#, javascript-format
-msgid ""
-"Delete notebook \"%s\"?\n"
-"\n"
-"All notes and sub-notebooks within this notebook will also be deleted."
-msgstr ""
-"“%s” 노트북을 삭제할까요?\n"
-"\n"
-"이 노트북 안에 있는 모든 노트와 더불어 하위 노트북들도 함께 삭제됩니다."
-
-#: ElectronClient/gui/SideBar.min.js:287
-#: ElectronClient/gui/utils/NoteListUtils.js:204
-#: ElectronClient/gui/utils/NoteListUtils.js:227
-#: ElectronClient/gui/ResourceScreen.js:46
-#: ElectronClient/gui/ResourceScreen.js:94
-#: ReactNativeClient/lib/components/screen-header.js:356
-#: ReactNativeClient/lib/components/side-menu-content.js:146
-#: ReactNativeClient/lib/components/screens/note.js:864
-msgid "Delete"
-msgstr "삭제"
 
 #: ElectronClient/gui/SideBar.min.js:290
 #, javascript-format
 msgid "Remove tag \"%s\" from all notes?"
 msgstr "모든 노트에서 “%s” 태그를 제거할까요?"
 
-#: ElectronClient/gui/SideBar.min.js:292
-msgid "Remove this search from the sidebar?"
-msgstr "사이드바에서 이 검색 항목을 제거할까요?"
-
-#: ElectronClient/gui/SideBar.min.js:304 ElectronClient/app.js:560
+#: ElectronClient/gui/SideBar.min.js:304
 msgid "New sub-notebook"
 msgstr "새 노트북"
-
-#: ElectronClient/gui/SideBar.min.js:339 ElectronClient/gui/SideBar.min.js:389
-#: ReactNativeClient/lib/components/side-menu-content.js:129
-msgid "Rename"
-msgstr "이름 바꾸기"
-
-#: ElectronClient/gui/SideBar.min.js:382
-#: ElectronClient/gui/utils/NoteListUtils.js:197 ElectronClient/app.js:759
-#: ElectronClient/app.js:816
-msgid "Export"
-msgstr "내보내기"
-
-#: ElectronClient/gui/SideBar.min.js:724 ElectronClient/app.js:765
-#: ReactNativeClient/lib/components/side-menu-content.js:338
-msgid "Synchronise"
-msgstr "동기화"
-
-#: ElectronClient/gui/SideBar.min.js:757
-#: ReactNativeClient/lib/components/side-menu-content.js:360
-#: ReactNativeClient/lib/components/screens/notes.js:188
-msgid "All notes"
-msgstr "모든 노트"
-
-#: ElectronClient/gui/SideBar.min.js:762
-#: ReactNativeClient/lib/components/side-menu-content.js:364
-msgid "Notebooks"
-msgstr "노트북"
-
-#: ElectronClient/gui/SideBar.min.js:797
-#: ReactNativeClient/lib/components/side-menu-content.js:325
-#, javascript-format
-msgid "Decrypting items: %d/%d"
-msgstr "복호화 항목: %d/%d"
-
-#: ElectronClient/gui/SideBar.min.js:802
-#: ReactNativeClient/lib/components/side-menu-content.js:330
-#, javascript-format
-msgid "Fetching resources: %d/%d"
-msgstr "리소스 가져오는 중: %d/%d"
 
 #: ElectronClient/gui/ClipperConfigScreen.min.js:39
 msgid "Token has been copied to the clipboard!"
@@ -1359,12 +1516,12 @@ msgstr "OneDrive 로그인"
 msgid "Dropbox Login"
 msgstr "Dropbox 로그인"
 
-#: ElectronClient/gui/Root.min.js:91 ElectronClient/app.js:755
-#: ElectronClient/app.js:813
+#: ElectronClient/gui/Root.min.js:91 ElectronClient/app.js:673
+#: ElectronClient/app.js:724
 msgid "Import"
 msgstr "가져오기"
 
-#: ElectronClient/gui/Root.min.js:92 ElectronClient/app.js:642
+#: ElectronClient/gui/Root.min.js:92 ElectronClient/app.js:561
 msgid "Options"
 msgstr "옵션"
 
@@ -1373,7 +1530,7 @@ msgstr "옵션"
 msgid "Note attachments"
 msgstr "첨부"
 
-#: ElectronClient/gui/Root.min.js:94 ElectronClient/app.js:515
+#: ElectronClient/gui/Root.min.js:94 ElectronClient/app.js:500
 msgid "Synchronisation Status"
 msgstr "동기화 상태"
 
@@ -1396,25 +1553,29 @@ msgid ""
 msgstr "새 \"%s\" 노트북이 생성되었으며 \"%s\" 파일을 가져왔습니다"
 
 #: ElectronClient/gui/DropboxLoginScreen.min.js:67
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:64
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:68
 msgid "Submit"
 msgstr "제출"
 
 #: ElectronClient/gui/NoteList.min.js:147
+#: ElectronClient/gui/NoteList/NoteList.min.js:152
 msgid "Custom order"
 msgstr ""
 
 #: ElectronClient/gui/NoteList.min.js:147
+#: ElectronClient/gui/NoteList/NoteList.min.js:152
 #, fuzzy
 msgid "View"
 msgstr "보기"
 
 #: ElectronClient/gui/NoteList.min.js:147
-#: ReactNativeClient/lib/models/Setting.js:329
+#: ElectronClient/gui/NoteList/NoteList.min.js:152
+#: ReactNativeClient/lib/models/Setting.js:370
 msgid "Sort notes by"
 msgstr "노트를 다음 기준으로 정렬"
 
 #: ElectronClient/gui/NoteList.min.js:147
+#: ElectronClient/gui/NoteList/NoteList.min.js:152
 #, javascript-format
 msgid ""
 "To manually sort the notes, the sort order must be changed to \"%s\" in the "
@@ -1422,82 +1583,58 @@ msgid ""
 msgstr ""
 
 #: ElectronClient/gui/NoteList.min.js:148
+#: ElectronClient/gui/NoteList/NoteList.min.js:153
 #, fuzzy
 msgid "Do it now"
 msgstr "설치하기:"
 
 #: ElectronClient/gui/NoteList.min.js:452
+#: ElectronClient/gui/NoteList/NoteList.min.js:425
 msgid "No notes in here. Create one by clicking on \"New note\"."
 msgstr "노트가 없습니다. '새 노트'를 선택해서 노트를 새로 만드세요."
 
 #: ElectronClient/gui/NoteList.min.js:452
+#: ElectronClient/gui/NoteList/NoteList.min.js:425
 msgid ""
 "There is currently no notebook. Create one by clicking on \"New notebook\"."
 msgstr "노트북이 없습니다. '새 노트북'을 선택해서 노트북을 새로 만드세요."
 
-#: ElectronClient/gui/utils/NoteListUtils.js:27
-msgid "Add or remove tags"
-msgstr "태그 추가 및 제거"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:40
-#, fuzzy
-msgid "Move to notebook"
-msgstr "노트북으로 옮기기..."
-
-#: ElectronClient/gui/utils/NoteListUtils.js:53
+#: ElectronClient/gui/utils/NoteListUtils.js:37
 #: ReactNativeClient/lib/components/screen-header.js:362
 msgid "Duplicate"
 msgstr "복제"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:58
+#: ElectronClient/gui/utils/NoteListUtils.js:42
 #, javascript-format
 msgid "%s - Copy"
 msgstr "%s - 복사"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:78
-msgid "Stop external editing"
-msgstr "외부 편집을 그만 두시려면 클릭하세요"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:90
+#: ElectronClient/gui/utils/NoteListUtils.js:62
 msgid "Switch between note and to-do type"
 msgstr "'노트' 또는 '할 일' 형식으로 전환합니다"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:119
+#: ElectronClient/gui/utils/NoteListUtils.js:91
 msgid "Switch to note type"
 msgstr "'노트' 형식으로 전환합니다"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:128
+#: ElectronClient/gui/utils/NoteListUtils.js:100
 msgid "Switch to to-do type"
 msgstr "'할 일' 형식으로 전환합니다"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:138
-#: ReactNativeClient/lib/components/screens/note.js:851
+#: ElectronClient/gui/utils/NoteListUtils.js:110
+#: ReactNativeClient/lib/components/screens/note.js:855
 msgid "Copy Markdown link"
 msgstr "마크다운 링크 복사"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:153
-msgid "Share note..."
-msgstr "노트 공유..."
-
-#: ElectronClient/gui/utils/NoteListUtils.js:186
-#: ElectronClient/gui/MainScreen.min.js:549 ElectronClient/app.js:495
-msgid "PDF File"
-msgstr "PDF 파일"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:221
+#: ElectronClient/gui/utils/NoteListUtils.js:178
 #, javascript-format
 msgid "Delete note \"%s\"?"
 msgstr "“%s” 노트를 삭제할까요?"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:223
+#: ElectronClient/gui/utils/NoteListUtils.js:180
 #, javascript-format
 msgid "Delete these %d notes?"
 msgstr "%d 개의 노트들을 삭제할까요?"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:240
-#, javascript-format
-msgid "Error opening note in editor: %s"
-msgstr "편집기에서 노트를 열 수 없는 오류가 발생하였습니다: %s"
 
 #: ElectronClient/gui/FolderPropertiesDialog.min.js:22
 msgid "Name"
@@ -1517,9 +1654,22 @@ msgstr "노트북 속성"
 msgid "This file could not be opened: %s"
 msgstr "다음 파일을 열 수 없습니다: %s"
 
-#: ElectronClient/gui/NoteText.min.js:1321
-msgid "Only one note can be printed at a time."
-msgstr "한 번에 오직 하나의 노트만 출력할 수 있습니다."
+#: ElectronClient/gui/NoteText.min.js:1551
+msgid "emphasized text"
+msgstr "강조"
+
+#: ElectronClient/gui/NoteText.min.js:1792
+msgid "Click to stop external editing"
+msgstr "외부 편집을 그만 두시려면 클릭하세요"
+
+#: ElectronClient/gui/NoteText.min.js:1793
+msgid "Watching..."
+msgstr "외부 보기..."
+
+#: ElectronClient/gui/NoteText.min.js:1801
+#: ElectronClient/commands/startExternalEditing.js:18
+msgid "Edit in external editor"
+msgstr "외부 편집기에서 편집하기"
 
 #: ElectronClient/gui/NoteText.min.js:1852
 #, fuzzy
@@ -1627,75 +1777,51 @@ msgstr "먼저 노트북을 만들어야 합니다."
 msgid "Please create a notebook first"
 msgstr "먼저 노트북을 만들어야 합니다"
 
-#: ElectronClient/gui/MainScreen.min.js:178
-msgid "Notebook title:"
-msgstr "노트북 제목:"
-
-#: ElectronClient/gui/MainScreen.min.js:221
-msgid "Add or remove tags:"
-msgstr "태그 추가 및 제거:"
-
-#: ElectronClient/gui/MainScreen.min.js:272
-#, fuzzy
-msgid "Move to notebook:"
-msgstr "노트북으로 옮기기..."
-
-#: ElectronClient/gui/MainScreen.min.js:292
-msgid "Rename notebook:"
-msgstr "노트북 이름 바꾸기:"
-
-#: ElectronClient/gui/MainScreen.min.js:313
-msgid "Rename tag:"
-msgstr "태그 이름 바꾸기:"
-
-#: ElectronClient/gui/MainScreen.min.js:417
-msgid "Set alarm:"
-msgstr "알람 설정:"
-
-#: ElectronClient/gui/MainScreen.min.js:448
-msgid "Template file:"
-msgstr "템플릿 파일:"
-
 #: ElectronClient/gui/PromptDialog.min.js:249
 msgid "Clear"
 msgstr "지우기"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:51
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:76
 msgid "Words"
 msgstr ""
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:52
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:77
 msgid "Characters"
 msgstr ""
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:53
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:78
 msgid "Characters excluding spaces"
 msgstr ""
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:54
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:79
 msgid "Lines"
 msgstr ""
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:73
-#: ReactNativeClient/lib/models/Setting.js:314
-#: ReactNativeClient/lib/models/Setting.js:315
-#: ReactNativeClient/lib/models/Setting.js:316
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:98
+#: ReactNativeClient/lib/models/Setting.js:355
+#: ReactNativeClient/lib/models/Setting.js:356
+#: ReactNativeClient/lib/models/Setting.js:357
 msgid "Editor"
 msgstr "편집"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:74
-#: ReactNativeClient/lib/models/Setting.js:314
-#: ReactNativeClient/lib/models/Setting.js:315
-#: ReactNativeClient/lib/models/Setting.js:317
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:99
+#: ReactNativeClient/lib/models/Setting.js:355
+#: ReactNativeClient/lib/models/Setting.js:356
+#: ReactNativeClient/lib/models/Setting.js:358
 msgid "Viewer"
 msgstr "뷰어"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:82
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:107
 #, fuzzy
 msgid "Statistics"
 msgstr "상태"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:86
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:111
+#, javascript-format
+msgid "Read time: %s min"
+msgstr ""
+
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:112
 #: ElectronClient/gui/ShareNoteDialog.js:175
 msgid "Close"
 msgstr "닫기"
@@ -1759,8 +1885,17 @@ msgid "Apply"
 msgstr "적용"
 
 #: ElectronClient/gui/Header.min.js:267
+#: ElectronClient/gui/Header/Header.min.js:253
 msgid "Usage"
 msgstr "사용 방법"
+
+#: ElectronClient/gui/NoteList/commands/focusElementNoteList.js:15
+msgid "Note list"
+msgstr "노트 목록"
+
+#: ElectronClient/gui/Header/commands/focusSearch.js:15
+msgid "Search in all the notes"
+msgstr "모든 노트에서 검색"
 
 #: ElectronClient/gui/ResourceScreen.js:31
 #, fuzzy
@@ -1779,7 +1914,7 @@ msgstr "위치"
 #: ElectronClient/gui/ResourceScreen.js:42
 #: ReactNativeClient/lib/path-utils.js:65
 #: ReactNativeClient/lib/path-utils.js:101
-#: ReactNativeClient/lib/models/BaseItem.js:710
+#: ReactNativeClient/lib/models/BaseItem.js:720
 msgid "Untitled"
 msgstr "제목 없음"
 
@@ -1837,231 +1972,172 @@ msgid "Copy Shareable Link"
 msgid_plural "Copy Shareable Links"
 msgstr[0] "공유 링크 복사"
 
-#: ElectronClient/app.js:392
-msgid "Sidebar"
-msgstr "사이드바"
+#: ElectronClient/commands/stopExternalEditing.js:16
+msgid "Stop external editing"
+msgstr "외부 편집을 그만 두시려면 클릭하세요"
 
-#: ElectronClient/app.js:398
-msgid "Note list"
-msgstr "노트 목록"
+#: ElectronClient/commands/startExternalEditing.js:29
+#, javascript-format
+msgid "Error opening note in editor: %s"
+msgstr "편집기에서 노트를 열 수 없는 오류가 발생하였습니다: %s"
 
-#: ElectronClient/app.js:404
-msgid "Note title"
-msgstr "노트 제목"
-
-#: ElectronClient/app.js:410
-msgid "Note body"
-msgstr "노트 본문"
-
-#: ElectronClient/app.js:462
+#: ElectronClient/app.js:460
 #, javascript-format
 msgid "Importing from \"%s\" as \"%s\" format. Please wait..."
 msgstr "\"%s\"에서 \"%s\" 포맷으로 가져오는 중입니다. 잠시만 기다려주세요..."
 
-#: ElectronClient/app.js:525
-#: ReactNativeClient/lib/components/action-button.js:73
-#: ReactNativeClient/setUpQuickActions.js:14
-msgid "New note"
-msgstr "새 노트"
-
-#: ElectronClient/app.js:537
-#: ReactNativeClient/lib/components/action-button.js:64
-#: ReactNativeClient/setUpQuickActions.js:15
-msgid "New to-do"
-msgstr "새 '할 일'"
-
-#: ElectronClient/app.js:549
-msgid "New notebook"
-msgstr "새 노트북"
-
-#: ElectronClient/app.js:572
-msgid "Print"
-msgstr "인쇄"
-
-#: ElectronClient/app.js:592
+#: ElectronClient/app.js:522
 msgid "Create note from template"
 msgstr "템플릿에서 노트 생성"
 
-#: ElectronClient/app.js:602
+#: ElectronClient/app.js:528
 msgid "Create to-do from template"
 msgstr "템플릿에서 할일 생성"
 
-#: ElectronClient/app.js:612
+#: ElectronClient/app.js:534
 msgid "Insert template"
 msgstr "템플릿 삽입"
 
-#: ElectronClient/app.js:622
+#: ElectronClient/app.js:541
 msgid "Open template directory"
 msgstr "템플릿 디렉터리 열기"
 
-#: ElectronClient/app.js:629
+#: ElectronClient/app.js:548
 msgid "Refresh templates"
 msgstr "템플릿 새로고침"
 
-#: ElectronClient/app.js:655
+#: ElectronClient/app.js:574
 #, fuzzy
 msgid "Note attachments..."
 msgstr "첨부"
 
-#: ElectronClient/app.js:677
+#: ElectronClient/app.js:596
 #, javascript-format
 msgid "Revision: %s (%s)"
 msgstr "개정판: %s (%s)"
 
-#: ElectronClient/app.js:684
+#: ElectronClient/app.js:603
 #, javascript-format
 msgid "%s %s (%s, %s)"
 msgstr "%s %s (%s, %s)"
 
-#: ElectronClient/app.js:686
+#: ElectronClient/app.js:605
 #, javascript-format
 msgid "Client ID: %s"
 msgstr "클라이언트 식별자: %s"
 
-#: ElectronClient/app.js:687
+#: ElectronClient/app.js:606
 #, javascript-format
 msgid "Sync Version: %s"
 msgstr "동기화 버전: %s"
 
-#: ElectronClient/app.js:688
+#: ElectronClient/app.js:607
 #, javascript-format
 msgid "Profile Version: %s"
 msgstr "프로파일 버전: %s"
 
-#: ElectronClient/app.js:689
+#: ElectronClient/app.js:608
 #, javascript-format
 msgid "Keychain Supported: %s"
 msgstr ""
 
-#: ElectronClient/app.js:711 ElectronClient/app.js:794
+#: ElectronClient/app.js:630 ElectronClient/app.js:706
 msgid "&File"
 msgstr "파일"
 
-#: ElectronClient/app.js:717 ElectronClient/app.js:1142
+#: ElectronClient/app.js:636 ElectronClient/app.js:905
 msgid "About Joplin"
 msgstr "Joplin에 대해서"
 
-#: ElectronClient/app.js:724
+#: ElectronClient/app.js:643
 msgid "Preferences..."
 msgstr "설정..."
 
-#: ElectronClient/app.js:734 ElectronClient/app.js:1121
+#: ElectronClient/app.js:653 ElectronClient/app.js:887
 msgid "Check for updates..."
 msgstr "업데이트 확인..."
 
-#: ElectronClient/app.js:748 ElectronClient/app.js:808
+#: ElectronClient/app.js:666 ElectronClient/app.js:719
 msgid "Templates"
 msgstr "템플릿"
 
-#: ElectronClient/app.js:780
+#: ElectronClient/app.js:692
 #, javascript-format
 msgid "Hide %s"
 msgstr "%s 숨기기"
 
-#: ElectronClient/app.js:787
+#: ElectronClient/app.js:699
 msgid "Quit"
 msgstr "종료"
 
-#: ElectronClient/app.js:801
+#: ElectronClient/app.js:712
 msgid "Close Window"
 msgstr "창 닫기"
 
-#: ElectronClient/app.js:839
+#: ElectronClient/app.js:757
 msgid "&Edit"
 msgstr "편집"
 
-#: ElectronClient/app.js:857
-msgid "Select all"
-msgstr "모두 선택"
-
-#: ElectronClient/app.js:887
-msgid "Link"
-msgstr "링크"
-
-#: ElectronClient/app.js:926
-msgid "Search in all the notes"
-msgstr "모든 노트에서 검색"
-
-#: ElectronClient/app.js:937
-msgid "Search in current note"
-msgstr "현재 노트에서 검색"
-
-#: ElectronClient/app.js:949
+#: ElectronClient/app.js:776
 msgid "&View"
 msgstr "보기"
 
-#: ElectronClient/app.js:951
-msgid "Toggle sidebar"
-msgstr "사이드바 표시 전환"
-
-#: ElectronClient/app.js:964
+#: ElectronClient/app.js:782
 msgid "Layout button sequence"
 msgstr "레이아웃 버튼 순서"
 
-#: ElectronClient/app.js:968
-msgid "Toggle note list"
-msgstr "노트 목록 전환"
-
-#: ElectronClient/app.js:977
-msgid "Toggle editor layout"
-msgstr "편집기 배치 형태 전환"
-
-#: ElectronClient/app.js:1025
+#: ElectronClient/app.js:822
 msgid "Focus"
 msgstr "강조"
 
-#: ElectronClient/app.js:1032
+#: ElectronClient/app.js:828
 msgid "Actual Size"
 msgstr "실제 크기"
 
-#: ElectronClient/app.js:1043 ElectronClient/app.js:1049
+#: ElectronClient/app.js:839 ElectronClient/app.js:845
 msgid "Zoom In"
 msgstr "확대"
 
-#: ElectronClient/app.js:1056
+#: ElectronClient/app.js:852
 msgid "Zoom Out"
 msgstr "축소"
 
-#: ElectronClient/app.js:1064
+#: ElectronClient/app.js:860
 #, fuzzy
 msgid "&Note"
 msgstr "노트"
 
-#: ElectronClient/app.js:1094
-msgid "Statistics..."
-msgstr ""
-
-#: ElectronClient/app.js:1104
+#: ElectronClient/app.js:870
 msgid "&Tools"
 msgstr "도구"
 
-#: ElectronClient/app.js:1108
+#: ElectronClient/app.js:874
 msgid "&Help"
 msgstr "도움말"
 
-#: ElectronClient/app.js:1111
+#: ElectronClient/app.js:877
 msgid "Website and documentation"
 msgstr "웹사이트 및 각종 문서"
 
-#: ElectronClient/app.js:1115
+#: ElectronClient/app.js:881
 msgid "Joplin Forum"
 msgstr "Joplin 포럼"
 
-#: ElectronClient/app.js:1118
+#: ElectronClient/app.js:884
 #: ReactNativeClient/lib/components/screens/config.js:495
 msgid "Make a donation"
 msgstr "기부하기"
 
-#: ElectronClient/app.js:1130
+#: ElectronClient/app.js:894
 msgid "Toggle development tools"
 msgstr "개발자 도구 띄우기"
 
-#: ElectronClient/app.js:1301
+#: ElectronClient/app.js:1037
 #, javascript-format
 msgid "Open %s"
 msgstr "%s 열기"
 
-#: ElectronClient/app.js:1303
+#: ElectronClient/app.js:1039
 msgid "Exit"
 msgstr "종료"
 
@@ -2088,8 +2164,9 @@ msgstr ""
 "데이터는 제3자와 공유되지 않습니다."
 
 #: ReactNativeClient/lib/registry.js:156
+#, fuzzy
 msgid ""
-"Could not synchronize with OneDrive.\n"
+"Could not synchronise with OneDrive.\n"
 "\n"
 "This error often happens when using OneDrive for Business, which "
 "unfortunately cannot be supported.\n"
@@ -2113,12 +2190,16 @@ msgstr "알 수 없는 로그 레벨: %s"
 msgid "Unknown level ID: %s"
 msgstr "알 수 없는 레벨 ID: %s"
 
+#: ReactNativeClient/lib/SyncTargetAmazonS3.js:28
+msgid "AWS S3"
+msgstr ""
+
 #: ReactNativeClient/lib/SyncTargetDropbox.js:25
 msgid "Dropbox"
 msgstr "Dropbox"
 
 #: ReactNativeClient/lib/shim-init-node.js:90
-#: ReactNativeClient/lib/components/screens/note.js:519
+#: ReactNativeClient/lib/components/screens/note.js:523
 #, javascript-format
 msgid ""
 "You are about to attach a large image (%dx%d pixels). Would you like to "
@@ -2130,25 +2211,25 @@ msgstr ""
 msgid "Cannot access %s"
 msgstr "%s에 접근할 수 없음"
 
-#: ReactNativeClient/lib/models/Folder.js:27
+#: ReactNativeClient/lib/models/Folder.js:28
 #: ReactNativeClient/lib/models/Note.js:25
 msgid "title"
 msgstr "제목"
 
-#: ReactNativeClient/lib/models/Folder.js:28
+#: ReactNativeClient/lib/models/Folder.js:29
 #: ReactNativeClient/lib/models/Note.js:26
 msgid "updated date"
 msgstr "업데이트된 날짜"
 
-#: ReactNativeClient/lib/models/Folder.js:88
+#: ReactNativeClient/lib/models/Folder.js:89
 msgid "Conflicts"
 msgstr "충돌"
 
-#: ReactNativeClient/lib/models/Folder.js:386
+#: ReactNativeClient/lib/models/Folder.js:374
 msgid "Cannot move notebook to this location"
 msgstr "노트북을 이 위치로 옮길 수 없습니다"
 
-#: ReactNativeClient/lib/models/Folder.js:438
+#: ReactNativeClient/lib/models/Folder.js:426
 #, javascript-format
 msgid "Notebooks cannot be named \"%s\", which is a reserved title."
 msgstr "노트북 제목을 \"%s\" 으로 정할 수 없습니다. 이미 예약중입니다."
@@ -2251,11 +2332,23 @@ msgstr "WebDAV 사용자 이름"
 msgid "WebDAV password"
 msgstr "WebDAV 암호"
 
-#: ReactNativeClient/lib/models/Setting.js:195
+#: ReactNativeClient/lib/models/Setting.js:189
+msgid "AWS S3 bucket"
+msgstr ""
+
+#: ReactNativeClient/lib/models/Setting.js:200
+msgid "AWS key"
+msgstr ""
+
+#: ReactNativeClient/lib/models/Setting.js:210
+msgid "AWS secret"
+msgstr ""
+
+#: ReactNativeClient/lib/models/Setting.js:224
 msgid "Attachment download behaviour"
 msgstr "첨부 파일 다운로드 시 행동"
 
-#: ReactNativeClient/lib/models/Setting.js:196
+#: ReactNativeClient/lib/models/Setting.js:225
 msgid ""
 "In \"Manual\" mode, attachments are downloaded only when you click on them. "
 "In \"Auto\", they are downloaded when you open the note. In \"Always\", all "
@@ -2265,188 +2358,188 @@ msgstr ""
 "를 열 때만 다운로드됩니다. “항상” 모드에서는 노트를 열지 않아도 첨부 파일이 "
 "다운로드됩니다."
 
-#: ReactNativeClient/lib/models/Setting.js:199
+#: ReactNativeClient/lib/models/Setting.js:228
 msgid "Always"
 msgstr "항상"
 
-#: ReactNativeClient/lib/models/Setting.js:200
+#: ReactNativeClient/lib/models/Setting.js:229
 msgid "Manual"
 msgstr "수동"
 
-#: ReactNativeClient/lib/models/Setting.js:201
+#: ReactNativeClient/lib/models/Setting.js:230
 msgid "Auto"
 msgstr "자동"
 
-#: ReactNativeClient/lib/models/Setting.js:206
+#: ReactNativeClient/lib/models/Setting.js:247
 msgid "Max concurrent connections"
 msgstr "최대 동시 연결수"
 
-#: ReactNativeClient/lib/models/Setting.js:215
+#: ReactNativeClient/lib/models/Setting.js:256
 msgid "Language"
 msgstr "언어"
 
-#: ReactNativeClient/lib/models/Setting.js:225
+#: ReactNativeClient/lib/models/Setting.js:266
 msgid "Date format"
 msgstr "날짜 형식"
 
-#: ReactNativeClient/lib/models/Setting.js:244
+#: ReactNativeClient/lib/models/Setting.js:285
 msgid "Time format"
 msgstr "시간 형식"
 
-#: ReactNativeClient/lib/models/Setting.js:263
+#: ReactNativeClient/lib/models/Setting.js:304
 msgid "Theme"
 msgstr "테마"
 
-#: ReactNativeClient/lib/models/Setting.js:274
+#: ReactNativeClient/lib/models/Setting.js:315
 msgid "Automatically switch theme to match system theme"
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:286
+#: ReactNativeClient/lib/models/Setting.js:327
 msgid "Preferred light theme"
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:300
+#: ReactNativeClient/lib/models/Setting.js:341
 msgid "Preferred dark theme"
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:305
+#: ReactNativeClient/lib/models/Setting.js:346
 msgid "Show note counts"
 msgstr "노트 수 보이기"
 
-#: ReactNativeClient/lib/models/Setting.js:314
-#: ReactNativeClient/lib/models/Setting.js:316
-#: ReactNativeClient/lib/models/Setting.js:317
+#: ReactNativeClient/lib/models/Setting.js:355
+#: ReactNativeClient/lib/models/Setting.js:357
+#: ReactNativeClient/lib/models/Setting.js:358
 msgid "Split View"
 msgstr "뷰 나누기"
 
-#: ReactNativeClient/lib/models/Setting.js:314
+#: ReactNativeClient/lib/models/Setting.js:355
 #, javascript-format
 msgid "%s / %s / %s"
 msgstr "%s / %s / %s"
 
-#: ReactNativeClient/lib/models/Setting.js:315
-#: ReactNativeClient/lib/models/Setting.js:316
-#: ReactNativeClient/lib/models/Setting.js:317
+#: ReactNativeClient/lib/models/Setting.js:356
+#: ReactNativeClient/lib/models/Setting.js:357
+#: ReactNativeClient/lib/models/Setting.js:358
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ReactNativeClient/lib/models/Setting.js:320
+#: ReactNativeClient/lib/models/Setting.js:361
 msgid "Uncompleted to-dos on top"
 msgstr "완료되지 않은 '할 일'을 맨 위에"
 
-#: ReactNativeClient/lib/models/Setting.js:321
+#: ReactNativeClient/lib/models/Setting.js:362
 msgid "Show completed to-dos"
 msgstr "완료된 '할 일'을 표시"
 
-#: ReactNativeClient/lib/models/Setting.js:346
+#: ReactNativeClient/lib/models/Setting.js:387
 msgid "Auto-pair braces, parenthesis, quotations, etc."
 msgstr "괄호, 중괄호, 인용 부호 등의 자동 완성"
 
-#: ReactNativeClient/lib/models/Setting.js:354
+#: ReactNativeClient/lib/models/Setting.js:395
 msgid "Use CodeMirror as the code editor (WARNING: BETA)."
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:356
-#: ReactNativeClient/lib/models/Setting.js:374
+#: ReactNativeClient/lib/models/Setting.js:397
+#: ReactNativeClient/lib/models/Setting.js:415
 msgid "Reverse sort order"
 msgstr "정렬 순서 반전"
 
-#: ReactNativeClient/lib/models/Setting.js:363
+#: ReactNativeClient/lib/models/Setting.js:404
 msgid "Sort notebooks by"
 msgstr "노트를 다음 기준으로 정렬"
 
-#: ReactNativeClient/lib/models/Setting.js:375
+#: ReactNativeClient/lib/models/Setting.js:416
 msgid "Save geo-location with notes"
 msgstr "노트에 지리적 위치 정보 포함시키기"
 
-#: ReactNativeClient/lib/models/Setting.js:394
+#: ReactNativeClient/lib/models/Setting.js:435
 msgid "When creating a new to-do:"
 msgstr "새로운 '할 일'을 만들때:"
 
-#: ReactNativeClient/lib/models/Setting.js:397
-#: ReactNativeClient/lib/models/Setting.js:412
+#: ReactNativeClient/lib/models/Setting.js:438
+#: ReactNativeClient/lib/models/Setting.js:453
 msgid "Focus title"
 msgstr "제목에 포커스"
 
-#: ReactNativeClient/lib/models/Setting.js:398
-#: ReactNativeClient/lib/models/Setting.js:413
+#: ReactNativeClient/lib/models/Setting.js:439
+#: ReactNativeClient/lib/models/Setting.js:454
 msgid "Focus body"
 msgstr "내용에 포커스"
 
-#: ReactNativeClient/lib/models/Setting.js:409
+#: ReactNativeClient/lib/models/Setting.js:450
 msgid "When creating a new note:"
 msgstr "새 노트를 만들 때:"
 
-#: ReactNativeClient/lib/models/Setting.js:423
+#: ReactNativeClient/lib/models/Setting.js:464
 msgid "Enable soft breaks"
 msgstr "소프트 브레이크 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:424
+#: ReactNativeClient/lib/models/Setting.js:465
 msgid "Enable typographer support"
 msgstr "typographer 지원 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:425
+#: ReactNativeClient/lib/models/Setting.js:466
 msgid "Enable math expressions"
 msgstr "수식 표현 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:426
+#: ReactNativeClient/lib/models/Setting.js:467
 msgid "Enable Fountain syntax support"
 msgstr "Fountain 구문 지원 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:427
+#: ReactNativeClient/lib/models/Setting.js:468
 msgid "Enable Mermaid diagrams support"
 msgstr "Mermaid 다이어그램 지원 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:429
+#: ReactNativeClient/lib/models/Setting.js:470
 msgid "Enable ==mark== syntax"
 msgstr "==Mark== 구문 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:430
+#: ReactNativeClient/lib/models/Setting.js:471
 msgid "Enable footnotes"
 msgstr "각주 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:431
+#: ReactNativeClient/lib/models/Setting.js:472
 msgid "Enable table of contents extension"
 msgstr "표 내용 확장 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:432
+#: ReactNativeClient/lib/models/Setting.js:473
 msgid "Enable ~sub~ syntax"
 msgstr "~sub~ 구문 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:433
+#: ReactNativeClient/lib/models/Setting.js:474
 msgid "Enable ^sup^ syntax"
 msgstr "^sup^ 구문 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:434
+#: ReactNativeClient/lib/models/Setting.js:475
 msgid "Enable deflist syntax"
 msgstr "정의 목록 구문 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:435
+#: ReactNativeClient/lib/models/Setting.js:476
 msgid "Enable abbreviation syntax"
 msgstr "약어 구문 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:436
+#: ReactNativeClient/lib/models/Setting.js:477
 msgid "Enable markdown emoji"
 msgstr "마크다운 이모지 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:437
+#: ReactNativeClient/lib/models/Setting.js:478
 msgid "Enable ++insert++ syntax"
 msgstr "++insert++ 확장 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:438
+#: ReactNativeClient/lib/models/Setting.js:479
 msgid "Enable multimarkdown table extension"
 msgstr "MultiMarkdown 테이블 확장 활성화"
 
-#: ReactNativeClient/lib/models/Setting.js:450
+#: ReactNativeClient/lib/models/Setting.js:491
 msgid "Show tray icon"
 msgstr "트레이 아이콘 표시"
 
-#: ReactNativeClient/lib/models/Setting.js:452
+#: ReactNativeClient/lib/models/Setting.js:493
 msgid "Note: Does not work in all desktop environments."
 msgstr "참고: 모든 데스크탑 환경에서 작동하는 것은 아닙니다."
 
-#: ReactNativeClient/lib/models/Setting.js:452
+#: ReactNativeClient/lib/models/Setting.js:493
 msgid ""
 "This will allow Joplin to run in the background. It is recommended to enable "
 "this setting so that your notes are constantly being synchronised, thus "
@@ -2455,23 +2548,23 @@ msgstr ""
 "Joplin을 백그라운드에서 구동합니다. 노트가 정기적으로 동기화 되므로, 충돌 횟"
 "수가 줄어들게 되므로 이 옵션을 활성화 하시는 것을 추천드립니다."
 
-#: ReactNativeClient/lib/models/Setting.js:456
+#: ReactNativeClient/lib/models/Setting.js:497
 msgid "Start application minimised in the tray icon"
 msgstr "트레이 아이콘에 최소화 된 채로 Joplin 실행"
 
-#: ReactNativeClient/lib/models/Setting.js:474
+#: ReactNativeClient/lib/models/Setting.js:516
 msgid "Editor font size"
 msgstr "편집기 글꼴 크기"
 
-#: ReactNativeClient/lib/models/Setting.js:482
+#: ReactNativeClient/lib/models/Setting.js:524
 msgid "Editor font"
 msgstr "편집기 글꼴"
 
-#: ReactNativeClient/lib/models/Setting.js:506
+#: ReactNativeClient/lib/models/Setting.js:548
 msgid "Editor font family"
 msgstr "편집기 글꼴 모음"
 
-#: ReactNativeClient/lib/models/Setting.js:508
+#: ReactNativeClient/lib/models/Setting.js:550
 #, fuzzy
 msgid ""
 "This should be a *monospace* font or some elements will render incorrectly. "
@@ -2482,50 +2575,50 @@ msgstr ""
 "올바르지 않을 경우, 기본적으로 제공되는 monospace 글꼴을 기본값으로 사용합니"
 "다."
 
-#: ReactNativeClient/lib/models/Setting.js:547
+#: ReactNativeClient/lib/models/Setting.js:589
 msgid "Custom stylesheet for Joplin-wide app styles"
 msgstr "Joplin 앱에 전역적으로 적용되는 사용자 정의 스타일시트"
 
-#: ReactNativeClient/lib/models/Setting.js:553
+#: ReactNativeClient/lib/models/Setting.js:595
 msgid "Automatically update the application"
 msgstr "자동으로 업데이트 하기"
 
-#: ReactNativeClient/lib/models/Setting.js:554
+#: ReactNativeClient/lib/models/Setting.js:596
 msgid "Get pre-releases when checking for updates"
 msgstr "업데이트 시 프리-릴리즈 받기"
 
-#: ReactNativeClient/lib/models/Setting.js:554
+#: ReactNativeClient/lib/models/Setting.js:596
 #, javascript-format
 msgid "See the pre-release page for more details: %s"
 msgstr "자세한 내용은 프리-릴리즈 페이지를 참조해주세요: %s"
 
-#: ReactNativeClient/lib/models/Setting.js:562
+#: ReactNativeClient/lib/models/Setting.js:604
 msgid "Synchronisation interval"
 msgstr "동기화 간격"
 
-#: ReactNativeClient/lib/models/Setting.js:566
-#: ReactNativeClient/lib/models/Setting.js:567
-#: ReactNativeClient/lib/models/Setting.js:568
+#: ReactNativeClient/lib/models/Setting.js:608
+#: ReactNativeClient/lib/models/Setting.js:609
+#: ReactNativeClient/lib/models/Setting.js:610
 #, javascript-format
 msgid "%d minutes"
 msgstr "%d 분"
 
-#: ReactNativeClient/lib/models/Setting.js:569
+#: ReactNativeClient/lib/models/Setting.js:611
 #, javascript-format
 msgid "%d hour"
 msgstr "%d 시간"
 
-#: ReactNativeClient/lib/models/Setting.js:570
-#: ReactNativeClient/lib/models/Setting.js:571
+#: ReactNativeClient/lib/models/Setting.js:612
+#: ReactNativeClient/lib/models/Setting.js:613
 #, javascript-format
 msgid "%d hours"
 msgstr "%d 시간"
 
-#: ReactNativeClient/lib/models/Setting.js:580
+#: ReactNativeClient/lib/models/Setting.js:622
 msgid "Text editor command"
 msgstr "텍스트 편집기 명령어"
 
-#: ReactNativeClient/lib/models/Setting.js:580
+#: ReactNativeClient/lib/models/Setting.js:622
 msgid ""
 "The editor command (may include arguments) that will be used to open a note. "
 "If none is provided it will try to auto-detect the default editor."
@@ -2533,67 +2626,67 @@ msgstr ""
 "노트를 여는데 사용할 텍스트 편집기 명령어(인자를 포함할 수 있습니다)를 지정합"
 "니다. 주어진 명령어가 없을 시 기본 편집기를 자동으로 찾을 것입니다."
 
-#: ReactNativeClient/lib/models/Setting.js:581
+#: ReactNativeClient/lib/models/Setting.js:623
 msgid "Page size for PDF export"
 msgstr "PDF로 내보낼때 페이지 크기"
 
-#: ReactNativeClient/lib/models/Setting.js:583
+#: ReactNativeClient/lib/models/Setting.js:625
 msgid "A4"
 msgstr "A4"
 
-#: ReactNativeClient/lib/models/Setting.js:584
+#: ReactNativeClient/lib/models/Setting.js:626
 msgid "Letter"
 msgstr "Letter"
 
-#: ReactNativeClient/lib/models/Setting.js:585
+#: ReactNativeClient/lib/models/Setting.js:627
 msgid "A3"
 msgstr "A3"
 
-#: ReactNativeClient/lib/models/Setting.js:586
+#: ReactNativeClient/lib/models/Setting.js:628
 msgid "A5"
 msgstr "A5"
 
-#: ReactNativeClient/lib/models/Setting.js:587
+#: ReactNativeClient/lib/models/Setting.js:629
 msgid "Tabloid"
 msgstr "Tabloid"
 
-#: ReactNativeClient/lib/models/Setting.js:588
+#: ReactNativeClient/lib/models/Setting.js:630
 msgid "Legal"
 msgstr "Legal"
 
-#: ReactNativeClient/lib/models/Setting.js:591
+#: ReactNativeClient/lib/models/Setting.js:633
 msgid "Page orientation for PDF export"
 msgstr "PDF를 내보낼때의 페이지 방향"
 
-#: ReactNativeClient/lib/models/Setting.js:593
+#: ReactNativeClient/lib/models/Setting.js:635
 msgid "Portrait"
 msgstr "세로 방향"
 
-#: ReactNativeClient/lib/models/Setting.js:594
+#: ReactNativeClient/lib/models/Setting.js:636
 msgid "Landscape"
 msgstr "가로 방향"
 
-#: ReactNativeClient/lib/models/Setting.js:605
+#: ReactNativeClient/lib/models/Setting.js:647
 msgid "Keyboard Mode"
 msgstr "키보드 모드"
 
-#: ReactNativeClient/lib/models/Setting.js:608
+#: ReactNativeClient/lib/models/Setting.js:650
 msgid "Default"
 msgstr "기본값:  %s"
 
-#: ReactNativeClient/lib/models/Setting.js:609
+#: ReactNativeClient/lib/models/Setting.js:651
 msgid "Emacs"
 msgstr "Emacs"
 
-#: ReactNativeClient/lib/models/Setting.js:610
+#: ReactNativeClient/lib/models/Setting.js:652
 msgid "Vim"
 msgstr "Vim"
 
-#: ReactNativeClient/lib/models/Setting.js:625
+#: ReactNativeClient/lib/models/Setting.js:667
 msgid "Custom TLS certificates"
 msgstr "사용자 TLS 인증서"
 
-#: ReactNativeClient/lib/models/Setting.js:626
+#: ReactNativeClient/lib/models/Setting.js:668
 msgid ""
 "Comma-separated list of paths to directories to load the certificates from, "
 "or path to individual cert files. For example: /my/cert_dir, /other/custom."
@@ -2605,15 +2698,15 @@ msgstr ""
 "custom.pem. 참고사항: 만약 TLS 설정을 변경했다면 \"동기화 설정 확인\"을 진행"
 "하기 전에 반드시 변경 사항을 저장해야 합니다."
 
-#: ReactNativeClient/lib/models/Setting.js:638
+#: ReactNativeClient/lib/models/Setting.js:680
 msgid "Ignore TLS certificate errors"
 msgstr "TLS 인증서 오류 무시"
 
-#: ReactNativeClient/lib/models/Setting.js:647
+#: ReactNativeClient/lib/models/Setting.js:689
 msgid "Fail-safe"
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:648
+#: ReactNativeClient/lib/models/Setting.js:690
 msgid ""
 "Fail-safe: Do not wipe out local data when sync target is empty (often the "
 "result of a misconfiguration or bug)"
@@ -2621,7 +2714,7 @@ msgstr ""
 "안전 장치: 동기화 목표가 비어 있을시 로컬 데이타를 지우시지 마세요 (종종 잘못"
 "된 설정이나 버그로 인해 발생됩니다)"
 
-#: ReactNativeClient/lib/models/Setting.js:652
+#: ReactNativeClient/lib/models/Setting.js:694
 msgid ""
 "Specify the port that should be used by the API server. If not set, a "
 "default will be used."
@@ -2629,30 +2722,30 @@ msgstr ""
 "API 서버에 사용할 포트를 선택해주세요. 선택되지 않으면, 기본 포트를 선택합니"
 "다."
 
-#: ReactNativeClient/lib/models/Setting.js:660
+#: ReactNativeClient/lib/models/Setting.js:702
 msgid "Enable note history"
 msgstr "노트 역사 허용"
 
-#: ReactNativeClient/lib/models/Setting.js:670
+#: ReactNativeClient/lib/models/Setting.js:712
 msgid "days"
 msgstr "일"
 
-#: ReactNativeClient/lib/models/Setting.js:670
+#: ReactNativeClient/lib/models/Setting.js:712
 #, javascript-format
 msgid "%d days"
 msgstr "%d 일"
 
-#: ReactNativeClient/lib/models/Setting.js:672
+#: ReactNativeClient/lib/models/Setting.js:714
 msgid "Keep note history for"
 msgstr "노트 역사를 다음 날짜로 보관합니다"
 
-#: ReactNativeClient/lib/models/Setting.js:699
+#: ReactNativeClient/lib/models/Setting.js:741
 msgid "Notebook list growth factor"
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:701
-#: ReactNativeClient/lib/models/Setting.js:714
-#: ReactNativeClient/lib/models/Setting.js:727
+#: ReactNativeClient/lib/models/Setting.js:743
+#: ReactNativeClient/lib/models/Setting.js:756
+#: ReactNativeClient/lib/models/Setting.js:769
 msgid ""
 "The factor property sets how the item will grow or shrink to fit the "
 "available space in its container with respect to the other items. Thus an "
@@ -2660,52 +2753,52 @@ msgid ""
 "factor of 1.Restart app to see changes."
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:712
+#: ReactNativeClient/lib/models/Setting.js:754
 msgid "Note list growth factor"
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:725
+#: ReactNativeClient/lib/models/Setting.js:767
 msgid "Note area growth factor"
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:877
+#: ReactNativeClient/lib/models/Setting.js:919
 #, javascript-format
 msgid "Invalid option value: \"%s\". Possible values are: %s."
 msgstr "올바르지 않은 옵션 값: \"%s\". 가능한 값은 다음과 같습니다: \"%s\"."
 
-#: ReactNativeClient/lib/models/Setting.js:1205
+#: ReactNativeClient/lib/models/Setting.js:1247
 msgid "General"
 msgstr "일반"
 
-#: ReactNativeClient/lib/models/Setting.js:1206
+#: ReactNativeClient/lib/models/Setting.js:1248
 msgid "Synchronisation"
 msgstr "동기화"
 
-#: ReactNativeClient/lib/models/Setting.js:1207
+#: ReactNativeClient/lib/models/Setting.js:1249
 msgid "Appearance"
 msgstr "보기"
 
-#: ReactNativeClient/lib/models/Setting.js:1208
+#: ReactNativeClient/lib/models/Setting.js:1250
 msgid "Note"
 msgstr "노트"
 
-#: ReactNativeClient/lib/models/Setting.js:1209
+#: ReactNativeClient/lib/models/Setting.js:1251
 msgid "Plugins"
 msgstr "플러그인"
 
-#: ReactNativeClient/lib/models/Setting.js:1210
+#: ReactNativeClient/lib/models/Setting.js:1252
 msgid "Application"
 msgstr "애플리케이션"
 
-#: ReactNativeClient/lib/models/Setting.js:1212
+#: ReactNativeClient/lib/models/Setting.js:1254
 msgid "Encryption"
 msgstr "암호화"
 
-#: ReactNativeClient/lib/models/Setting.js:1213
+#: ReactNativeClient/lib/models/Setting.js:1255
 msgid "Web Clipper"
 msgstr "웹 수집기"
 
-#: ReactNativeClient/lib/models/Setting.js:1218
+#: ReactNativeClient/lib/models/Setting.js:1260
 msgid ""
 "These plugins enhance the Markdown renderer with additional features. Please "
 "note that, while these features might be useful, they are not standard "
@@ -2716,7 +2809,7 @@ msgid ""
 "the WYSIWYG editor."
 msgstr ""
 
-#: ReactNativeClient/lib/models/Setting.js:1219
+#: ReactNativeClient/lib/models/Setting.js:1261
 #, javascript-format
 msgid "Notes and settings are stored in: %s"
 msgstr "노트와 설정값이 다음에 저장되었습니다: %s"
@@ -2746,7 +2839,20 @@ msgid ""
 "%s"
 msgstr "첨부 파일을 다운로드하던 중에 오류가 발생했습니다:"
 
-#: ReactNativeClient/lib/models/Tag.js:183
+#: ReactNativeClient/lib/models/Tag.js:384
+#, fuzzy
+msgid "Cannot move tag to this location."
+msgstr "노트북을 이 위치로 옮길 수 없습니다"
+
+#: ReactNativeClient/lib/models/Tag.js:429
+msgid "Tag name cannot start or end with a `/`."
+msgstr ""
+
+#: ReactNativeClient/lib/models/Tag.js:431
+msgid "Tag name cannot contain `//`."
+msgstr ""
+
+#: ReactNativeClient/lib/models/Tag.js:482
 #, javascript-format
 msgid "The tag \"%s\" already exists. Please choose a different name."
 msgstr "태그 \"%s\"(이)가 이미 존재합니다. 다른 이름을 선택해 주세요."
@@ -2763,21 +2869,21 @@ msgstr ""
 msgid "This note does not have geolocation information."
 msgstr "이 노트는 위치 정보를 포함하고 있지 않습니다."
 
-#: ReactNativeClient/lib/models/Note.js:468
+#: ReactNativeClient/lib/models/Note.js:466
 #, javascript-format
 msgid "Cannot copy note to \"%s\" notebook"
 msgstr "노트를 \"%s\" 노트북으로 복사할 수 없습니다"
 
-#: ReactNativeClient/lib/models/Note.js:479
+#: ReactNativeClient/lib/models/Note.js:477
 #, javascript-format
 msgid "Cannot move note to \"%s\" notebook"
 msgstr "노트를 \"%s\" 노트북으로 옮길 수 없습니다"
 
-#: ReactNativeClient/lib/models/BaseItem.js:709
+#: ReactNativeClient/lib/models/BaseItem.js:719
 msgid "Encrypted"
 msgstr "암호화됨"
 
-#: ReactNativeClient/lib/models/BaseItem.js:769
+#: ReactNativeClient/lib/models/BaseItem.js:779
 msgid "Encrypted items cannot be modified"
 msgstr "암호화된 항목은 변경될 수 없습니다"
 
@@ -2785,14 +2891,14 @@ msgstr "암호화된 항목은 변경될 수 없습니다"
 msgid "OneDrive Dev (For testing only)"
 msgstr "OneDrive Dev (실험 전용)"
 
-#: ReactNativeClient/lib/BaseApplication.js:138
-#: ReactNativeClient/lib/BaseApplication.js:151
-#: ReactNativeClient/lib/BaseApplication.js:182
+#: ReactNativeClient/lib/BaseApplication.js:139
+#: ReactNativeClient/lib/BaseApplication.js:152
+#: ReactNativeClient/lib/BaseApplication.js:183
 #, javascript-format
 msgid "Usage: %s"
 msgstr "사용량: %s"
 
-#: ReactNativeClient/lib/BaseApplication.js:217
+#: ReactNativeClient/lib/BaseApplication.js:218
 #, javascript-format
 msgid "Unknown flag: %s"
 msgstr "알 수 없는 플래그: %s"
@@ -2955,11 +3061,11 @@ msgstr "노트북 편집"
 msgid "Enter notebook title"
 msgstr "노트북 제목을 입력해주세요"
 
-#: ReactNativeClient/lib/components/screens/onedrive-login.js:98
+#: ReactNativeClient/lib/components/screens/onedrive-login.js:109
 msgid "Login with OneDrive"
 msgstr "OneDrive 로그인"
 
-#: ReactNativeClient/lib/components/screens/onedrive-login.js:109
+#: ReactNativeClient/lib/components/screens/onedrive-login.js:120
 #: ReactNativeClient/lib/components/screens/log.js:109
 #: ReactNativeClient/lib/components/screens/status.js:144
 msgid "Refresh"
@@ -2973,11 +3079,11 @@ msgstr "새 태그:"
 msgid "Type new tags or select from list"
 msgstr "새 태그를 입력하거나 목록에서 선택하세요"
 
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:51
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:55
 msgid "Login with Dropbox"
 msgstr "Dropbox로 로그인"
 
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:62
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:66
 msgid "Enter code here"
 msgstr "코드를 입력하세요"
 
@@ -2987,7 +3093,7 @@ msgid "Master Key %s"
 msgstr "마스터 키 %s"
 
 #: ReactNativeClient/lib/components/screens/encryption-config.js:120
-#: ReactNativeClient/lib/components/screens/note.js:769
+#: ReactNativeClient/lib/components/screens/note.js:773
 #, javascript-format
 msgid "Created: %s"
 msgstr "생성됨: %s"
@@ -3196,66 +3302,66 @@ msgstr "Joplin 모바일 앱에서는 현재 해당 형식의 링크를 지원�
 msgid "Links with protocol \"%s\" are not supported"
 msgstr "링크를 위한 프로토콜 “%s”는 지원하지 않습니다"
 
-#: ReactNativeClient/lib/components/screens/note.js:614
+#: ReactNativeClient/lib/components/screens/note.js:618
 #, javascript-format
 msgid "Unsupported image type: %s"
 msgstr "지원하지 않는 이미지 형식: %s"
 
-#: ReactNativeClient/lib/components/screens/note.js:770
+#: ReactNativeClient/lib/components/screens/note.js:774
 #, javascript-format
 msgid "Updated: %s"
 msgstr "업데이트됨: %s"
 
-#: ReactNativeClient/lib/components/screens/note.js:774
+#: ReactNativeClient/lib/components/screens/note.js:778
 msgid "View on map"
 msgstr "지도에 표시"
 
-#: ReactNativeClient/lib/components/screens/note.js:781
+#: ReactNativeClient/lib/components/screens/note.js:785
 msgid "Go to source URL"
 msgstr "소스 URL로 이동"
 
-#: ReactNativeClient/lib/components/screens/note.js:809
+#: ReactNativeClient/lib/components/screens/note.js:813
 msgid "Attach..."
 msgstr "첨부..."
 
-#: ReactNativeClient/lib/components/screens/note.js:811
+#: ReactNativeClient/lib/components/screens/note.js:815
 msgid "Choose an option"
 msgstr "옵션 선택"
 
-#: ReactNativeClient/lib/components/screens/note.js:811
+#: ReactNativeClient/lib/components/screens/note.js:815
 msgid "Take photo"
 msgstr "사진 찍기"
 
-#: ReactNativeClient/lib/components/screens/note.js:811
+#: ReactNativeClient/lib/components/screens/note.js:815
 msgid "Attach photo"
 msgstr "사진 첨부"
 
-#: ReactNativeClient/lib/components/screens/note.js:811
+#: ReactNativeClient/lib/components/screens/note.js:815
 msgid "Attach any file"
 msgstr "모든 형식의 파일 첨부"
 
-#: ReactNativeClient/lib/components/screens/note.js:830
+#: ReactNativeClient/lib/components/screens/note.js:834
 msgid "Share"
 msgstr "공유"
 
-#: ReactNativeClient/lib/components/screens/note.js:844
+#: ReactNativeClient/lib/components/screens/note.js:848
 msgid "Convert to note"
 msgstr "노트로 변환"
 
-#: ReactNativeClient/lib/components/screens/note.js:844
+#: ReactNativeClient/lib/components/screens/note.js:848
 msgid "Convert to todo"
 msgstr "'할 일'로 변환"
 
-#: ReactNativeClient/lib/components/screens/note.js:858
+#: ReactNativeClient/lib/components/screens/note.js:862
 msgid "Properties"
 msgstr "속성"
 
-#: ReactNativeClient/lib/components/screens/note.js:1038
-#: ReactNativeClient/lib/components/screens/note.js:1096
+#: ReactNativeClient/lib/components/screens/note.js:1042
+#: ReactNativeClient/lib/components/screens/note.js:1100
 msgid "Add body"
 msgstr "내용 추가"
 
-#: ReactNativeClient/lib/components/screens/note.js:1146
+#: ReactNativeClient/lib/components/screens/note.js:1150
 msgid "Add title"
 msgstr "제목 추가"
 
@@ -3271,60 +3377,60 @@ msgstr ""
 "인증 데이터를 찾을 수 없어서 토큰을 새로고침 할 수 없습니다. 동기화를 다시 시"
 "도하면 문제가 해결될 수 있습니다."
 
-#: ReactNativeClient/lib/synchronizer.js:93
+#: ReactNativeClient/lib/synchronizer.js:94
 #, javascript-format
 msgid "Created local items: %d."
 msgstr "로컬 항목 생성됨: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:94
+#: ReactNativeClient/lib/synchronizer.js:95
 #, javascript-format
 msgid "Updated local items: %d."
 msgstr "로컬 항목 업데이트됨: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:95
+#: ReactNativeClient/lib/synchronizer.js:96
 #, javascript-format
 msgid "Created remote items: %d."
 msgstr "원격 항목 생성됨: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:96
+#: ReactNativeClient/lib/synchronizer.js:97
 #, javascript-format
 msgid "Updated remote items: %d."
 msgstr "원격 항목 업데이트됨: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:97
+#: ReactNativeClient/lib/synchronizer.js:98
 #, javascript-format
 msgid "Deleted local items: %d."
 msgstr "로컬 항목 삭제됨: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:98
+#: ReactNativeClient/lib/synchronizer.js:99
 #, javascript-format
 msgid "Deleted remote items: %d."
 msgstr "원격 항목 삭제됨: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:99
+#: ReactNativeClient/lib/synchronizer.js:100
 #, javascript-format
 msgid "Fetched items: %d/%d."
 msgstr "가져온 항목: %d/%d."
 
-#: ReactNativeClient/lib/synchronizer.js:101
+#: ReactNativeClient/lib/synchronizer.js:102
 msgid "Cancelling..."
 msgstr "취소하는 중..."
 
-#: ReactNativeClient/lib/synchronizer.js:102
+#: ReactNativeClient/lib/synchronizer.js:103
 #, javascript-format
 msgid "Completed: %s"
 msgstr "완료됨: %s"
 
-#: ReactNativeClient/lib/synchronizer.js:103
+#: ReactNativeClient/lib/synchronizer.js:104
 #, javascript-format
 msgid "Last error: %s"
 msgstr "최근 오류: %s"
 
-#: ReactNativeClient/lib/synchronizer.js:203
+#: ReactNativeClient/lib/synchronizer.js:204
 msgid "Idle"
 msgstr "대기"
 
-#: ReactNativeClient/lib/synchronizer.js:204
+#: ReactNativeClient/lib/synchronizer.js:205
 msgid "In progress"
 msgstr "진행 중"
 
@@ -3352,6 +3458,15 @@ msgstr "WebDAV"
 #: ReactNativeClient/lib/SyncTargetFilesystem.js:18
 msgid "File system"
 msgstr "파일 시스템"
+
+#: ReactNativeClient/lib/commands/historyForward.js:16
+msgid "Forward"
+msgstr ""
+
+#: ReactNativeClient/lib/commands/synchronize.js:17
+#, fuzzy
+msgid "Synchronize"
+msgstr "동기화"
 
 #: ReactNativeClient/lib/services/InteropService_Exporter_Jex.js:29
 msgid "There is no data to export."
@@ -3474,17 +3589,17 @@ msgid "On %s: %s"
 msgstr "%s: %s"
 
 #: ReactNativeClient/lib/services/InteropService.js:29
-#: ReactNativeClient/lib/services/InteropService.js:67
+#: ReactNativeClient/lib/services/InteropService.js:68
 msgid "Joplin Export File"
 msgstr "Joplin 내보내기 파일"
 
 #: ReactNativeClient/lib/services/InteropService.js:36
-#: ReactNativeClient/lib/services/InteropService.js:82
+#: ReactNativeClient/lib/services/InteropService.js:83
 msgid "Markdown"
 msgstr "마크다운"
 
 #: ReactNativeClient/lib/services/InteropService.js:41
-#: ReactNativeClient/lib/services/InteropService.js:72
+#: ReactNativeClient/lib/services/InteropService.js:73
 msgid "Joplin Export Directory"
 msgstr "Joplin 내보내기 폴더"
 
@@ -3496,29 +3611,29 @@ msgstr "에버노트 내보내기 파일 (마크다운으로)"
 msgid "Evernote Export File (as HTML)"
 msgstr "에버노트 내보내기 파일 (HTML 으로)"
 
-#: ReactNativeClient/lib/services/InteropService.js:77
+#: ReactNativeClient/lib/services/InteropService.js:78
 msgid "Json Export Directory"
 msgstr "Json 내보내기 폴더"
 
-#: ReactNativeClient/lib/services/InteropService.js:89
+#: ReactNativeClient/lib/services/InteropService.js:90
 msgid "HTML File"
 msgstr "HTML 파일"
 
-#: ReactNativeClient/lib/services/InteropService.js:94
+#: ReactNativeClient/lib/services/InteropService.js:95
 msgid "HTML Directory"
 msgstr "HTML 디렉터리"
 
-#: ReactNativeClient/lib/services/InteropService.js:130
+#: ReactNativeClient/lib/services/InteropService.js:128
 msgid "File"
 msgstr "파일"
 
-#: ReactNativeClient/lib/services/InteropService.js:130
+#: ReactNativeClient/lib/services/InteropService.js:128
 msgid "Directory"
 msgstr "폴더"
 
 #: ReactNativeClient/lib/services/InteropService.js:174
-#, javascript-format
-msgid "Cannot load \"%s\" module for format \"%s\""
+#, fuzzy, javascript-format
+msgid "Cannot load \"%s\" module for format \"%s\" and output \"%s\""
 msgstr "\"%s\" 모듈을 \"%s\" 형식에 불러올 수 없습니다"
 
 #: ReactNativeClient/lib/services/InteropService.js:232
@@ -3526,7 +3641,7 @@ msgstr "\"%s\" 모듈을 \"%s\" 형식에 불러올 수 없습니다"
 msgid "Please specify import format for %s"
 msgstr "%s 항목에 사용할 가져오기 형식을 지정하세요"
 
-#: ReactNativeClient/lib/services/InteropService.js:364
+#: ReactNativeClient/lib/services/InteropService.js:361
 #, javascript-format
 msgid ""
 "This item is currently encrypted: %s \"%s\". Please wait for all items to be "
@@ -3535,43 +3650,18 @@ msgstr ""
 "이 항목은 암호화되어 있습니다: %s \"%s\". 모든 항목이 복호화 될 때까지 기다"
 "린 후 다시 시도하세요."
 
+#~ msgid "Add or remove tags"
+#~ msgstr "태그 추가 및 제거"
+
+#~ msgid "Link"
+#~ msgstr "링크"
+
 #~ msgid "Front"
 #~ msgstr "글꼴"
 
 #, fuzzy
 #~ msgid "Content properties"
 #~ msgstr "노트 속성"
-
-#~ msgid "Some items cannot be synchronised."
-#~ msgstr "일부 항목들은 동기화할 수 없습니다."
-
-#~ msgid "View them now"
-#~ msgstr "지금 나타내기"
-
-#~ msgid "Some items cannot be decrypted."
-#~ msgstr "일부 항목들은 암호화할 수 없습니다."
-
-#~ msgid "One or more master keys need a password."
-#~ msgstr "하나 혹은 그 이상의 마스터 키 비밀번호를 입력해주세요."
-
-#~ msgid "Set the password"
-#~ msgstr "암호 설정"
-
-#, fuzzy
-#~ msgid "One of your master keys use an obsolete encryption method."
-#~ msgstr "하나 혹은 그 이상의 마스터 키 비밀번호를 입력해주세요."
-
-#~ msgid ""
-#~ "The default encryption method has been changed, you should re-encrypt "
-#~ "your data."
-#~ msgstr "기본 암호과 구문이 변경 되었습니다. 데이타를 재암호화 해야합니다."
-
-#, fuzzy
-#~ msgid "More info"
-#~ msgstr "더 많은 정보"
-
-#~ msgid "Search..."
-#~ msgstr "찾기..."
 
 #, fuzzy
 #~ msgid "Split"

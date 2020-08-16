@@ -25,7 +25,7 @@ msgstr ""
 "場合は、現在のノートブックに複製を行います。"
 
 #: CliClient/app/command-cp.js:24 CliClient/app/command-cp.js:27
-#: CliClient/app/command-import.js:30 CliClient/app/command-mv.js:22
+#: CliClient/app/command-import.js:34 CliClient/app/command-mv.js:22
 #: CliClient/app/command-mv.js:25 CliClient/app/command-use.js:21
 #: CliClient/app/command-ren.js:23 CliClient/app/command-rmbook.js:25
 #: CliClient/app/command-cat.js:25 CliClient/app/command-rmnote.js:25
@@ -93,50 +93,55 @@ msgstr "まずはノートブックを選択して下さい。"
 msgid "Imports data into Joplin."
 msgstr "Joplinにデータをインポートします。"
 
-#: CliClient/app/command-import.js:24
+#: CliClient/app/command-import.js:25
 #, javascript-format
 msgid "Source format: %s"
 msgstr "ソースフォーマット: %s"
 
-#: CliClient/app/command-import.js:24
+#: CliClient/app/command-import.js:26
 msgid "Do not ask for confirmation."
 msgstr "確認を行ないません。"
 
-#: CliClient/app/command-import.js:43 ElectronClient/gui/ImportScreen.min.js:69
+#: CliClient/app/command-import.js:27
+#, javascript-format
+msgid "Output format: %s"
+msgstr "出力フォーマット: %s"
+
+#: CliClient/app/command-import.js:47 ElectronClient/gui/ImportScreen.min.js:69
 #, javascript-format
 msgid "Found: %d."
 msgstr "総数: %d."
 
-#: CliClient/app/command-import.js:44 ElectronClient/gui/ImportScreen.min.js:70
+#: CliClient/app/command-import.js:48 ElectronClient/gui/ImportScreen.min.js:70
 #, javascript-format
 msgid "Created: %d."
 msgstr "新規作成: %d."
 
-#: CliClient/app/command-import.js:45 ElectronClient/gui/ImportScreen.min.js:71
+#: CliClient/app/command-import.js:49 ElectronClient/gui/ImportScreen.min.js:71
 #, javascript-format
 msgid "Updated: %d."
 msgstr "アップデート: %d."
 
-#: CliClient/app/command-import.js:46 ElectronClient/gui/ImportScreen.min.js:72
+#: CliClient/app/command-import.js:50 ElectronClient/gui/ImportScreen.min.js:72
 #, javascript-format
 msgid "Skipped: %d."
 msgstr "スキップ: %d."
 
-#: CliClient/app/command-import.js:47 ElectronClient/gui/ImportScreen.min.js:73
+#: CliClient/app/command-import.js:51 ElectronClient/gui/ImportScreen.min.js:73
 #, javascript-format
 msgid "Resources: %d."
 msgstr "リソース: %d."
 
-#: CliClient/app/command-import.js:48 ElectronClient/gui/ImportScreen.min.js:74
+#: CliClient/app/command-import.js:52 ElectronClient/gui/ImportScreen.min.js:74
 #, javascript-format
 msgid "Tagged: %d."
 msgstr "タグ付き: %d."
 
-#: CliClient/app/command-import.js:61
+#: CliClient/app/command-import.js:65
 msgid "Importing notes..."
 msgstr "ノートのインポート中..."
 
-#: CliClient/app/command-import.js:66 ElectronClient/gui/ImportScreen.min.js:89
+#: CliClient/app/command-import.js:70 ElectronClient/gui/ImportScreen.min.js:89
 #, javascript-format
 msgid "The notes have been imported: %s"
 msgstr "ノートはインポートされました：%s"
@@ -246,7 +251,7 @@ msgstr "有効"
 
 #: CliClient/app/command-e2ee.js:108
 #: ElectronClient/gui/EncryptionConfigScreen.min.js:442
-#: ReactNativeClient/lib/models/Setting.js:565
+#: ReactNativeClient/lib/models/Setting.js:607
 #: ReactNativeClient/lib/components/screens/encryption-config.js:280
 msgid "Disabled"
 msgstr "無効"
@@ -312,20 +317,20 @@ msgstr "認証は完了していません(認証トークンが得られませ�
 
 #: CliClient/app/command-sync.js:86
 #: ElectronClient/gui/DropboxLoginScreen.min.js:42
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:54
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:58
 msgid ""
 "To allow Joplin to synchronise with Dropbox, please follow the steps below:"
 msgstr "DropboxでJoplinを同期する場合は、次のステップを実行してください:"
 
 #: CliClient/app/command-sync.js:87
 #: ElectronClient/gui/DropboxLoginScreen.min.js:47
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:55
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:59
 msgid "Step 1: Open this URL in your browser to authorise the application:"
 msgstr "ステップ1: アプリケーションを認証するためにこのURLをブラウザーで開く:"
 
 #: CliClient/app/command-sync.js:89
 #: ElectronClient/gui/DropboxLoginScreen.min.js:57
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:61
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:65
 msgid "Step 2: Enter the code provided by Dropbox:"
 msgstr "ステップ2: Dropboxによって提供されたコードを入力する:"
 
@@ -354,7 +359,7 @@ msgid "Synchronisation target: %s (%s)"
 msgstr "同期先: %s (%s)"
 
 #: CliClient/app/command-sync.js:177
-msgid "Cannot initialize synchroniser."
+msgid "Cannot initialise synchroniser."
 msgstr "同期プロセスを初期化できませんでした。"
 
 #: CliClient/app/command-sync.js:179
@@ -452,7 +457,7 @@ msgid "%d notes match this pattern. Delete them?"
 msgstr "%d 個のノートが一致しました。削除しますか？"
 
 #: CliClient/app/command-rmnote.js:27
-#: ReactNativeClient/lib/components/screens/note.js:457
+#: ReactNativeClient/lib/components/screens/note.js:461
 msgid "Delete note?"
 msgstr "ノートを削除しますか？"
 
@@ -498,11 +503,11 @@ msgstr "選択されたノートブックのみを出力する。"
 msgid "Creates a new note."
 msgstr "あたらしいノートを作成します。"
 
-#: CliClient/app/main.js:82
+#: CliClient/app/main.js:80
 msgid "Type `joplin help` for usage information."
 msgstr "`joplin help`を実行して使い方を表示します。"
 
-#: CliClient/app/main.js:84
+#: CliClient/app/main.js:82
 msgid "Fatal error:"
 msgstr "致命的なエラー:"
 
@@ -753,7 +758,7 @@ msgstr "ノートはToDoリストではありません：\"%s\""
 #: ElectronClient/gui/DialogButtonRow.min.js:30
 #: ElectronClient/gui/PromptDialog.min.js:235
 #: ElectronClient/gui/ConfigScreen.min.js:185
-#: ElectronClient/gui/ConfigScreen.min.js:754 ElectronClient/app.js:699
+#: ElectronClient/gui/ConfigScreen.min.js:754 ElectronClient/app.js:618
 #: ReactNativeClient/lib/components/ModalDialog.js:67
 #: ReactNativeClient/lib/components/CameraView.js:182
 #: ReactNativeClient/lib/components/side-menu-content.js:150
@@ -762,11 +767,14 @@ msgstr "OK"
 
 #: ElectronClient/bridge.js:112 ElectronClient/bridge.js:125
 #: ElectronClient/gui/DialogButtonRow.min.js:38
+#: ElectronClient/gui/SideBar/SideBar.min.js:296
+#: ElectronClient/gui/SideBar/SideBar.min.js:660
 #: ElectronClient/gui/SideBar.min.js:319 ElectronClient/gui/SideBar.min.js:724
 #: ElectronClient/gui/NoteList.min.js:148
-#: ElectronClient/gui/utils/NoteListUtils.js:227
+#: ElectronClient/gui/utils/NoteListUtils.js:184
 #: ElectronClient/gui/PromptDialog.min.js:242
 #: ElectronClient/gui/ConfigScreen.min.js:744
+#: ElectronClient/gui/NoteList/NoteList.min.js:153
 #: ElectronClient/gui/ResourceScreen.js:94
 #: ReactNativeClient/lib/shim-init-node.js:91
 #: ReactNativeClient/lib/components/select-date-time-dialog.js:70
@@ -778,11 +786,11 @@ msgstr "OK"
 #: ReactNativeClient/lib/components/side-menu-content.js:338
 #: ReactNativeClient/lib/components/screens/encryption-config.js:185
 #: ReactNativeClient/lib/components/screens/note.js:97
-#: ReactNativeClient/lib/components/screens/note.js:522
+#: ReactNativeClient/lib/components/screens/note.js:526
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: ElectronClient/plugins/GotoAnything.min.js:436
+#: ElectronClient/plugins/GotoAnything.min.js:454
 msgid ""
 "Type a note title or part of its content to jump to it. Or type # followed "
 "by a tag name, or @ followed by a notebook name."
@@ -791,17 +799,17 @@ msgstr ""
 "タグ名」で該当タグ付きノートの一覧に、「@ノートブック名」で該当ノートブックに"
 "移動できます。"
 
-#: ElectronClient/plugins/GotoAnything.min.js:474
+#: ElectronClient/plugins/GotoAnything.min.js:493
 msgid "Goto Anything..."
 msgstr "Goto Anything..."
 
-#: ElectronClient/InteropServiceHelper.js:142
+#: ElectronClient/InteropServiceHelper.js:147
 #, javascript-format
 msgid "Exporting to \"%s\" as \"%s\" format. Please wait..."
 msgstr ""
 "\"%s\" を \"%s\" フォーマットにエクスポート中。しばらくお待ちください..."
 
-#: ElectronClient/InteropServiceHelper.js:160
+#: ElectronClient/InteropServiceHelper.js:164
 #, javascript-format
 msgid "Could not export notes: %s"
 msgstr "ノートをエクスポートできませんでした: %s"
@@ -829,15 +837,15 @@ msgstr "あなたのバージョン: %s"
 msgid "New version: %s"
 msgstr "新バージョン: %s"
 
-#: ElectronClient/checkForUpdates.js:153 ElectronClient/app.js:689
+#: ElectronClient/checkForUpdates.js:153 ElectronClient/app.js:608
 #: ReactNativeClient/lib/shim-init-node.js:91
-#: ReactNativeClient/lib/components/screens/note.js:520
+#: ReactNativeClient/lib/components/screens/note.js:524
 msgid "Yes"
 msgstr "Yes"
 
-#: ElectronClient/checkForUpdates.js:153 ElectronClient/app.js:689
+#: ElectronClient/checkForUpdates.js:153 ElectronClient/app.js:608
 #: ReactNativeClient/lib/shim-init-node.js:91
-#: ReactNativeClient/lib/components/screens/note.js:521
+#: ReactNativeClient/lib/components/screens/note.js:525
 msgid "No"
 msgstr "No"
 
@@ -875,34 +883,129 @@ msgstr ""
 "ブックにコピーされます。現在のバージョンのノートの置換や変更は行われません。"
 
 #: ElectronClient/gui/NoteRevisionViewer.min.js:187
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:24
 #: ElectronClient/gui/NoteText.min.js:1671
 #: ElectronClient/gui/ConfigScreen.min.js:744
 #: ElectronClient/gui/Header.min.js:316
+#: ElectronClient/gui/Header/Header.min.js:302
+#: ReactNativeClient/lib/commands/historyBackward.js:16
 msgid "Back"
 msgstr "戻る"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:153
+#: ElectronClient/gui/SideBar/SideBar.min.js:269
+#: ElectronClient/gui/SideBar.min.js:283
+msgid "Remove"
+msgstr "削除"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:272
+#: ElectronClient/gui/SideBar.min.js:286
+#: ReactNativeClient/lib/components/side-menu-content.js:148
+#, javascript-format
+msgid ""
+"Delete notebook \"%s\"?\n"
+"\n"
+"All notes and sub-notebooks within this notebook will also be deleted."
+msgstr ""
+"ノートブック \"%s\" を削除しますか？\n"
+"\n"
+"このノートブックにあるノートとサブノートはすべて消えてしまいます。"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:273
+#: ElectronClient/gui/SideBar.min.js:287
+#: ElectronClient/gui/utils/NoteListUtils.js:161
+#: ElectronClient/gui/utils/NoteListUtils.js:184
+#: ElectronClient/gui/ResourceScreen.js:46
+#: ElectronClient/gui/ResourceScreen.js:94
+#: ReactNativeClient/lib/components/screen-header.js:356
+#: ReactNativeClient/lib/components/side-menu-content.js:146
+#: ReactNativeClient/lib/components/screens/note.js:868
+msgid "Delete"
+msgstr "削除"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:276
+#, javascript-format
+msgid "Remove tag \"%s\" and its descendant tags from all notes?"
+msgstr "すべてのノートからタグ \"%s\" とその子タグを削除しますか？"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:278
+#: ElectronClient/gui/SideBar.min.js:292
+msgid "Remove this search from the sidebar?"
+msgstr "サイドバーからこの検索を削除しますか？"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:337
+#: ElectronClient/gui/SideBar.min.js:382
+#: ElectronClient/gui/utils/NoteListUtils.js:154 ElectronClient/app.js:677
+#: ElectronClient/app.js:727
+msgid "Export"
+msgstr "エクスポート"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:660
+#: ElectronClient/gui/SideBar.min.js:724
+#: ReactNativeClient/lib/components/side-menu-content.js:338
+msgid "Synchronise"
+msgstr "同期"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:694
+#: ElectronClient/gui/SideBar.min.js:757
+#: ReactNativeClient/lib/components/side-menu-content.js:360
+#: ReactNativeClient/lib/components/screens/notes.js:189
+msgid "All notes"
+msgstr "すべてのノート"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:699
+#: ElectronClient/gui/SideBar.min.js:762
+#: ReactNativeClient/lib/components/side-menu-content.js:364
+msgid "Notebooks"
+msgstr "ノートブック"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:716
+#: ElectronClient/gui/MainScreen/commands/setTags.js:17
+#: ElectronClient/gui/SideBar.min.js:779
+#: ElectronClient/gui/NoteText.min.js:1634
+#: ElectronClient/gui/NoteText.min.js:1810
+#: ReactNativeClient/lib/components/side-menu-content.js:314
+#: ReactNativeClient/lib/components/screens/tags.js:101
+#: ReactNativeClient/lib/components/screens/note.js:841
+msgid "Tags"
+msgstr "タグ"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:735
+#: ElectronClient/gui/SideBar.min.js:797
+#: ReactNativeClient/lib/components/side-menu-content.js:325
+#, javascript-format
+msgid "Decrypting items: %d/%d"
+msgstr "復号中のアイテム: %d/%d"
+
+#: ElectronClient/gui/SideBar/SideBar.min.js:740
+#: ElectronClient/gui/SideBar.min.js:802
+#: ReactNativeClient/lib/components/side-menu-content.js:330
+#, javascript-format
+msgid "Fetching resources: %d/%d"
+msgstr "取得中のリソース: %d/%d"
+
+#: ElectronClient/gui/SideBar/commands/focusElementSideBar.js:15
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:144
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:260
 #: ElectronClient/gui/NoteText.min.js:1547
 msgid "strong text"
 msgstr "文字を太字に"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:154
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:145
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:261
-#: ElectronClient/gui/NoteText.min.js:1551
-msgid "emphasized text"
-msgstr "文字の強調"
+msgid "emphasised text"
+msgstr "強調したいテキスト"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:156
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:147
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:263
 #: ElectronClient/gui/NoteText.min.js:1616
 msgid "Insert Hyperlink"
 msgstr "ハイパーリンクの挿入"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:189
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:191
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:192
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:180
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:182
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:183
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:298
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:300
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:301
@@ -912,34 +1015,34 @@ msgstr "ハイパーリンクの挿入"
 msgid "List item"
 msgstr "リストアイテム"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:245
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:236
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:354
-#: ElectronClient/app.js:847
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:15
 msgid "Cut"
 msgstr "切り取り"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:252
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:243
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:361
 #: ElectronClient/gui/NoteEditor/utils/contextMenu.js:81
-#: ElectronClient/gui/NoteText.min.js:804 ElectronClient/app.js:699
-#: ElectronClient/app.js:842
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:10
+#: ElectronClient/gui/NoteText.min.js:804 ElectronClient/app.js:618
 msgid "Copy"
 msgstr "コピー"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:259
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:250
 #: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:368
-#: ElectronClient/app.js:852
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:20
 msgid "Paste"
 msgstr "貼り付け"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:300
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:463
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:291
+#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:457
 #: ElectronClient/gui/NoteText.min.js:1085
 msgid "Layout"
 msgstr "レイアウト"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:300
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:463
+#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/CodeMirror.js:291
+#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/AceEditor.js:457
 #: ElectronClient/gui/NoteText.min.js:1085
 #, javascript-format
 msgid ""
@@ -949,109 +1052,54 @@ msgstr ""
 "このノートには中身がありません。 \"%s\" をクリックしてエディターを表示し、"
 "ノートを編集してください。"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:24
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:24
-#: ElectronClient/gui/NoteText.min.js:1690 ElectronClient/app.js:865
-msgid "Bold"
-msgstr "太字"
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/plugins/lists.js:2151
+msgid "Checkbox list"
+msgstr "チェックボックスリスト"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:34
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:34
-#: ElectronClient/gui/NoteText.min.js:1698 ElectronClient/app.js:876
-msgid "Italic"
-msgstr "斜体"
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:470
+#: ElectronClient/gui/ConfigScreen.min.js:642
+#: ReactNativeClient/lib/components/screens/note.js:1110
+msgid "Edit"
+msgstr "編集"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:47
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:47
-#: ElectronClient/gui/NoteText.min.js:1710
-msgid "Hyperlink"
-msgstr "ハイパーリンク"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:57
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:57
-#: ElectronClient/gui/NoteText.min.js:1718 ElectronClient/app.js:898
-msgid "Code"
-msgstr "コード"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:67
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:525
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:67
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:526
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:50
 #: ElectronClient/gui/NoteText.min.js:1627
 #: ElectronClient/gui/NoteText.min.js:1726
 msgid "Attach file"
 msgstr "ファイルを添付する"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:80
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:80
-#: ElectronClient/gui/NoteText.min.js:1738
-msgid "Numbered List"
-msgstr "番号つきリスト"
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:535
+msgid "Code Block"
+msgstr "コードブロック"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:90
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:90
-#: ElectronClient/gui/NoteText.min.js:1746
-msgid "Bulleted List"
-msgstr "箇条書きリスト"
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:544
+msgid "Inline Code"
+msgstr "インラインコード"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:100
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:100
-#: ElectronClient/gui/NoteText.min.js:1754
-msgid "Checkbox"
-msgstr "チェックボックス"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:110
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:110
-#: ElectronClient/gui/NoteText.min.js:1762
-msgid "Heading"
-msgstr "見出し"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:120
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:120
-#: ElectronClient/gui/NoteText.min.js:1770
-msgid "Horizontal Rule"
-msgstr "横線"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/CodeMirror/Toolbar.js:130
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:558
-#: ElectronClient/gui/NoteEditor/NoteBody/AceEditor/Toolbar.js:130
-#: ElectronClient/gui/NoteText.min.js:1778 ElectronClient/app.js:912
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:559
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:80
+#: ElectronClient/gui/NoteText.min.js:1778
 msgid "Insert Date Time"
 msgstr "日付の入力"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/plugins/lists.js:2151
-#, fuzzy
-msgid "Checkbox list"
-msgstr "チェックボックス"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:469
-#: ElectronClient/gui/ConfigScreen.min.js:642
-#: ReactNativeClient/lib/components/screens/note.js:1106
-msgid "Edit"
-msgstr "編集"
-
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:534
-msgid "Code Block"
-msgstr ""
-
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:543
-msgid "Inline Code"
-msgstr ""
-
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:901
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:903
 msgid "Drop notes or files here"
-msgstr ""
+msgstr "ノートやファイルをここにドロップします"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:901
-#, fuzzy
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:903
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:401
 msgid "Code View"
-msgstr "コード"
+msgstr "コードビュー"
 
-#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:901
+#: ElectronClient/gui/NoteEditor/NoteBody/TinyMCE/TinyMCE.js:903
 #, javascript-format
 msgid ""
 "Please wait for all attachments to be downloaded and decrypted. You may also "
 "switch to %s to edit the note."
 msgstr ""
+"すべての添付ファイルのダウンロードと復号が終わるまでお待ちください。%sに切り"
+"替えてノートを編集することはできます。"
 
 #: ElectronClient/gui/NoteEditor/utils/useMessageHandler.js:70
 #: ElectronClient/gui/NoteText.min.js:833
@@ -1076,7 +1124,7 @@ msgstr "名前を付けて保存..."
 
 #: ElectronClient/gui/NoteEditor/utils/contextMenu.js:65
 msgid "Reveal file in folder"
-msgstr ""
+msgstr "ファイルのあるフォルダーを開く"
 
 #: ElectronClient/gui/NoteEditor/utils/contextMenu.js:73
 #: ElectronClient/gui/NoteText.min.js:797
@@ -1088,21 +1136,82 @@ msgstr "クリップボードにパスを保存"
 msgid "Copy Link Address"
 msgstr "リンクアドレスをコピー"
 
-#: ElectronClient/gui/NoteEditor/NoteEditor.js:316
+#: ElectronClient/gui/NoteEditor/NoteEditor.js:283
 #: ElectronClient/gui/NoteText.min.js:2121
 msgid "to-do"
 msgstr "to-do"
 
-#: ElectronClient/gui/NoteEditor/NoteEditor.js:316
+#: ElectronClient/gui/NoteEditor/NoteEditor.js:283
 #: ElectronClient/gui/NoteText.min.js:2121
 msgid "note"
 msgstr "ノート"
 
-#: ElectronClient/gui/NoteEditor/NoteEditor.js:316
+#: ElectronClient/gui/NoteEditor/NoteEditor.js:283
 #: ElectronClient/gui/NoteText.min.js:2121
 #, javascript-format
 msgid "Creating new %s..."
 msgstr "新しい %s を作成中..."
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:25
+msgid "Select all"
+msgstr "すべて選択"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:30
+#: ElectronClient/gui/NoteText.min.js:1690
+msgid "Bold"
+msgstr "太字"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:35
+#: ElectronClient/gui/NoteText.min.js:1698
+msgid "Italic"
+msgstr "斜体"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:40
+#: ElectronClient/gui/NoteText.min.js:1710
+msgid "Hyperlink"
+msgstr "ハイパーリンク"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:45
+#: ElectronClient/gui/NoteText.min.js:1718
+msgid "Code"
+msgstr "コード"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:55
+#: ElectronClient/gui/NoteText.min.js:1738
+msgid "Numbered List"
+msgstr "番号つきリスト"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:60
+#: ElectronClient/gui/NoteText.min.js:1746
+msgid "Bulleted List"
+msgstr "箇条書きリスト"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:65
+#: ElectronClient/gui/NoteText.min.js:1754
+msgid "Checkbox"
+msgstr "チェックボックス"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:70
+#: ElectronClient/gui/NoteText.min.js:1762
+msgid "Heading"
+msgstr "見出し"
+
+#: ElectronClient/gui/NoteEditor/commands/editorCommandDeclarations.js:75
+#: ElectronClient/gui/NoteText.min.js:1770
+msgid "Horizontal Rule"
+msgstr "横線"
+
+#: ElectronClient/gui/NoteEditor/commands/focusElementNoteTitle.js:15
+msgid "Note title"
+msgstr "ノートの題名"
+
+#: ElectronClient/gui/NoteEditor/commands/showLocalSearch.js:15
+msgid "Search in current note"
+msgstr "現在のノートを検索"
+
+#: ElectronClient/gui/NoteEditor/commands/focusElementNoteBody.js:15
+msgid "Note body"
+msgstr "ノートの本文"
 
 #: ElectronClient/gui/NotePropertiesDialog.min.js:26
 #: ElectronClient/gui/FolderPropertiesDialog.min.js:21
@@ -1132,7 +1241,7 @@ msgid "URL"
 msgstr "URL"
 
 #: ElectronClient/gui/NotePropertiesDialog.min.js:32
-#: ReactNativeClient/lib/models/Setting.js:1211
+#: ReactNativeClient/lib/models/Setting.js:1253
 msgid "Note History"
 msgstr "ノートの履歴"
 
@@ -1145,132 +1254,176 @@ msgid "Previous versions of this note"
 msgstr "このノートの以前のバージョン"
 
 #: ElectronClient/gui/NotePropertiesDialog.min.js:382
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:61
+#: ElectronClient/gui/MainScreen/commands/showNoteProperties.js:16
 #: ElectronClient/gui/NoteText.min.js:1834
 msgid "Note properties"
 msgstr "ノートのプロパティ"
 
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:36
-msgid "Forward"
-msgstr ""
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:295
+msgid "Some items cannot be synchronised."
+msgstr "いくつかの項目は同期されませんでした。"
 
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:49
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:300
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:312
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:336
+msgid "View them now"
+msgstr "今すぐ表示"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:307
+msgid "Some items cannot be decrypted."
+msgstr "いくつかの項目は復号されませんでした。"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:319
+msgid "One or more master keys need a password."
+msgstr "パスワードに1つ以上のマスターキーが必要です"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:324
+msgid "Set the password"
+msgstr "パスワードの設定"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:331
+msgid "One of your master keys use an obsolete encryption method."
+msgstr "古い暗号化方式を使っているマスターキーがあります。"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:343
+msgid ""
+"The default encryption method has been changed, you should re-encrypt your "
+"data."
+msgstr ""
+"デフォルトの暗号化方式が変更されています。既存データを暗号化しなおすことをお"
+"すすめします。"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:348
+msgid "More info"
+msgstr "詳細情報"
+
+#: ElectronClient/gui/MainScreen/MainScreen.min.js:419
+msgid "Search..."
+msgstr "検索..."
+
+#: ElectronClient/gui/MainScreen/commands/showNoteContentProperties.js:16
+msgid "Statistics..."
+msgstr "統計..."
+
+#: ElectronClient/gui/MainScreen/commands/renameFolder.js:17
+#: ElectronClient/gui/MainScreen/commands/renameTag.js:17
+#: ElectronClient/gui/SideBar.min.js:339 ElectronClient/gui/SideBar.min.js:389
+#: ReactNativeClient/lib/components/side-menu-content.js:129
+msgid "Rename"
+msgstr "名前の変更"
+
+#: ElectronClient/gui/MainScreen/commands/renameFolder.js:26
+#: ElectronClient/gui/MainScreen.min.js:292
+msgid "Rename notebook:"
+msgstr "ノートブックの名前を変更："
+
+#: ElectronClient/gui/MainScreen/commands/newTodo.js:16
+#: ElectronClient/gui/MainScreen/commands/newTodo.js:28
+#: ReactNativeClient/lib/components/action-button.js:64
+#: ReactNativeClient/setUpQuickActions.js:15
+msgid "New to-do"
+msgstr "新しいToDo"
+
+#: ElectronClient/gui/MainScreen/commands/toggleNoteList.js:15
+#: ElectronClient/gui/MainScreen/commands/toggleNoteList.js:26
+msgid "Toggle note list"
+msgstr "ノート一覧の表示切り替え"
+
+#: ElectronClient/gui/MainScreen/commands/toggleSidebar.js:15
+#: ElectronClient/gui/MainScreen/commands/toggleSidebar.js:26
+msgid "Toggle sidebar"
+msgstr "サイドバーの表示切り替え"
+
+#: ElectronClient/gui/MainScreen/commands/editAlarm.js:19
+#: ElectronClient/gui/NoteText.min.js:1642
+#: ElectronClient/gui/NoteText.min.js:1828
+#: ReactNativeClient/lib/components/screens/note.js:826
+msgid "Set alarm"
+msgstr "アラームをセット"
+
+#: ElectronClient/gui/MainScreen/commands/editAlarm.js:31
+#: ElectronClient/gui/MainScreen.min.js:417
+msgid "Set alarm:"
+msgstr "アラームをセット："
+
+#: ElectronClient/gui/MainScreen/commands/exportPdf.js:19
+#: ElectronClient/gui/MainScreen/commands/exportPdf.js:30
+#: ElectronClient/gui/MainScreen.min.js:549
+msgid "PDF File"
+msgstr "PDF ファイル"
+
+#: ElectronClient/gui/MainScreen/commands/newNote.js:20
+#: ElectronClient/gui/MainScreen/commands/newNote.js:47
+#: ReactNativeClient/lib/components/action-button.js:73
+#: ReactNativeClient/setUpQuickActions.js:14
+msgid "New note"
+msgstr "新しいノート"
+
+#: ElectronClient/gui/MainScreen/commands/moveToFolder.js:17
+msgid "Move to notebook"
+msgstr "ノートブックへ移動"
+
+#: ElectronClient/gui/MainScreen/commands/moveToFolder.js:36
+#: ElectronClient/gui/MainScreen.min.js:272
+msgid "Move to notebook:"
+msgstr "ノートブックへ移動:"
+
+#: ElectronClient/gui/MainScreen/commands/toggleVisiblePanes.js:15
+msgid "Toggle editor layout"
+msgstr "エディターレイアウトの表示切り替え"
+
+#: ElectronClient/gui/MainScreen/commands/renameTag.js:26
+#: ElectronClient/gui/MainScreen.min.js:313
+msgid "Rename tag:"
+msgstr "タグの変更:"
+
+#: ElectronClient/gui/MainScreen/commands/newNotebook.js:17
+#: ElectronClient/gui/MainScreen/commands/newNotebook.js:57
+msgid "New notebook"
+msgstr "新しいノートブック"
+
+#: ElectronClient/gui/MainScreen/commands/newNotebook.js:25
+#: ElectronClient/gui/MainScreen.min.js:178
+msgid "Notebook title:"
+msgstr "ノートブックの題名："
+
+#: ElectronClient/gui/MainScreen/commands/showShareNoteDialog.js:15
+msgid "Share note..."
+msgstr "ノートを共有..."
+
+#: ElectronClient/gui/MainScreen/commands/selectTemplate.js:23
+#: ElectronClient/gui/MainScreen.min.js:448
+msgid "Template file:"
+msgstr "テンプレートファイル："
+
+#: ElectronClient/gui/MainScreen/commands/setTags.js:44
+#: ElectronClient/gui/MainScreen.min.js:221
+msgid "Add or remove tags:"
+msgstr "タグの追加・削除："
+
+#: ElectronClient/gui/MainScreen/commands/print.js:16
+msgid "Print"
+msgstr "印刷"
+
+#: ElectronClient/gui/MainScreen/commands/print.js:25
+#: ElectronClient/gui/NoteText.min.js:1321
+msgid "Only one note can be printed at a time."
+msgstr "一度に印刷できるノートは1つだけです。"
+
+#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:32
 #: ElectronClient/gui/NoteText.min.js:1656
 #, javascript-format
 msgid "In: %s"
 msgstr "内: %s"
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:76
-#: ElectronClient/gui/NoteText.min.js:1792
-msgid "Click to stop external editing"
-msgstr "クリックすると外部エディターでの編集を終了します"
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:77
-#: ElectronClient/gui/NoteText.min.js:1793
-msgid "Watching..."
-msgstr "確認中..."
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:86
-#: ElectronClient/gui/utils/NoteListUtils.js:68
-#: ElectronClient/gui/NoteText.min.js:1801 ElectronClient/app.js:1067
-msgid "Edit in external editor"
-msgstr "外部エディターで編集"
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:105
-#: ElectronClient/gui/NoteText.min.js:1642
-#: ElectronClient/gui/NoteText.min.js:1828
-#: ReactNativeClient/lib/components/screens/note.js:822
-msgid "Set alarm"
-msgstr "アラームをセット"
-
-#: ElectronClient/gui/NoteToolbar/NoteToolbar.js:110
-#: ElectronClient/gui/SideBar.min.js:779
-#: ElectronClient/gui/NoteText.min.js:1634
-#: ElectronClient/gui/NoteText.min.js:1810 ElectronClient/app.js:1078
-#: ReactNativeClient/lib/components/side-menu-content.js:314
-#: ReactNativeClient/lib/components/screens/tags.js:101
-#: ReactNativeClient/lib/components/screens/note.js:837
-msgid "Tags"
-msgstr "タグ"
-
-#: ElectronClient/gui/SideBar.min.js:283
-msgid "Remove"
-msgstr "削除"
-
-#: ElectronClient/gui/SideBar.min.js:286
-#: ReactNativeClient/lib/components/side-menu-content.js:148
-#, javascript-format
-msgid ""
-"Delete notebook \"%s\"?\n"
-"\n"
-"All notes and sub-notebooks within this notebook will also be deleted."
-msgstr ""
-"ノートブック \"%s\" を削除しますか？\n"
-"\n"
-"このノートブックにあるノートとサブノートはすべて消えてしまいます。"
-
-#: ElectronClient/gui/SideBar.min.js:287
-#: ElectronClient/gui/utils/NoteListUtils.js:204
-#: ElectronClient/gui/utils/NoteListUtils.js:227
-#: ElectronClient/gui/ResourceScreen.js:46
-#: ElectronClient/gui/ResourceScreen.js:94
-#: ReactNativeClient/lib/components/screen-header.js:356
-#: ReactNativeClient/lib/components/side-menu-content.js:146
-#: ReactNativeClient/lib/components/screens/note.js:864
-msgid "Delete"
-msgstr "削除"
 
 #: ElectronClient/gui/SideBar.min.js:290
 #, javascript-format
 msgid "Remove tag \"%s\" from all notes?"
 msgstr "すべてのノートからタグ \"%s\" を削除しますか？"
 
-#: ElectronClient/gui/SideBar.min.js:292
-msgid "Remove this search from the sidebar?"
-msgstr "サイドバーからこの検索を削除しますか？"
-
-#: ElectronClient/gui/SideBar.min.js:304 ElectronClient/app.js:560
+#: ElectronClient/gui/SideBar.min.js:304
 msgid "New sub-notebook"
 msgstr "新しいサブノートブック"
-
-#: ElectronClient/gui/SideBar.min.js:339 ElectronClient/gui/SideBar.min.js:389
-#: ReactNativeClient/lib/components/side-menu-content.js:129
-msgid "Rename"
-msgstr "名前の変更"
-
-#: ElectronClient/gui/SideBar.min.js:382
-#: ElectronClient/gui/utils/NoteListUtils.js:197 ElectronClient/app.js:759
-#: ElectronClient/app.js:816
-msgid "Export"
-msgstr "エクスポート"
-
-#: ElectronClient/gui/SideBar.min.js:724 ElectronClient/app.js:765
-#: ReactNativeClient/lib/components/side-menu-content.js:338
-msgid "Synchronise"
-msgstr "同期"
-
-#: ElectronClient/gui/SideBar.min.js:757
-#: ReactNativeClient/lib/components/side-menu-content.js:360
-#: ReactNativeClient/lib/components/screens/notes.js:188
-msgid "All notes"
-msgstr "すべてのノート"
-
-#: ElectronClient/gui/SideBar.min.js:762
-#: ReactNativeClient/lib/components/side-menu-content.js:364
-msgid "Notebooks"
-msgstr "ノートブック"
-
-#: ElectronClient/gui/SideBar.min.js:797
-#: ReactNativeClient/lib/components/side-menu-content.js:325
-#, javascript-format
-msgid "Decrypting items: %d/%d"
-msgstr "復号中のアイテム: %d/%d"
-
-#: ElectronClient/gui/SideBar.min.js:802
-#: ReactNativeClient/lib/components/side-menu-content.js:330
-#, javascript-format
-msgid "Fetching resources: %d/%d"
-msgstr "取得中のリソース: %d/%d"
 
 #: ElectronClient/gui/ClipperConfigScreen.min.js:39
 msgid "Token has been copied to the clipboard!"
@@ -1364,12 +1517,12 @@ msgstr "OneDriveログイン"
 msgid "Dropbox Login"
 msgstr "Dropboxログイン"
 
-#: ElectronClient/gui/Root.min.js:91 ElectronClient/app.js:755
-#: ElectronClient/app.js:813
+#: ElectronClient/gui/Root.min.js:91 ElectronClient/app.js:673
+#: ElectronClient/app.js:724
 msgid "Import"
 msgstr "インポート"
 
-#: ElectronClient/gui/Root.min.js:92 ElectronClient/app.js:642
+#: ElectronClient/gui/Root.min.js:92 ElectronClient/app.js:561
 msgid "Options"
 msgstr "オプション"
 
@@ -1377,7 +1530,7 @@ msgstr "オプション"
 msgid "Note attachments"
 msgstr "添付ファイル一覧"
 
-#: ElectronClient/gui/Root.min.js:94 ElectronClient/app.js:515
+#: ElectronClient/gui/Root.min.js:94 ElectronClient/app.js:500
 msgid "Synchronisation Status"
 msgstr "同期状況"
 
@@ -1402,24 +1555,28 @@ msgstr ""
 "されます"
 
 #: ElectronClient/gui/DropboxLoginScreen.min.js:67
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:64
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:68
 msgid "Submit"
 msgstr "入力"
 
 #: ElectronClient/gui/NoteList.min.js:147
+#: ElectronClient/gui/NoteList/NoteList.min.js:152
 msgid "Custom order"
 msgstr "任意順"
 
 #: ElectronClient/gui/NoteList.min.js:147
+#: ElectronClient/gui/NoteList/NoteList.min.js:152
 msgid "View"
 msgstr "表示"
 
 #: ElectronClient/gui/NoteList.min.js:147
-#: ReactNativeClient/lib/models/Setting.js:329
+#: ElectronClient/gui/NoteList/NoteList.min.js:152
+#: ReactNativeClient/lib/models/Setting.js:370
 msgid "Sort notes by"
 msgstr "ノートのソート方法"
 
 #: ElectronClient/gui/NoteList.min.js:147
+#: ElectronClient/gui/NoteList/NoteList.min.js:152
 #, javascript-format
 msgid ""
 "To manually sort the notes, the sort order must be changed to \"%s\" in the "
@@ -1429,80 +1586,57 @@ msgstr ""
 "り替えてください (メニューバーの \"%s\" > \"%s\" から選択)。"
 
 #: ElectronClient/gui/NoteList.min.js:148
+#: ElectronClient/gui/NoteList/NoteList.min.js:153
 msgid "Do it now"
 msgstr "今すぐ実行"
 
 #: ElectronClient/gui/NoteList.min.js:452
+#: ElectronClient/gui/NoteList/NoteList.min.js:425
 msgid "No notes in here. Create one by clicking on \"New note\"."
 msgstr "ノートがありません。新しいノートを作成して下さい。"
 
 #: ElectronClient/gui/NoteList.min.js:452
+#: ElectronClient/gui/NoteList/NoteList.min.js:425
 msgid ""
 "There is currently no notebook. Create one by clicking on \"New notebook\"."
 msgstr "ノートブックがありません。新しいノートブックを作成してください。"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:27
-msgid "Add or remove tags"
-msgstr "タグの追加と削除"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:40
-msgid "Move to notebook"
-msgstr "ノートブックへ移動"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:53
+#: ElectronClient/gui/utils/NoteListUtils.js:37
 #: ReactNativeClient/lib/components/screen-header.js:362
 msgid "Duplicate"
 msgstr "複製"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:58
+#: ElectronClient/gui/utils/NoteListUtils.js:42
 #, javascript-format
 msgid "%s - Copy"
 msgstr "%s - コピー"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:78
-msgid "Stop external editing"
-msgstr "外部エディターでの編集を終了"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:90
+#: ElectronClient/gui/utils/NoteListUtils.js:62
 msgid "Switch between note and to-do type"
 msgstr "ノートとToDoを切り替え"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:119
+#: ElectronClient/gui/utils/NoteListUtils.js:91
 msgid "Switch to note type"
 msgstr "ノートに切り替え"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:128
+#: ElectronClient/gui/utils/NoteListUtils.js:100
 msgid "Switch to to-do type"
 msgstr "ToDoに切り替え"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:138
-#: ReactNativeClient/lib/components/screens/note.js:851
+#: ElectronClient/gui/utils/NoteListUtils.js:110
+#: ReactNativeClient/lib/components/screens/note.js:855
 msgid "Copy Markdown link"
 msgstr "Markdownのリンクをコピー"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:153
-msgid "Share note..."
-msgstr "ノートを共有..."
-
-#: ElectronClient/gui/utils/NoteListUtils.js:186
-#: ElectronClient/gui/MainScreen.min.js:549 ElectronClient/app.js:495
-msgid "PDF File"
-msgstr "PDF ファイル"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:221
+#: ElectronClient/gui/utils/NoteListUtils.js:178
 #, javascript-format
 msgid "Delete note \"%s\"?"
 msgstr "ノート \"%s\" を削除しますか？"
 
-#: ElectronClient/gui/utils/NoteListUtils.js:223
+#: ElectronClient/gui/utils/NoteListUtils.js:180
 #, javascript-format
 msgid "Delete these %d notes?"
 msgstr "ノート \"%d\" を削除しますか？"
-
-#: ElectronClient/gui/utils/NoteListUtils.js:240
-#, javascript-format
-msgid "Error opening note in editor: %s"
-msgstr "次のエディターで開く際にエラー: %s"
 
 #: ElectronClient/gui/FolderPropertiesDialog.min.js:22
 msgid "Name"
@@ -1521,9 +1655,22 @@ msgstr "ノートブックのプロパティ"
 msgid "This file could not be opened: %s"
 msgstr "次のファイルは開くことができません：%s"
 
-#: ElectronClient/gui/NoteText.min.js:1321
-msgid "Only one note can be printed at a time."
-msgstr "一度に印刷できるノートは1つだけです。"
+#: ElectronClient/gui/NoteText.min.js:1551
+msgid "emphasized text"
+msgstr "文字の強調"
+
+#: ElectronClient/gui/NoteText.min.js:1792
+msgid "Click to stop external editing"
+msgstr "クリックすると外部エディターでの編集を終了します"
+
+#: ElectronClient/gui/NoteText.min.js:1793
+msgid "Watching..."
+msgstr "確認中..."
+
+#: ElectronClient/gui/NoteText.min.js:1801
+#: ElectronClient/commands/startExternalEditing.js:18
+msgid "Edit in external editor"
+msgstr "外部エディターで編集"
 
 #: ElectronClient/gui/NoteText.min.js:1852
 msgid "Content Properties"
@@ -1635,74 +1782,50 @@ msgstr "まずはノートブックを作成して下さい。"
 msgid "Please create a notebook first"
 msgstr "まず最初にノートブックを作成して下さい"
 
-#: ElectronClient/gui/MainScreen.min.js:178
-msgid "Notebook title:"
-msgstr "ノートブックの題名："
-
-#: ElectronClient/gui/MainScreen.min.js:221
-msgid "Add or remove tags:"
-msgstr "タグの追加・削除："
-
-#: ElectronClient/gui/MainScreen.min.js:272
-msgid "Move to notebook:"
-msgstr "ノートブックへ移動:"
-
-#: ElectronClient/gui/MainScreen.min.js:292
-msgid "Rename notebook:"
-msgstr "ノートブックの名前を変更："
-
-#: ElectronClient/gui/MainScreen.min.js:313
-msgid "Rename tag:"
-msgstr "タグの変更:"
-
-#: ElectronClient/gui/MainScreen.min.js:417
-msgid "Set alarm:"
-msgstr "アラームをセット："
-
-#: ElectronClient/gui/MainScreen.min.js:448
-msgid "Template file:"
-msgstr "テンプレートファイル："
-
 #: ElectronClient/gui/PromptDialog.min.js:249
 msgid "Clear"
 msgstr "クリア"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:51
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:76
 msgid "Words"
 msgstr "単語数"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:52
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:77
 msgid "Characters"
 msgstr "文字数"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:53
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:78
 msgid "Characters excluding spaces"
 msgstr "文字数(空白を除く)"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:54
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:79
 msgid "Lines"
 msgstr "行数"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:73
-#: ReactNativeClient/lib/models/Setting.js:314
-#: ReactNativeClient/lib/models/Setting.js:315
-#: ReactNativeClient/lib/models/Setting.js:316
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:98
+#: ReactNativeClient/lib/models/Setting.js:355
+#: ReactNativeClient/lib/models/Setting.js:356
+#: ReactNativeClient/lib/models/Setting.js:357
 msgid "Editor"
 msgstr "エディター"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:74
-#: ReactNativeClient/lib/models/Setting.js:314
-#: ReactNativeClient/lib/models/Setting.js:315
-#: ReactNativeClient/lib/models/Setting.js:317
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:99
+#: ReactNativeClient/lib/models/Setting.js:355
+#: ReactNativeClient/lib/models/Setting.js:356
+#: ReactNativeClient/lib/models/Setting.js:358
 msgid "Viewer"
 msgstr "ビューアー"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:82
-#, fuzzy
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:107
 msgid "Statistics"
-msgstr "統計..."
+msgstr "統計"
 
-#: ElectronClient/gui/NoteContentPropertiesDialog.js:86
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:111
+#, javascript-format
+msgid "Read time: %s min"
+msgstr "読むのに必要な時間: %s 分"
+
+#: ElectronClient/gui/NoteContentPropertiesDialog.js:112
 #: ElectronClient/gui/ShareNoteDialog.js:175
 msgid "Close"
 msgstr "閉じる"
@@ -1766,8 +1889,17 @@ msgid "Apply"
 msgstr "適用"
 
 #: ElectronClient/gui/Header.min.js:267
+#: ElectronClient/gui/Header/Header.min.js:253
 msgid "Usage"
 msgstr "使い方"
+
+#: ElectronClient/gui/NoteList/commands/focusElementNoteList.js:15
+msgid "Note list"
+msgstr "ノート一覧"
+
+#: ElectronClient/gui/Header/commands/focusSearch.js:15
+msgid "Search in all the notes"
+msgstr "すべてのノートを検索"
 
 #: ElectronClient/gui/ResourceScreen.js:31
 msgid "Title"
@@ -1784,7 +1916,7 @@ msgstr "操作"
 #: ElectronClient/gui/ResourceScreen.js:42
 #: ReactNativeClient/lib/path-utils.js:65
 #: ReactNativeClient/lib/path-utils.js:101
-#: ReactNativeClient/lib/models/BaseItem.js:710
+#: ReactNativeClient/lib/models/BaseItem.js:720
 msgid "Untitled"
 msgstr "名称未設定"
 
@@ -1844,230 +1976,171 @@ msgid "Copy Shareable Link"
 msgid_plural "Copy Shareable Links"
 msgstr[0] "共有可能なリンクをコピー"
 
-#: ElectronClient/app.js:392
-msgid "Sidebar"
-msgstr "サイドバー"
+#: ElectronClient/commands/stopExternalEditing.js:16
+msgid "Stop external editing"
+msgstr "外部エディターでの編集を終了"
 
-#: ElectronClient/app.js:398
-msgid "Note list"
-msgstr "ノート一覧"
+#: ElectronClient/commands/startExternalEditing.js:29
+#, javascript-format
+msgid "Error opening note in editor: %s"
+msgstr "次のエディターで開く際にエラー: %s"
 
-#: ElectronClient/app.js:404
-msgid "Note title"
-msgstr "ノートの題名"
-
-#: ElectronClient/app.js:410
-msgid "Note body"
-msgstr "ノートの本文"
-
-#: ElectronClient/app.js:462
+#: ElectronClient/app.js:460
 #, javascript-format
 msgid "Importing from \"%s\" as \"%s\" format. Please wait..."
 msgstr ""
 "\"%s\" を \"%s\" フォーマットとしてインポート中。しばらくお待ちください..."
 
-#: ElectronClient/app.js:525
-#: ReactNativeClient/lib/components/action-button.js:73
-#: ReactNativeClient/setUpQuickActions.js:14
-msgid "New note"
-msgstr "新しいノート"
-
-#: ElectronClient/app.js:537
-#: ReactNativeClient/lib/components/action-button.js:64
-#: ReactNativeClient/setUpQuickActions.js:15
-msgid "New to-do"
-msgstr "新しいToDo"
-
-#: ElectronClient/app.js:549
-msgid "New notebook"
-msgstr "新しいノートブック"
-
-#: ElectronClient/app.js:572
-msgid "Print"
-msgstr "印刷"
-
-#: ElectronClient/app.js:592
+#: ElectronClient/app.js:522
 msgid "Create note from template"
 msgstr "テンプレートからノートを作成"
 
-#: ElectronClient/app.js:602
+#: ElectronClient/app.js:528
 msgid "Create to-do from template"
 msgstr "テンプレートからto-doを作成"
 
-#: ElectronClient/app.js:612
+#: ElectronClient/app.js:534
 msgid "Insert template"
 msgstr "テンプレートを挿入"
 
-#: ElectronClient/app.js:622
+#: ElectronClient/app.js:541
 msgid "Open template directory"
 msgstr "テンプレートディレクトリを開く"
 
-#: ElectronClient/app.js:629
+#: ElectronClient/app.js:548
 msgid "Refresh templates"
 msgstr "テンプレートの更新"
 
-#: ElectronClient/app.js:655
+#: ElectronClient/app.js:574
 msgid "Note attachments..."
 msgstr "添付ファイル一覧..."
 
-#: ElectronClient/app.js:677
+#: ElectronClient/app.js:596
 #, javascript-format
 msgid "Revision: %s (%s)"
 msgstr "リビジョン: %s (%s)"
 
-#: ElectronClient/app.js:684
+#: ElectronClient/app.js:603
 #, javascript-format
 msgid "%s %s (%s, %s)"
 msgstr "%s %s (%s, %s)"
 
-#: ElectronClient/app.js:686
+#: ElectronClient/app.js:605
 #, javascript-format
 msgid "Client ID: %s"
 msgstr "クライアントID: %s"
 
-#: ElectronClient/app.js:687
+#: ElectronClient/app.js:606
 #, javascript-format
 msgid "Sync Version: %s"
 msgstr "同期バージョン: %s"
 
-#: ElectronClient/app.js:688
+#: ElectronClient/app.js:607
 #, javascript-format
 msgid "Profile Version: %s"
 msgstr "プロファイルバージョン: %s"
 
-#: ElectronClient/app.js:689
+#: ElectronClient/app.js:608
 #, javascript-format
 msgid "Keychain Supported: %s"
-msgstr ""
+msgstr "キーチェーンのサポート: %s"
 
-#: ElectronClient/app.js:711 ElectronClient/app.js:794
+#: ElectronClient/app.js:630 ElectronClient/app.js:706
 msgid "&File"
 msgstr "ファイル(&F)"
 
-#: ElectronClient/app.js:717 ElectronClient/app.js:1142
+#: ElectronClient/app.js:636 ElectronClient/app.js:905
 msgid "About Joplin"
 msgstr "Joplinについて"
 
-#: ElectronClient/app.js:724
+#: ElectronClient/app.js:643
 msgid "Preferences..."
 msgstr "環境設定"
 
-#: ElectronClient/app.js:734 ElectronClient/app.js:1121
+#: ElectronClient/app.js:653 ElectronClient/app.js:887
 msgid "Check for updates..."
 msgstr "アップデートのチェック..."
 
-#: ElectronClient/app.js:748 ElectronClient/app.js:808
+#: ElectronClient/app.js:666 ElectronClient/app.js:719
 msgid "Templates"
 msgstr "テンプレート"
 
-#: ElectronClient/app.js:780
+#: ElectronClient/app.js:692
 #, javascript-format
 msgid "Hide %s"
 msgstr "%s を隠す"
 
-#: ElectronClient/app.js:787
+#: ElectronClient/app.js:699
 msgid "Quit"
 msgstr "終了"
 
-#: ElectronClient/app.js:801
+#: ElectronClient/app.js:712
 msgid "Close Window"
 msgstr "ウィンドウを閉じる"
 
-#: ElectronClient/app.js:839
+#: ElectronClient/app.js:757
 msgid "&Edit"
 msgstr "編集(&E)"
 
-#: ElectronClient/app.js:857
-msgid "Select all"
-msgstr "すべて選択"
-
-#: ElectronClient/app.js:887
-msgid "Link"
-msgstr "リンク"
-
-#: ElectronClient/app.js:926
-msgid "Search in all the notes"
-msgstr "すべてのノートを検索"
-
-#: ElectronClient/app.js:937
-msgid "Search in current note"
-msgstr "現在のノートを検索"
-
-#: ElectronClient/app.js:949
+#: ElectronClient/app.js:776
 msgid "&View"
 msgstr "表示(&V)"
 
-#: ElectronClient/app.js:951
-msgid "Toggle sidebar"
-msgstr "サイドバーの表示切り替え"
-
-#: ElectronClient/app.js:964
+#: ElectronClient/app.js:782
 msgid "Layout button sequence"
 msgstr "レイアウトボタンによる切り替え順"
 
-#: ElectronClient/app.js:968
-msgid "Toggle note list"
-msgstr "ノート一覧の表示切り替え"
-
-#: ElectronClient/app.js:977
-msgid "Toggle editor layout"
-msgstr "エディターレイアウトの表示切り替え"
-
-#: ElectronClient/app.js:1025
+#: ElectronClient/app.js:822
 msgid "Focus"
 msgstr "フォーカス"
 
-#: ElectronClient/app.js:1032
+#: ElectronClient/app.js:828
 msgid "Actual Size"
 msgstr "100%%表示"
 
-#: ElectronClient/app.js:1043 ElectronClient/app.js:1049
+#: ElectronClient/app.js:839 ElectronClient/app.js:845
 msgid "Zoom In"
 msgstr "ズームイン"
 
-#: ElectronClient/app.js:1056
+#: ElectronClient/app.js:852
 msgid "Zoom Out"
 msgstr "ズームアウト"
 
-#: ElectronClient/app.js:1064
+#: ElectronClient/app.js:860
 msgid "&Note"
 msgstr "ノート(&N)"
 
-#: ElectronClient/app.js:1094
-msgid "Statistics..."
-msgstr "統計..."
-
-#: ElectronClient/app.js:1104
+#: ElectronClient/app.js:870
 msgid "&Tools"
 msgstr "ツール(&T)"
 
-#: ElectronClient/app.js:1108
+#: ElectronClient/app.js:874
 msgid "&Help"
 msgstr "ヘルプ(&H)"
 
-#: ElectronClient/app.js:1111
+#: ElectronClient/app.js:877
 msgid "Website and documentation"
 msgstr "Webサイトとドキュメント"
 
-#: ElectronClient/app.js:1115
+#: ElectronClient/app.js:881
 msgid "Joplin Forum"
 msgstr "Joplinフォーラム"
 
-#: ElectronClient/app.js:1118
+#: ElectronClient/app.js:884
 #: ReactNativeClient/lib/components/screens/config.js:495
 msgid "Make a donation"
 msgstr "寄付する"
 
-#: ElectronClient/app.js:1130
+#: ElectronClient/app.js:894
 msgid "Toggle development tools"
 msgstr "開発者ツールのオンオフを切り替える"
 
-#: ElectronClient/app.js:1301
+#: ElectronClient/app.js:1037
 #, javascript-format
 msgid "Open %s"
 msgstr "%s を開く"
 
-#: ElectronClient/app.js:1303
+#: ElectronClient/app.js:1039
 msgid "Exit"
 msgstr "終了"
 
@@ -2095,7 +2168,7 @@ msgstr ""
 
 #: ReactNativeClient/lib/registry.js:156
 msgid ""
-"Could not synchronize with OneDrive.\n"
+"Could not synchronise with OneDrive.\n"
 "\n"
 "This error often happens when using OneDrive for Business, which "
 "unfortunately cannot be supported.\n"
@@ -2119,12 +2192,16 @@ msgstr "不明なログレベル: %s"
 msgid "Unknown level ID: %s"
 msgstr "不明なレベルID: %s"
 
+#: ReactNativeClient/lib/SyncTargetAmazonS3.js:28
+msgid "AWS S3"
+msgstr ""
+
 #: ReactNativeClient/lib/SyncTargetDropbox.js:25
 msgid "Dropbox"
 msgstr "Dropbox"
 
 #: ReactNativeClient/lib/shim-init-node.js:90
-#: ReactNativeClient/lib/components/screens/note.js:519
+#: ReactNativeClient/lib/components/screens/note.js:523
 #, javascript-format
 msgid ""
 "You are about to attach a large image (%dx%d pixels). Would you like to "
@@ -2138,25 +2215,25 @@ msgstr ""
 msgid "Cannot access %s"
 msgstr "%sにアクセスできません"
 
-#: ReactNativeClient/lib/models/Folder.js:27
+#: ReactNativeClient/lib/models/Folder.js:28
 #: ReactNativeClient/lib/models/Note.js:25
 msgid "title"
 msgstr "題名"
 
-#: ReactNativeClient/lib/models/Folder.js:28
+#: ReactNativeClient/lib/models/Folder.js:29
 #: ReactNativeClient/lib/models/Note.js:26
 msgid "updated date"
 msgstr "アップデート日"
 
-#: ReactNativeClient/lib/models/Folder.js:88
+#: ReactNativeClient/lib/models/Folder.js:89
 msgid "Conflicts"
 msgstr "衝突"
 
-#: ReactNativeClient/lib/models/Folder.js:386
+#: ReactNativeClient/lib/models/Folder.js:374
 msgid "Cannot move notebook to this location"
 msgstr "ノートをノートブック \"%s\" に移動できません"
 
-#: ReactNativeClient/lib/models/Folder.js:438
+#: ReactNativeClient/lib/models/Folder.js:426
 #, javascript-format
 msgid "Notebooks cannot be named \"%s\", which is a reserved title."
 msgstr ""
@@ -2260,11 +2337,23 @@ msgstr "WebDAV ユーザー名"
 msgid "WebDAV password"
 msgstr "WevDAV パスワード"
 
-#: ReactNativeClient/lib/models/Setting.js:195
+#: ReactNativeClient/lib/models/Setting.js:189
+msgid "AWS S3 bucket"
+msgstr ""
+
+#: ReactNativeClient/lib/models/Setting.js:200
+msgid "AWS key"
+msgstr ""
+
+#: ReactNativeClient/lib/models/Setting.js:210
+msgid "AWS secret"
+msgstr ""
+
+#: ReactNativeClient/lib/models/Setting.js:224
 msgid "Attachment download behaviour"
 msgstr "添付ファイルのダウンロードの動作"
 
-#: ReactNativeClient/lib/models/Setting.js:196
+#: ReactNativeClient/lib/models/Setting.js:225
 msgid ""
 "In \"Manual\" mode, attachments are downloaded only when you click on them. "
 "In \"Auto\", they are downloaded when you open the note. In \"Always\", all "
@@ -2274,188 +2363,188 @@ msgstr ""
 "動\"はノートを開いたときにダウンロードをします。\"いつも\"はノートを開いてい"
 "るか閉じているかにかかわらずダウンロードをします。"
 
-#: ReactNativeClient/lib/models/Setting.js:199
+#: ReactNativeClient/lib/models/Setting.js:228
 msgid "Always"
 msgstr "いつも"
 
-#: ReactNativeClient/lib/models/Setting.js:200
+#: ReactNativeClient/lib/models/Setting.js:229
 msgid "Manual"
 msgstr "手動"
 
-#: ReactNativeClient/lib/models/Setting.js:201
+#: ReactNativeClient/lib/models/Setting.js:230
 msgid "Auto"
 msgstr "自動"
 
-#: ReactNativeClient/lib/models/Setting.js:206
+#: ReactNativeClient/lib/models/Setting.js:247
 msgid "Max concurrent connections"
 msgstr "最大同時接続数"
 
-#: ReactNativeClient/lib/models/Setting.js:215
+#: ReactNativeClient/lib/models/Setting.js:256
 msgid "Language"
 msgstr "言語"
 
-#: ReactNativeClient/lib/models/Setting.js:225
+#: ReactNativeClient/lib/models/Setting.js:266
 msgid "Date format"
 msgstr "日付の形式"
 
-#: ReactNativeClient/lib/models/Setting.js:244
+#: ReactNativeClient/lib/models/Setting.js:285
 msgid "Time format"
 msgstr "時刻の形式"
 
-#: ReactNativeClient/lib/models/Setting.js:263
+#: ReactNativeClient/lib/models/Setting.js:304
 msgid "Theme"
 msgstr "テーマ"
 
-#: ReactNativeClient/lib/models/Setting.js:274
+#: ReactNativeClient/lib/models/Setting.js:315
 msgid "Automatically switch theme to match system theme"
 msgstr "システムのテーマにあわせて自動設定"
 
-#: ReactNativeClient/lib/models/Setting.js:286
+#: ReactNativeClient/lib/models/Setting.js:327
 msgid "Preferred light theme"
 msgstr "優先ライトテーマ"
 
-#: ReactNativeClient/lib/models/Setting.js:300
+#: ReactNativeClient/lib/models/Setting.js:341
 msgid "Preferred dark theme"
 msgstr "優先ダークテーマ"
 
-#: ReactNativeClient/lib/models/Setting.js:305
+#: ReactNativeClient/lib/models/Setting.js:346
 msgid "Show note counts"
 msgstr "ノートの数を表示"
 
-#: ReactNativeClient/lib/models/Setting.js:314
-#: ReactNativeClient/lib/models/Setting.js:316
-#: ReactNativeClient/lib/models/Setting.js:317
+#: ReactNativeClient/lib/models/Setting.js:355
+#: ReactNativeClient/lib/models/Setting.js:357
+#: ReactNativeClient/lib/models/Setting.js:358
 msgid "Split View"
 msgstr "分割ビュー"
 
-#: ReactNativeClient/lib/models/Setting.js:314
+#: ReactNativeClient/lib/models/Setting.js:355
 #, javascript-format
 msgid "%s / %s / %s"
 msgstr "%s / %s / %s"
 
-#: ReactNativeClient/lib/models/Setting.js:315
-#: ReactNativeClient/lib/models/Setting.js:316
-#: ReactNativeClient/lib/models/Setting.js:317
+#: ReactNativeClient/lib/models/Setting.js:356
+#: ReactNativeClient/lib/models/Setting.js:357
+#: ReactNativeClient/lib/models/Setting.js:358
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ReactNativeClient/lib/models/Setting.js:320
+#: ReactNativeClient/lib/models/Setting.js:361
 msgid "Uncompleted to-dos on top"
 msgstr "未完のToDoをリストの上部に表示"
 
-#: ReactNativeClient/lib/models/Setting.js:321
+#: ReactNativeClient/lib/models/Setting.js:362
 msgid "Show completed to-dos"
 msgstr "完了したToDoを表示"
 
-#: ReactNativeClient/lib/models/Setting.js:346
+#: ReactNativeClient/lib/models/Setting.js:387
 msgid "Auto-pair braces, parenthesis, quotations, etc."
 msgstr "始めの括弧や引用符入力時に終わりの括弧や引用符を自動入力する"
 
-#: ReactNativeClient/lib/models/Setting.js:354
+#: ReactNativeClient/lib/models/Setting.js:395
 msgid "Use CodeMirror as the code editor (WARNING: BETA)."
-msgstr ""
+msgstr "コードエディターとしてCodeMirrorを使う (ベータ版のため注意)"
 
-#: ReactNativeClient/lib/models/Setting.js:356
-#: ReactNativeClient/lib/models/Setting.js:374
+#: ReactNativeClient/lib/models/Setting.js:397
+#: ReactNativeClient/lib/models/Setting.js:415
 msgid "Reverse sort order"
 msgstr "逆順に並び替え"
 
-#: ReactNativeClient/lib/models/Setting.js:363
+#: ReactNativeClient/lib/models/Setting.js:404
 msgid "Sort notebooks by"
 msgstr "ノートブックのソート方法"
 
-#: ReactNativeClient/lib/models/Setting.js:375
+#: ReactNativeClient/lib/models/Setting.js:416
 msgid "Save geo-location with notes"
 msgstr "ノートに位置情報を保存"
 
-#: ReactNativeClient/lib/models/Setting.js:394
+#: ReactNativeClient/lib/models/Setting.js:435
 msgid "When creating a new to-do:"
 msgstr "新しいToDoを作成した場合:"
 
-#: ReactNativeClient/lib/models/Setting.js:397
-#: ReactNativeClient/lib/models/Setting.js:412
+#: ReactNativeClient/lib/models/Setting.js:438
+#: ReactNativeClient/lib/models/Setting.js:453
 msgid "Focus title"
 msgstr "題名にフォーカス"
 
-#: ReactNativeClient/lib/models/Setting.js:398
-#: ReactNativeClient/lib/models/Setting.js:413
+#: ReactNativeClient/lib/models/Setting.js:439
+#: ReactNativeClient/lib/models/Setting.js:454
 msgid "Focus body"
 msgstr "本文にフォーカス"
 
-#: ReactNativeClient/lib/models/Setting.js:409
+#: ReactNativeClient/lib/models/Setting.js:450
 msgid "When creating a new note:"
 msgstr "新しいノートを作成した際:"
 
-#: ReactNativeClient/lib/models/Setting.js:423
+#: ReactNativeClient/lib/models/Setting.js:464
 msgid "Enable soft breaks"
 msgstr "ソフトブレークを有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:424
+#: ReactNativeClient/lib/models/Setting.js:465
 msgid "Enable typographer support"
 msgstr "Typographer（記号文字）を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:425
+#: ReactNativeClient/lib/models/Setting.js:466
 msgid "Enable math expressions"
 msgstr "数式表現を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:426
+#: ReactNativeClient/lib/models/Setting.js:467
 msgid "Enable Fountain syntax support"
 msgstr "Fountain構文を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:427
+#: ReactNativeClient/lib/models/Setting.js:468
 msgid "Enable Mermaid diagrams support"
 msgstr "Mermaid（作図機能）を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:429
+#: ReactNativeClient/lib/models/Setting.js:470
 msgid "Enable ==mark== syntax"
 msgstr "==ハイライト==構文を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:430
+#: ReactNativeClient/lib/models/Setting.js:471
 msgid "Enable footnotes"
 msgstr "脚注を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:431
+#: ReactNativeClient/lib/models/Setting.js:472
 msgid "Enable table of contents extension"
 msgstr "目次拡張を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:432
+#: ReactNativeClient/lib/models/Setting.js:473
 msgid "Enable ~sub~ syntax"
 msgstr "~下付きテキスト~構文を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:433
+#: ReactNativeClient/lib/models/Setting.js:474
 msgid "Enable ^sup^ syntax"
 msgstr "^上付きテキスト^構文を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:434
+#: ReactNativeClient/lib/models/Setting.js:475
 msgid "Enable deflist syntax"
 msgstr "定義リスト構文を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:435
+#: ReactNativeClient/lib/models/Setting.js:476
 msgid "Enable abbreviation syntax"
 msgstr "略語構文を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:436
+#: ReactNativeClient/lib/models/Setting.js:477
 msgid "Enable markdown emoji"
 msgstr "マークダウン絵文字を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:437
+#: ReactNativeClient/lib/models/Setting.js:478
 msgid "Enable ++insert++ syntax"
 msgstr "++追加++構文を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:438
+#: ReactNativeClient/lib/models/Setting.js:479
 msgid "Enable multimarkdown table extension"
 msgstr "MultiMarkdownのテーブル拡張を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:450
+#: ReactNativeClient/lib/models/Setting.js:491
 msgid "Show tray icon"
 msgstr "トレイアイコンの表示"
 
-#: ReactNativeClient/lib/models/Setting.js:452
+#: ReactNativeClient/lib/models/Setting.js:493
 msgid "Note: Does not work in all desktop environments."
 msgstr "注意: すべてのデスクトップ環境で動作するわけではありません。"
 
-#: ReactNativeClient/lib/models/Setting.js:452
+#: ReactNativeClient/lib/models/Setting.js:493
 msgid ""
 "This will allow Joplin to run in the background. It is recommended to enable "
 "this setting so that your notes are constantly being synchronised, thus "
@@ -2464,76 +2553,76 @@ msgstr ""
 "有効にすると、Joplinがバックグラウンドで動作するようになります。ノートを定期"
 "的に同期し、衝突を減らすために強くおすすめする設定です。"
 
-#: ReactNativeClient/lib/models/Setting.js:456
+#: ReactNativeClient/lib/models/Setting.js:497
 msgid "Start application minimised in the tray icon"
 msgstr "アプリケーションをトレイアイコンで最小化して起動"
 
-#: ReactNativeClient/lib/models/Setting.js:474
+#: ReactNativeClient/lib/models/Setting.js:516
 msgid "Editor font size"
 msgstr "エディターのフォントサイズ"
 
-#: ReactNativeClient/lib/models/Setting.js:482
+#: ReactNativeClient/lib/models/Setting.js:524
 msgid "Editor font"
 msgstr "エディターのフォント"
 
-#: ReactNativeClient/lib/models/Setting.js:506
+#: ReactNativeClient/lib/models/Setting.js:548
 msgid "Editor font family"
 msgstr "エディターのフォントファミリー"
 
-#: ReactNativeClient/lib/models/Setting.js:508
-#, fuzzy
+#: ReactNativeClient/lib/models/Setting.js:550
 msgid ""
 "This should be a *monospace* font or some elements will render incorrectly. "
 "If the font is incorrect or empty, it will default to a generic monospace "
 "font."
 msgstr ""
-"ここは *monospace* (等幅)フォントを選択しないと正しく動作しません。フォントが"
-"誤っているか空の場合は、一般的な等幅フォントが指定されるでしょう。"
+"ここは *monospace* (等幅)フォントを指定しないと内容によっては正しく表示されな"
+"い場合があります。指定したフォントが誤っているか空の場合は、一般的な等幅フォ"
+"ントが使用されます。"
 
-#: ReactNativeClient/lib/models/Setting.js:547
+#: ReactNativeClient/lib/models/Setting.js:589
 msgid "Custom stylesheet for Joplin-wide app styles"
 msgstr "カスタムスタイルシート (アプリ全般の外観調整用)"
 
-#: ReactNativeClient/lib/models/Setting.js:553
+#: ReactNativeClient/lib/models/Setting.js:595
 msgid "Automatically update the application"
 msgstr "アプリケーションを自動的にアップデート"
 
-#: ReactNativeClient/lib/models/Setting.js:554
+#: ReactNativeClient/lib/models/Setting.js:596
 msgid "Get pre-releases when checking for updates"
 msgstr "更新をチェックする時、開発版を取得する"
 
-#: ReactNativeClient/lib/models/Setting.js:554
+#: ReactNativeClient/lib/models/Setting.js:596
 #, javascript-format
 msgid "See the pre-release page for more details: %s"
 msgstr "詳細についてはプレリリースページを参照してください: %s"
 
-#: ReactNativeClient/lib/models/Setting.js:562
+#: ReactNativeClient/lib/models/Setting.js:604
 msgid "Synchronisation interval"
 msgstr "同期間隔"
 
-#: ReactNativeClient/lib/models/Setting.js:566
-#: ReactNativeClient/lib/models/Setting.js:567
-#: ReactNativeClient/lib/models/Setting.js:568
+#: ReactNativeClient/lib/models/Setting.js:608
+#: ReactNativeClient/lib/models/Setting.js:609
+#: ReactNativeClient/lib/models/Setting.js:610
 #, javascript-format
 msgid "%d minutes"
 msgstr "%d 分"
 
-#: ReactNativeClient/lib/models/Setting.js:569
+#: ReactNativeClient/lib/models/Setting.js:611
 #, javascript-format
 msgid "%d hour"
 msgstr "%d 時間"
 
-#: ReactNativeClient/lib/models/Setting.js:570
-#: ReactNativeClient/lib/models/Setting.js:571
+#: ReactNativeClient/lib/models/Setting.js:612
+#: ReactNativeClient/lib/models/Setting.js:613
 #, javascript-format
 msgid "%d hours"
 msgstr "%d 時間"
 
-#: ReactNativeClient/lib/models/Setting.js:580
+#: ReactNativeClient/lib/models/Setting.js:622
 msgid "Text editor command"
 msgstr "テキストエディターのコマンド"
 
-#: ReactNativeClient/lib/models/Setting.js:580
+#: ReactNativeClient/lib/models/Setting.js:622
 msgid ""
 "The editor command (may include arguments) that will be used to open a note. "
 "If none is provided it will try to auto-detect the default editor."
@@ -2541,67 +2630,67 @@ msgstr ""
 "このエディターコマンド（と引数）はノートを開く際に使用されます。空欄の場合は"
 "既定のエディターを自動的に検出します。"
 
-#: ReactNativeClient/lib/models/Setting.js:581
+#: ReactNativeClient/lib/models/Setting.js:623
 msgid "Page size for PDF export"
 msgstr "エクスポートするPDFのページサイズ"
 
-#: ReactNativeClient/lib/models/Setting.js:583
+#: ReactNativeClient/lib/models/Setting.js:625
 msgid "A4"
 msgstr "A4"
 
-#: ReactNativeClient/lib/models/Setting.js:584
+#: ReactNativeClient/lib/models/Setting.js:626
 msgid "Letter"
 msgstr "Letter"
 
-#: ReactNativeClient/lib/models/Setting.js:585
+#: ReactNativeClient/lib/models/Setting.js:627
 msgid "A3"
 msgstr "A3"
 
-#: ReactNativeClient/lib/models/Setting.js:586
+#: ReactNativeClient/lib/models/Setting.js:628
 msgid "A5"
 msgstr "A5"
 
-#: ReactNativeClient/lib/models/Setting.js:587
+#: ReactNativeClient/lib/models/Setting.js:629
 msgid "Tabloid"
 msgstr "Tabloid"
 
-#: ReactNativeClient/lib/models/Setting.js:588
+#: ReactNativeClient/lib/models/Setting.js:630
 msgid "Legal"
 msgstr "Legal"
 
-#: ReactNativeClient/lib/models/Setting.js:591
+#: ReactNativeClient/lib/models/Setting.js:633
 msgid "Page orientation for PDF export"
 msgstr "PDFページの向き"
 
-#: ReactNativeClient/lib/models/Setting.js:593
+#: ReactNativeClient/lib/models/Setting.js:635
 msgid "Portrait"
 msgstr "縦"
 
-#: ReactNativeClient/lib/models/Setting.js:594
+#: ReactNativeClient/lib/models/Setting.js:636
 msgid "Landscape"
 msgstr "横"
 
-#: ReactNativeClient/lib/models/Setting.js:605
+#: ReactNativeClient/lib/models/Setting.js:647
 msgid "Keyboard Mode"
 msgstr "キーバインド"
 
-#: ReactNativeClient/lib/models/Setting.js:608
+#: ReactNativeClient/lib/models/Setting.js:650
 msgid "Default"
 msgstr "標準"
 
-#: ReactNativeClient/lib/models/Setting.js:609
+#: ReactNativeClient/lib/models/Setting.js:651
 msgid "Emacs"
 msgstr "Emacs"
 
-#: ReactNativeClient/lib/models/Setting.js:610
+#: ReactNativeClient/lib/models/Setting.js:652
 msgid "Vim"
 msgstr "Vim"
 
-#: ReactNativeClient/lib/models/Setting.js:625
+#: ReactNativeClient/lib/models/Setting.js:667
 msgid "Custom TLS certificates"
 msgstr "TLS証明書のカスタマイズ"
 
-#: ReactNativeClient/lib/models/Setting.js:626
+#: ReactNativeClient/lib/models/Setting.js:668
 msgid ""
 "Comma-separated list of paths to directories to load the certificates from, "
 "or path to individual cert files. For example: /my/cert_dir, /other/custom."
@@ -2613,15 +2702,15 @@ msgstr ""
 "注意点として、TLSの設定を変更する場合は\"同期の設定を確認\"をクリックする前に"
 "保存する必要があります。"
 
-#: ReactNativeClient/lib/models/Setting.js:638
+#: ReactNativeClient/lib/models/Setting.js:680
 msgid "Ignore TLS certificate errors"
 msgstr "TLS証明書のエラーを無視"
 
-#: ReactNativeClient/lib/models/Setting.js:647
+#: ReactNativeClient/lib/models/Setting.js:689
 msgid "Fail-safe"
 msgstr "フェイルセーフ"
 
-#: ReactNativeClient/lib/models/Setting.js:648
+#: ReactNativeClient/lib/models/Setting.js:690
 msgid ""
 "Fail-safe: Do not wipe out local data when sync target is empty (often the "
 "result of a misconfiguration or bug)"
@@ -2629,7 +2718,7 @@ msgstr ""
 "フェイルセーフ: 同期先が空の場合、設定ミスやバグによる可能性を考慮して、ロー"
 "カルデータを消去しないようにする"
 
-#: ReactNativeClient/lib/models/Setting.js:652
+#: ReactNativeClient/lib/models/Setting.js:694
 msgid ""
 "Specify the port that should be used by the API server. If not set, a "
 "default will be used."
@@ -2637,30 +2726,30 @@ msgstr ""
 "APIサーバーが使用するポートを指定してください。未設定時はデフォルトのポートが"
 "使用されます。"
 
-#: ReactNativeClient/lib/models/Setting.js:660
+#: ReactNativeClient/lib/models/Setting.js:702
 msgid "Enable note history"
 msgstr "ノートの履歴を有効にする"
 
-#: ReactNativeClient/lib/models/Setting.js:670
+#: ReactNativeClient/lib/models/Setting.js:712
 msgid "days"
 msgstr "日"
 
-#: ReactNativeClient/lib/models/Setting.js:670
+#: ReactNativeClient/lib/models/Setting.js:712
 #, javascript-format
 msgid "%d days"
 msgstr "%d 日"
 
-#: ReactNativeClient/lib/models/Setting.js:672
+#: ReactNativeClient/lib/models/Setting.js:714
 msgid "Keep note history for"
 msgstr "ノート履歴の保存期間"
 
-#: ReactNativeClient/lib/models/Setting.js:699
+#: ReactNativeClient/lib/models/Setting.js:741
 msgid "Notebook list growth factor"
 msgstr "ノートブック一覧のストレッチ係数"
 
-#: ReactNativeClient/lib/models/Setting.js:701
-#: ReactNativeClient/lib/models/Setting.js:714
-#: ReactNativeClient/lib/models/Setting.js:727
+#: ReactNativeClient/lib/models/Setting.js:743
+#: ReactNativeClient/lib/models/Setting.js:756
+#: ReactNativeClient/lib/models/Setting.js:769
 msgid ""
 "The factor property sets how the item will grow or shrink to fit the "
 "available space in its container with respect to the other items. Thus an "
@@ -2671,52 +2760,52 @@ msgstr ""
 "えば、係数が2の表示項目は、係数が1の項目の2倍の大きさで表示されます。係数の変"
 "更はアプリケーションの再起動後に反映されます。"
 
-#: ReactNativeClient/lib/models/Setting.js:712
+#: ReactNativeClient/lib/models/Setting.js:754
 msgid "Note list growth factor"
 msgstr "ノート一覧のストレッチ係数"
 
-#: ReactNativeClient/lib/models/Setting.js:725
+#: ReactNativeClient/lib/models/Setting.js:767
 msgid "Note area growth factor"
 msgstr "ノートエリアのストレッチ係数"
 
-#: ReactNativeClient/lib/models/Setting.js:877
+#: ReactNativeClient/lib/models/Setting.js:919
 #, javascript-format
 msgid "Invalid option value: \"%s\". Possible values are: %s."
 msgstr "無効な設定値: \"%s\"。有効な値は: %sです。"
 
-#: ReactNativeClient/lib/models/Setting.js:1205
+#: ReactNativeClient/lib/models/Setting.js:1247
 msgid "General"
 msgstr "全般"
 
-#: ReactNativeClient/lib/models/Setting.js:1206
+#: ReactNativeClient/lib/models/Setting.js:1248
 msgid "Synchronisation"
 msgstr "同期"
 
-#: ReactNativeClient/lib/models/Setting.js:1207
+#: ReactNativeClient/lib/models/Setting.js:1249
 msgid "Appearance"
 msgstr "スタイル"
 
-#: ReactNativeClient/lib/models/Setting.js:1208
+#: ReactNativeClient/lib/models/Setting.js:1250
 msgid "Note"
 msgstr "ノート"
 
-#: ReactNativeClient/lib/models/Setting.js:1209
+#: ReactNativeClient/lib/models/Setting.js:1251
 msgid "Plugins"
 msgstr "プラグイン"
 
-#: ReactNativeClient/lib/models/Setting.js:1210
+#: ReactNativeClient/lib/models/Setting.js:1252
 msgid "Application"
 msgstr "アプリケーション"
 
-#: ReactNativeClient/lib/models/Setting.js:1212
+#: ReactNativeClient/lib/models/Setting.js:1254
 msgid "Encryption"
 msgstr "暗号化"
 
-#: ReactNativeClient/lib/models/Setting.js:1213
+#: ReactNativeClient/lib/models/Setting.js:1255
 msgid "Web Clipper"
 msgstr "Webクリッパー"
 
-#: ReactNativeClient/lib/models/Setting.js:1218
+#: ReactNativeClient/lib/models/Setting.js:1260
 msgid ""
 "These plugins enhance the Markdown renderer with additional features. Please "
 "note that, while these features might be useful, they are not standard "
@@ -2733,7 +2822,7 @@ msgstr ""
 "失われてしまいます。どのプラグインがWYSIWYGに対応しているかは下記の一覧でご確"
 "認ください。"
 
-#: ReactNativeClient/lib/models/Setting.js:1219
+#: ReactNativeClient/lib/models/Setting.js:1261
 #, javascript-format
 msgid "Notes and settings are stored in: %s"
 msgstr "ノートと設定は次の場所に保存されます: %s"
@@ -2751,19 +2840,34 @@ msgid "Downloaded"
 msgstr "ダウンロード済み"
 
 #: ReactNativeClient/lib/models/Resource.js:371
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Attachment conflict: \"%s\""
-msgstr "添付ファイル"
+msgstr "添付ファイルの衝突: \"%s\""
 
 #: ReactNativeClient/lib/models/Resource.js:372
-#, fuzzy, javascript-format
+#, javascript-format
 msgid ""
 "There was a [conflict](%s) on the attachment below.\n"
 "\n"
 "%s"
-msgstr "この添付ファイルをダウンロードするときにエラーが発生しました:"
+msgstr ""
+"下記の添付ファイルで[衝突](%s)が発生しました。\n"
+"\n"
+"%s"
 
-#: ReactNativeClient/lib/models/Tag.js:183
+#: ReactNativeClient/lib/models/Tag.js:384
+msgid "Cannot move tag to this location."
+msgstr "タグをこの場所に移動することはできません。"
+
+#: ReactNativeClient/lib/models/Tag.js:429
+msgid "Tag name cannot start or end with a `/`."
+msgstr "タグ名の先頭と末尾に `/` を使わないでください。"
+
+#: ReactNativeClient/lib/models/Tag.js:431
+msgid "Tag name cannot contain `//`."
+msgstr "タグ名には連続するスラッシュ `//` を入れないでください。"
+
+#: ReactNativeClient/lib/models/Tag.js:482
 #, javascript-format
 msgid "The tag \"%s\" already exists. Please choose a different name."
 msgstr "タグ \"%s\" はすでにあります。ほかの名前を選択してください。"
@@ -2780,21 +2884,21 @@ msgstr "任意順"
 msgid "This note does not have geolocation information."
 msgstr "このノートには位置情報がありません。"
 
-#: ReactNativeClient/lib/models/Note.js:468
+#: ReactNativeClient/lib/models/Note.js:466
 #, javascript-format
 msgid "Cannot copy note to \"%s\" notebook"
 msgstr "ノートをノートブック \"%s\" にコピーできません"
 
-#: ReactNativeClient/lib/models/Note.js:479
+#: ReactNativeClient/lib/models/Note.js:477
 #, javascript-format
 msgid "Cannot move note to \"%s\" notebook"
 msgstr "ノートをノートブック \"%s\" に移動できません"
 
-#: ReactNativeClient/lib/models/BaseItem.js:709
+#: ReactNativeClient/lib/models/BaseItem.js:719
 msgid "Encrypted"
 msgstr "暗号化済"
 
-#: ReactNativeClient/lib/models/BaseItem.js:769
+#: ReactNativeClient/lib/models/BaseItem.js:779
 msgid "Encrypted items cannot be modified"
 msgstr "暗号化したアイテムは修正できません"
 
@@ -2802,14 +2906,14 @@ msgstr "暗号化したアイテムは修正できません"
 msgid "OneDrive Dev (For testing only)"
 msgstr "OneDrive Dev (テスト用途のみ)"
 
-#: ReactNativeClient/lib/BaseApplication.js:138
-#: ReactNativeClient/lib/BaseApplication.js:151
-#: ReactNativeClient/lib/BaseApplication.js:182
+#: ReactNativeClient/lib/BaseApplication.js:139
+#: ReactNativeClient/lib/BaseApplication.js:152
+#: ReactNativeClient/lib/BaseApplication.js:183
 #, javascript-format
 msgid "Usage: %s"
 msgstr "使用方法: %s"
 
-#: ReactNativeClient/lib/BaseApplication.js:217
+#: ReactNativeClient/lib/BaseApplication.js:218
 #, javascript-format
 msgid "Unknown flag: %s"
 msgstr "不明なフラグ: %s"
@@ -2972,11 +3076,11 @@ msgstr "ノートブックの編集"
 msgid "Enter notebook title"
 msgstr "ノートブックの題名を入力"
 
-#: ReactNativeClient/lib/components/screens/onedrive-login.js:98
+#: ReactNativeClient/lib/components/screens/onedrive-login.js:109
 msgid "Login with OneDrive"
 msgstr "OneDriveログイン"
 
-#: ReactNativeClient/lib/components/screens/onedrive-login.js:109
+#: ReactNativeClient/lib/components/screens/onedrive-login.js:120
 #: ReactNativeClient/lib/components/screens/log.js:109
 #: ReactNativeClient/lib/components/screens/status.js:144
 msgid "Refresh"
@@ -2990,11 +3094,11 @@ msgstr "新しいタグ:"
 msgid "Type new tags or select from list"
 msgstr "新しいタグを入力するか、リストから選択してください"
 
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:51
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:55
 msgid "Login with Dropbox"
 msgstr "Dropboxでログイン"
 
-#: ReactNativeClient/lib/components/screens/dropbox-login.js:62
+#: ReactNativeClient/lib/components/screens/dropbox-login.js:66
 msgid "Enter code here"
 msgstr "コードをここに入力"
 
@@ -3004,7 +3108,7 @@ msgid "Master Key %s"
 msgstr "マスターキー %s"
 
 #: ReactNativeClient/lib/components/screens/encryption-config.js:120
-#: ReactNativeClient/lib/components/screens/note.js:769
+#: ReactNativeClient/lib/components/screens/note.js:773
 #, javascript-format
 msgid "Created: %s"
 msgstr "作成しました：%s"
@@ -3214,66 +3318,66 @@ msgstr "Joplinモバイルアプリは次のタイプのリンクをまだサポ
 msgid "Links with protocol \"%s\" are not supported"
 msgstr "プロトコル \"%s\" でのリンクはサポートされていません"
 
-#: ReactNativeClient/lib/components/screens/note.js:614
+#: ReactNativeClient/lib/components/screens/note.js:618
 #, javascript-format
 msgid "Unsupported image type: %s"
 msgstr "サポートされていない画像の形式: %s"
 
-#: ReactNativeClient/lib/components/screens/note.js:770
+#: ReactNativeClient/lib/components/screens/note.js:774
 #, javascript-format
 msgid "Updated: %s"
 msgstr "アップデート: %s"
 
-#: ReactNativeClient/lib/components/screens/note.js:774
+#: ReactNativeClient/lib/components/screens/note.js:778
 msgid "View on map"
 msgstr "地図上に表示"
 
-#: ReactNativeClient/lib/components/screens/note.js:781
+#: ReactNativeClient/lib/components/screens/note.js:785
 msgid "Go to source URL"
 msgstr "ソースURLに行く"
 
-#: ReactNativeClient/lib/components/screens/note.js:809
+#: ReactNativeClient/lib/components/screens/note.js:813
 msgid "Attach..."
 msgstr "添付..."
 
-#: ReactNativeClient/lib/components/screens/note.js:811
+#: ReactNativeClient/lib/components/screens/note.js:815
 msgid "Choose an option"
 msgstr "オプションを選択"
 
-#: ReactNativeClient/lib/components/screens/note.js:811
+#: ReactNativeClient/lib/components/screens/note.js:815
 msgid "Take photo"
 msgstr "写真を撮影する"
 
-#: ReactNativeClient/lib/components/screens/note.js:811
+#: ReactNativeClient/lib/components/screens/note.js:815
 msgid "Attach photo"
 msgstr "写真を添付"
 
-#: ReactNativeClient/lib/components/screens/note.js:811
+#: ReactNativeClient/lib/components/screens/note.js:815
 msgid "Attach any file"
 msgstr "ファイルを添付"
 
-#: ReactNativeClient/lib/components/screens/note.js:830
+#: ReactNativeClient/lib/components/screens/note.js:834
 msgid "Share"
 msgstr "共有"
 
-#: ReactNativeClient/lib/components/screens/note.js:844
+#: ReactNativeClient/lib/components/screens/note.js:848
 msgid "Convert to note"
 msgstr "ノートに変換"
 
-#: ReactNativeClient/lib/components/screens/note.js:844
+#: ReactNativeClient/lib/components/screens/note.js:848
 msgid "Convert to todo"
 msgstr "ToDoに変換"
 
-#: ReactNativeClient/lib/components/screens/note.js:858
+#: ReactNativeClient/lib/components/screens/note.js:862
 msgid "Properties"
 msgstr "プロパティ"
 
-#: ReactNativeClient/lib/components/screens/note.js:1038
-#: ReactNativeClient/lib/components/screens/note.js:1096
+#: ReactNativeClient/lib/components/screens/note.js:1042
+#: ReactNativeClient/lib/components/screens/note.js:1100
 msgid "Add body"
 msgstr "本文を追加"
 
-#: ReactNativeClient/lib/components/screens/note.js:1146
+#: ReactNativeClient/lib/components/screens/note.js:1150
 msgid "Add title"
 msgstr "題名を追加"
 
@@ -3289,60 +3393,60 @@ msgstr ""
 "トークンの更新ができませんでした。認証データがありません。同期を再度行うこと"
 "で解決することがあります。"
 
-#: ReactNativeClient/lib/synchronizer.js:93
+#: ReactNativeClient/lib/synchronizer.js:94
 #, javascript-format
 msgid "Created local items: %d."
 msgstr "ローカルアイテムの作成: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:94
+#: ReactNativeClient/lib/synchronizer.js:95
 #, javascript-format
 msgid "Updated local items: %d."
 msgstr "ローカルアイテムの更新: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:95
+#: ReactNativeClient/lib/synchronizer.js:96
 #, javascript-format
 msgid "Created remote items: %d."
 msgstr "リモートアイテムの作成: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:96
+#: ReactNativeClient/lib/synchronizer.js:97
 #, javascript-format
 msgid "Updated remote items: %d."
 msgstr "リモートアイテムの更新: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:97
+#: ReactNativeClient/lib/synchronizer.js:98
 #, javascript-format
 msgid "Deleted local items: %d."
 msgstr "ローカルアイテムの削除: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:98
+#: ReactNativeClient/lib/synchronizer.js:99
 #, javascript-format
 msgid "Deleted remote items: %d."
 msgstr "リモートアイテムの削除: %d."
 
-#: ReactNativeClient/lib/synchronizer.js:99
+#: ReactNativeClient/lib/synchronizer.js:100
 #, javascript-format
 msgid "Fetched items: %d/%d."
 msgstr "取得したアイテム: %d/%d."
 
-#: ReactNativeClient/lib/synchronizer.js:101
+#: ReactNativeClient/lib/synchronizer.js:102
 msgid "Cancelling..."
 msgstr "中止中..."
 
-#: ReactNativeClient/lib/synchronizer.js:102
+#: ReactNativeClient/lib/synchronizer.js:103
 #, javascript-format
 msgid "Completed: %s"
 msgstr "完了: %s"
 
-#: ReactNativeClient/lib/synchronizer.js:103
+#: ReactNativeClient/lib/synchronizer.js:104
 #, javascript-format
 msgid "Last error: %s"
 msgstr "最新のエラー: %s"
 
-#: ReactNativeClient/lib/synchronizer.js:203
+#: ReactNativeClient/lib/synchronizer.js:204
 msgid "Idle"
 msgstr "待機中"
 
-#: ReactNativeClient/lib/synchronizer.js:204
+#: ReactNativeClient/lib/synchronizer.js:205
 msgid "In progress"
 msgstr "実行中"
 
@@ -3370,6 +3474,14 @@ msgstr "WebDAV"
 #: ReactNativeClient/lib/SyncTargetFilesystem.js:18
 msgid "File system"
 msgstr "ファイルシステム"
+
+#: ReactNativeClient/lib/commands/historyForward.js:16
+msgid "Forward"
+msgstr "進む"
+
+#: ReactNativeClient/lib/commands/synchronize.js:17
+msgid "Synchronize"
+msgstr "同期"
 
 #: ReactNativeClient/lib/services/InteropService_Exporter_Jex.js:29
 msgid "There is no data to export."
@@ -3492,17 +3604,17 @@ msgid "On %s: %s"
 msgstr "日時 %s: %s"
 
 #: ReactNativeClient/lib/services/InteropService.js:29
-#: ReactNativeClient/lib/services/InteropService.js:67
+#: ReactNativeClient/lib/services/InteropService.js:68
 msgid "Joplin Export File"
 msgstr "Joplin エクスポートファイル"
 
 #: ReactNativeClient/lib/services/InteropService.js:36
-#: ReactNativeClient/lib/services/InteropService.js:82
+#: ReactNativeClient/lib/services/InteropService.js:83
 msgid "Markdown"
 msgstr "Markdown"
 
 #: ReactNativeClient/lib/services/InteropService.js:41
-#: ReactNativeClient/lib/services/InteropService.js:72
+#: ReactNativeClient/lib/services/InteropService.js:73
 msgid "Joplin Export Directory"
 msgstr "Joplin エクスポートディレクトリ"
 
@@ -3514,37 +3626,37 @@ msgstr "Evernote エクスポートファイル (Markdownとしてインポー�
 msgid "Evernote Export File (as HTML)"
 msgstr "Evernote エクスポートファイル (HTMLとしてインポート)"
 
-#: ReactNativeClient/lib/services/InteropService.js:77
+#: ReactNativeClient/lib/services/InteropService.js:78
 msgid "Json Export Directory"
 msgstr "Json エクスポートディレクトリ"
 
-#: ReactNativeClient/lib/services/InteropService.js:89
+#: ReactNativeClient/lib/services/InteropService.js:90
 msgid "HTML File"
 msgstr "HTMLファイル"
 
-#: ReactNativeClient/lib/services/InteropService.js:94
+#: ReactNativeClient/lib/services/InteropService.js:95
 msgid "HTML Directory"
 msgstr "HTMLディレクトリ"
 
-#: ReactNativeClient/lib/services/InteropService.js:130
+#: ReactNativeClient/lib/services/InteropService.js:128
 msgid "File"
 msgstr "ファイル"
 
-#: ReactNativeClient/lib/services/InteropService.js:130
+#: ReactNativeClient/lib/services/InteropService.js:128
 msgid "Directory"
 msgstr "ディレクトリ"
 
 #: ReactNativeClient/lib/services/InteropService.js:174
 #, javascript-format
-msgid "Cannot load \"%s\" module for format \"%s\""
-msgstr "\"%s\" モジュール（\"%s\" フォーマット用）を読み込めません"
+msgid "Cannot load \"%s\" module for format \"%s\" and output \"%s\""
+msgstr "\"%s\" モジュール （\"%s / %s\" フォーマット用） を読み込めません"
 
 #: ReactNativeClient/lib/services/InteropService.js:232
 #, javascript-format
 msgid "Please specify import format for %s"
 msgstr "%s 用のインポートフォーマットを指定してくださあい"
 
-#: ReactNativeClient/lib/services/InteropService.js:364
+#: ReactNativeClient/lib/services/InteropService.js:361
 #, javascript-format
 msgid ""
 "This item is currently encrypted: %s \"%s\". Please wait for all items to be "
@@ -3553,42 +3665,17 @@ msgstr ""
 "このアイテムは現在暗号化されています: %s \"%s\" すべてのアイテムの復号が終わ"
 "るまで待ち、もう一度実行してください。"
 
+#~ msgid "Add or remove tags"
+#~ msgstr "タグの追加と削除"
+
+#~ msgid "Link"
+#~ msgstr "リンク"
+
 #~ msgid "Front"
 #~ msgstr "進む"
 
 #~ msgid "Content properties"
 #~ msgstr "ノート内容のプロパティ"
-
-#~ msgid "Some items cannot be synchronised."
-#~ msgstr "いくつかの項目は同期されませんでした。"
-
-#~ msgid "View them now"
-#~ msgstr "今すぐ表示"
-
-#~ msgid "Some items cannot be decrypted."
-#~ msgstr "いくつかの項目は復号されませんでした。"
-
-#~ msgid "One or more master keys need a password."
-#~ msgstr "パスワードに1つ以上のマスターキーが必要です"
-
-#~ msgid "Set the password"
-#~ msgstr "パスワードの設定"
-
-#~ msgid "One of your master keys use an obsolete encryption method."
-#~ msgstr "古い暗号化方式を使っているマスターキーがあります。"
-
-#~ msgid ""
-#~ "The default encryption method has been changed, you should re-encrypt "
-#~ "your data."
-#~ msgstr ""
-#~ "デフォルトの暗号化方式が変更されています。既存データを暗号化しなおすことを"
-#~ "おすすめします。"
-
-#~ msgid "More info"
-#~ msgstr "詳細情報"
-
-#~ msgid "Search..."
-#~ msgstr "検索..."
 
 #~ msgid "Split"
 #~ msgstr "分割ビュー"
