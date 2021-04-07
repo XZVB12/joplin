@@ -12,7 +12,7 @@ The notes can be [synchronised](#synchronisation) with various targets including
 
 Operating system | Method
 -----------------|----------------
-macOS, Linux, or Windows (via [WSL](https://msdn.microsoft.com/en-us/commandline/wsl/faq?f=255&MSPPError=-2147217396)) | **Important:** First, [install Node 10+](https://nodejs.org/en/download/package-manager/).<br/><br/>`NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin`<br/>`sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin`<br><br>By default, the application binary will be installed under `~/.joplin-bin`. You may change this directory if needed. Alternatively, if your npm permissions are setup as described [here](https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-2-change-npms-default-directory-to-another-directory) (Option 2) then simply running `npm -g install joplin` would work.
+macOS, Linux, or Windows (via [WSL](https://docs.microsoft.com/en-us/windows/wsl/faq)) | **Important:** First, [install Node 12+](https://nodejs.org/en/download/package-manager/).<br/><br/>`NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin`<br/>`sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin`<br><br>By default, the application binary will be installed under `~/.joplin-bin`. You may change this directory if needed. Alternatively, if your npm permissions are setup as described [here](https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-2-change-npms-default-directory-to-another-directory) (Option 2) then simply running `npm -g install joplin` would work.
 
 To start it, type `joplin`.
 
@@ -105,9 +105,12 @@ To import Evernote data, follow these steps:
 
 # Synchronisation
 
-One of the goals of Joplin was to avoid being tied to any particular company or service, whether it is Evernote, Google or Microsoft. As such the synchronisation is designed without any hard dependency to any particular service. Most of the synchronisation process is done at an abstract level and access to external services, such as Nextcloud or OneDrive, is done via lightweight drivers. It is easy to support new services by creating simple drivers that provide a filesystem-like interface, i.e. the ability to read, write, delete and list items. It is also simple to switch from one service to another or to even sync to multiple services at once. Each note, notebook, tags, as well as the relation between items is transmitted as plain text files during synchronisation, which means the data can also be moved to a different application, can be easily backed up, inspected, etc.
+One of the goals of Joplin was to avoid being tied to any particular company or service, whether it is Evernote, Google or Microsoft. As such the synchronisation is designed without any hard dependency to any particular service. Most of the synchronisation process is done at an abstract level and access to external services, such as Nextcloud or Dropbox, is done via lightweight drivers. It is easy to support new services by creating simple drivers that provide a filesystem-like interface, i.e. the ability to read, write, delete and list items. It is also simple to switch from one service to another or to even sync to multiple services at once. Each note, notebook, tags, as well as the relation between items is transmitted as plain text files during synchronisation, which means the data can also be moved to a different application, can be easily backed up, inspected, etc.
 
-Currently, synchronisation is possible with Nextcloud, Dropbox (by default) and OneDrive, or the local filesystem. To setup synchronisation please follow the instructions below. After that, the application will synchronise in the background whenever it is running, or you can click on "Synchronise" to start a synchronisation manually.
+Currently, synchronisation is possible with Nextcloud, WebDAV, Dropbox, OneDrive or the local filesystem. To enable synchronisation please follow the instructions below. After that, the application will synchronise in the background whenever it is running, or you can click on "Synchronise" to start a synchronisation manually.  Joplin will background sync automatically after any content change is made on the local application.
+If the **terminal client** has been installed, it is possible to also synchronise outside of the user interface by typing `joplin sync` from the terminal. This can be used to setup a cron script to synchronise at a regular interval. For example, this would do it every 30 minutes:
+
+ */30 * * * * /path/to/joplin sync
 
 ## Nextcloud synchronisation
 
@@ -122,19 +125,26 @@ If synchronisation does not work, please consult the logs in the app profile dir
 
 ## WebDAV synchronisation
 
-Select the "WebDAV" synchronisation target and follow the same instructions as for Nextcloud above.
+Select the "WebDAV" synchronisation target and follow the same instructions as for Nextcloud above (for the **terminal application** you will need to select sync target 6 rather than 5).
 
-## OneDrive and Dropbox synchronisation
+For WebDAV-compatible services that are known to work with Joplin see [WebDAV synchronisation](https://github.com/laurent22/joplin#webdav-synchronisation).
 
-For Dropbox, type `:config sync.target 7`. For OneDrive, type `:config sync.target 3`. Then type `sync` to login to the service and start the synchronisation process.
 
-It is possible to also synchronise outside of the user interface by typing `joplin sync` from the terminal. This can be used to setup a cron script to synchronise at regular interval. For example, this would do it every 30 minutes:
+## Dropbox synchronisation
 
-	*/30 * * * * /path/to/joplin sync
+When syncing with Dropbox, Joplin creates a sub-directory in Dropbox, in `/Apps/Joplin` and read/write the notes and notebooks from it. The application does not have access to anything outside this directory.
+
+To initiate the synchronisation process, type `:sync`. You will be asked to follow a link to authorise the application.
+
+## OneDrive synchronisation
+
+When syncing with OneDrive, Joplin creates a sub-directory in OneDrive, in /Apps/Joplin and read/write the notes and notebooks from it. The application does not have access to anything outside this directory.
+
+To initiate the synchronisation process, type `:sync`. You will be asked to follow a link to authorise the application (simply input your Microsoft credentials - you do not need to register with OneDrive).
 
 # URLs
 
-When Ctrl+Clicking a URL, most terminals will open that URL in the default browser. However, one issue, especially with long URLs, is that they can end up like this:
+When Ctrl+Clicking a URL (or opening with the shortcut 'o' while it is highlighted), most terminals will open that URL in the default browser. However, one issue, especially with long URLs, is that they can end up like this:
 
 <img src="https://joplinapp.org/images/UrlCut.png" width="300px">
 
@@ -183,6 +193,9 @@ There are two types of shortcuts: those that manipulate the user interface direc
 	ENTER             activate
 	DELETE, BACKSPACE delete
 	(SPACE)           todo toggle $n
+	n                 next_link
+	b                 previous_link
+	o                 open_link
 	tc                toggle_console
 	tm                toggle_metadata
 	/                 search ""
@@ -208,6 +221,9 @@ As an example, this is the default keymap, but read below for a detailed explana
 	{ "keys": ["ENTER"], "type": "function", "command": "activate" },
 	{ "keys": ["DELETE", "BACKSPACE"], "type": "function", "command": "delete" },
 	{ "keys": [" "], "command": "todo toggle $n" },
+	{ "keys": ["n"], "type": "function", "command": "next_link" },
+	{ "keys": ["b"], "type": "function", "command": "previous_link" },
+	{ "keys": ["o"], "type": "function", "command": "open_link" },
 	{ "keys": ["tc"], "type": "function", "command": "toggle_console" },
 	{ "keys": ["tm"], "type": "function", "command": "toggle_metadata" },
 	{ "keys": ["/"], "type": "prompt", "command": "search \"\"", "cursorPosition": -2 },
@@ -226,7 +242,7 @@ Name | Description
 `keys` | The array of keys that will trigger the action. Special keys such as page up, down arrow, etc. needs to be specified UPPERCASE. See the [list of available special keys](https://github.com/cronvel/terminal-kit/blob/3114206a9556f518cc63abbcb3d188fe1995100d/lib/termconfig/xterm.js#L531). For example, `['DELETE', 'BACKSPACE']` means the command will run if the user pressed either the delete or backspace key. Key combinations can also be provided - in that case specify them lowercase. For example "tc" means that the command will be executed when the user pressed "t" then "c". Special keys can also be used in this fashion - simply write them one after the other. For instance, `CTRL_WCTRL_W` means the action would be executed if the user pressed "ctrl-w ctrl-w".
 `type` | The command type. It can have the value "exec", "function" or "prompt". **exec**: Simply execute the provided [command](#commands). For example `edit $n` would edit the selected note. **function**: Run a special commands (see below for the list of functions). **prompt**: A bit similar to "exec", except that the command is not going to be executed immediately - this allows the user to provide additional data. For example `mknote ""` would fill the command line with this command and allow the user to set the title. A prompt command can also take a `cursorPosition` parameter (see below)
 `command` | The command that needs to be executed
-`cusorPosition` | An integer. For prompt commands, tells where the cursor (caret) should start at. This is convenient for example to position the cursor between quotes. Use a negative value to set a position starting from the end. A value of "0" means positioning the caret at the first character. A value of "-1" means positioning it at the end.
+`cursorPosition` | An integer. For prompt commands, tells where the cursor (caret) should start at. This is convenient for example to position the cursor between quotes. Use a negative value to set a position starting from the end. A value of "0" means positioning the caret at the first character. A value of "-1" means positioning it at the end.
 
 This is the list of special functions:
 
@@ -239,6 +255,9 @@ move_up | Move up (in a list for example)
 move_down | Move down (in a list for example)
 page_up | Page up
 page_down | Page down
+next_link | Select the next link in the currently opened note (the first link will be selected if no link is currently selected)
+previous_link | Select the previous link in the currently opened note (the last link will be selected if no link is currently selected)
+open_link | Open the currently selected link externally
 activate | Activates the selected item. If the item is a note for example it will be open in the editor
 delete | Deletes the selected item
 toggle_console | Toggle the console
@@ -260,193 +279,195 @@ The following commands are available in [command-line mode](#command-line-mode):
 
 	config [name] [value]
 
-	    Gets or sets a config value. If [value] is not provided, it will show the 
-	    value of [name]. If neither [name] nor [value] is provided, it will list 
+	    Gets or sets a config value. If [value] is not provided, it will show the
+	    value of [name]. If neither [name] nor [value] is provided, it will list
 	    the current configuration.
 
 	    -v, --verbose         Also displays unset and hidden config variables.
-	    --export              Writes all settings to STDOUT as JSON including 
+	    --export              Writes all settings to STDOUT as JSON including
 	                          secure variables.
 	    --import              Reads in JSON formatted settings from STDIN.
-	    --import-file <file>  Reads in settings from <file>. <file> must contain 
+	    --import-file <file>  Reads in settings from <file>. <file> must contain
 	                          valid JSON.
 
 	Possible keys/values:
 
 	    sync.target                    Synchronisation target.
-	                                   The target to synchonise to. Each sync 
-	                                   target may have additional parameters which 
-	                                   are named as `sync.NUM.NAME` (all 
+	                                   The target to synchonise to. Each sync
+	                                   target may have additional parameters which
+	                                   are named as `sync.NUM.NAME` (all
 	                                   documented below).
 	                                   Type: Enum.
-	                                   Possible values: 2 (File system), 3 
-	                                   (OneDrive), 4 (OneDrive Dev (For testing 
-	                                   only)), 5 (Nextcloud), 6 (WebDAV), 7 
+	                                   Possible values: 2 (File system), 3
+	                                   (OneDrive), 4 (OneDrive Dev (For testing
+	                                   only)), 5 (Nextcloud), 6 (WebDAV), 7
 	                                   (Dropbox).
 	                                   Default: 7
-	                                   
-	    sync.2.path                    Directory to synchronise with (absolute 
+
+	    sync.2.path                    Directory to synchronise with (absolute
 	                                   path).
-	                                   Attention: If you change this location, 
-	                                   make sure you copy all your content to it 
-	                                   before syncing, otherwise all files will be 
-	                                   removed! See the FAQ for more details: 
+	                                   Attention: If you change this location,
+	                                   make sure you copy all your content to it
+	                                   before syncing, otherwise all files will be
+	                                   removed! See the FAQ for more details:
 	                                   https://joplinapp.org/faq/
 	                                   Type: string.
-	                                   
+
 	    sync.5.path                    Nextcloud WebDAV URL.
-	                                   Attention: If you change this location, 
-	                                   make sure you copy all your content to it 
-	                                   before syncing, otherwise all files will be 
-	                                   removed! See the FAQ for more details: 
+	                                   Attention: If you change this location,
+	                                   make sure you copy all your content to it
+	                                   before syncing, otherwise all files will be
+	                                   removed! See the FAQ for more details:
 	                                   https://joplinapp.org/faq/
 	                                   Type: string.
-	                                   
+
 	    sync.5.username                Nextcloud username.
 	                                   Type: string.
-	                                   
+
 	    sync.5.password                Nextcloud password.
 	                                   Type: string.
-	                                   
+
 	    sync.6.path                    WebDAV URL.
-	                                   Attention: If you change this location, 
-	                                   make sure you copy all your content to it 
-	                                   before syncing, otherwise all files will be 
-	                                   removed! See the FAQ for more details: 
+	                                   Attention: If you change this location,
+	                                   make sure you copy all your content to it
+	                                   before syncing, otherwise all files will be
+	                                   removed! See the FAQ for more details:
 	                                   https://joplinapp.org/faq/
 	                                   Type: string.
-	                                   
+
 	    sync.6.username                WebDAV username.
 	                                   Type: string.
-	                                   
+
 	    sync.6.password                WebDAV password.
 	                                   Type: string.
-	                                   
+
 	    sync.maxConcurrentConnections  Max concurrent connections.
 	                                   Type: int.
 	                                   Default: 5
-	                                   
+
 	    locale                         Language.
+	                                   Please see localisation section on
+	                                   https://joplinapp.org/#localisation
+	                                   for info on translation completion progress
 	                                   Type: Enum.
-	                                   Possible values: ar (Arabic (92%)), eu 
-	                                   (Basque (39%)), bs_BA (Bosnian (85%)), 
-	                                   bg_BG (Bulgarian (77%)), ca (Catalan 
-	                                   (61%)), hr_HR (Croatian (32%)), cs_CZ 
-	                                   (Czech (94%)), da_DK (Dansk (85%)), de_DE 
-	                                   (Deutsch (100%)), et_EE (Eesti Keel (76%)), 
-	                                   en_GB (English (UK) (100%)), en_US (English 
-	                                   (US) (100%)), es_ES (Español (95%)), eo 
-	                                   (Esperanto (44%)), fr_FR (Français (95%)), 
-	                                   gl_ES (Galician (50%)), it_IT (Italiano 
-	                                   (97%)), nl_BE (Nederlands (39%)), nl_NL 
-	                                   (Nederlands (97%)), nb_NO (Norwegian 
-	                                   (89%)), fa (Persian (38%)), pl_PL (Polski 
-	                                   (75%)), pt_PT (Português (91%)), pt_BR 
-	                                   (Português (Brasil) (88%)), ro (Română 
-	                                   (39%)), sl_SI (Slovenian (49%)), sv 
-	                                   (Svenska (68%)), tr_TR (Türkçe (92%)), 
-	                                   el_GR (Ελληνικά (93%)), ru_RU (Русский 
-	                                   (95%)), sr_RS (српски језик (75%)), zh_CN 
-	                                   (中文 (简体) (97%)), zh_TW (中文 (繁體) (91%)), 
-	                                   ja_JP (日本語 (97%)), ko (한국말 (97%)).
+	                                   Possible values: ar (Arabic), eu (Basque),
+	                                   bs_BA (Bosnian), bg_BG (Bulgarian),
+	                                   ca (Catalan), hr_HR (Croatian),
+	                                   cs_CZ (Czech), da_DK (Dansk),
+	                                   de_DE (Deutsch), et_EE (Eesti Keel),
+	                                   en_GB (English (UK)), en_US (English (US)),
+	                                   es_ES (Español), eo (Esperanto),
+	                                   fi_FI (Finnish), fr_FR (Français),
+	                                   gl_ES (Galician), id_ID (Indonesian),
+	                                   it_IT (Italiano), nl_BE (Nederlands),
+	                                   nl_NL (Nederlands), nb_NO (Norwegian),
+	                                   fa (Persian), pl_PL (Polski),
+	                                   pt_PT (Português),
+	                                   pt_BR (Português (Brasil)), ro (Română),
+	                                   sl_SI (Slovenian), sv (Svenska),
+	                                   th_TH (Thai), vi (Tiếng Việt),
+	                                   tr_TR (Türkçe), el_GR (Ελληνικά),
+	                                   ru_RU (Русский), sr_RS (српски језик),
+	                                   zh_CN (中文 (简体)), zh_TW (中文 (繁體)),
+	                                   ja_JP (日本語), ko (한국말).
 	                                   Default: "en_GB"
-	                                   
+
 	    dateFormat                     Date format.
 	                                   Type: Enum.
-	                                   Possible values: DD/MM/YYYY (30/01/2017), 
-	                                   DD/MM/YY (30/01/17), MM/DD/YYYY 
-	                                   (01/30/2017), MM/DD/YY (01/30/17), 
-	                                   YYYY-MM-DD (2017-01-30), DD.MM.YYYY 
+	                                   Possible values: DD/MM/YYYY (30/01/2017),
+	                                   DD/MM/YY (30/01/17), MM/DD/YYYY
+	                                   (01/30/2017), MM/DD/YY (01/30/17),
+	                                   YYYY-MM-DD (2017-01-30), DD.MM.YYYY
 	                                   (30.01.2017), YYYY.MM.DD (2017.01.30).
 	                                   Default: "DD/MM/YYYY"
-	                                   
+
 	    timeFormat                     Time format.
 	                                   Type: Enum.
-	                                   Possible values: HH:mm (20:30), h:mm A 
+	                                   Possible values: HH:mm (20:30), h:mm A
 	                                   (8:30 PM).
 	                                   Default: "HH:mm"
-	                                   
+
 	    uncompletedTodosOnTop          Uncompleted to-dos on top.
 	                                   Type: bool.
 	                                   Default: true
-	                                   
+
 	    showCompletedTodos             Show completed to-dos.
 	                                   Type: bool.
 	                                   Default: true
-	                                   
+
 	    notes.sortOrder.field          Sort notes by.
 	                                   Type: Enum.
-	                                   Possible values: user_updated_time (Updated 
-	                                   date), user_created_time (Created date), 
+	                                   Possible values: user_updated_time (Updated
+	                                   date), user_created_time (Created date),
 	                                   title (Title).
 	                                   Default: "user_updated_time"
-	                                   
+
 	    notes.sortOrder.reverse        Reverse sort order.
 	                                   Type: bool.
 	                                   Default: true
-	                                   
+
 	    folders.sortOrder.field        Sort notebooks by.
 	                                   Type: Enum.
-	                                   Possible values: title (Title), 
+	                                   Possible values: title (Title),
 	                                   last_note_user_updated_time (Updated date).
 	                                   Default: "title"
-	                                   
+
 	    folders.sortOrder.reverse      Reverse sort order.
 	                                   Type: bool.
 	                                   Default: false
-	                                   
+
 	    trackLocation                  Save geo-location with notes.
 	                                   Type: bool.
 	                                   Default: true
-	                                   
+
 	    sync.interval                  Synchronisation interval.
 	                                   Type: Enum.
-	                                   Possible values: 0 (Disabled), 300 (5 
-	                                   minutes), 600 (10 minutes), 1800 (30 
-	                                   minutes), 3600 (1 hour), 43200 (12 hours), 
+	                                   Possible values: 0 (Disabled), 300 (5
+	                                   minutes), 600 (10 minutes), 1800 (30
+	                                   minutes), 3600 (1 hour), 43200 (12 hours),
 	                                   86400 (24 hours).
 	                                   Default: 300
-	                                   
+
 	    editor                         Text editor command.
-	                                   The editor command (may include arguments) 
-	                                   that will be used to open a note. If none 
-	                                   is provided it will try to auto-detect the 
+	                                   The editor command (may include arguments)
+	                                   that will be used to open a note. If none
+	                                   is provided it will try to auto-detect the
 	                                   default editor.
 	                                   Type: string.
-	                                   
+
 	    net.customCertificates         Custom TLS certificates.
-	                                   Comma-separated list of paths to 
-	                                   directories to load the certificates from, 
-	                                   or path to individual cert files. For 
-	                                   example: /my/cert_dir, /other/custom.pem. 
-	                                   Note that if you make changes to the TLS 
-	                                   settings, you must save your changes before 
-	                                   clicking on "Check synchronisation 
+	                                   Comma-separated list of paths to
+	                                   directories to load the certificates from,
+	                                   or path to individual cert files. For
+	                                   example: /my/cert_dir, /other/custom.pem.
+	                                   Note that if you make changes to the TLS
+	                                   settings, you must save your changes before
+	                                   clicking on "Check synchronisation
 	                                   configuration".
 	                                   Type: string.
-	                                   
+
 	    net.ignoreTlsErrors            Ignore TLS certificate errors.
 	                                   Type: bool.
 	                                   Default: false
-	                                   
-	    sync.wipeOutFailSafe           Fail-safe: Do not wipe out local data when 
-	                                   sync target is empty (often the result of a 
+
+	    sync.wipeOutFailSafe           Fail-safe: Do not wipe out local data when
+	                                   sync target is empty (often the result of a
 	                                   misconfiguration or bug).
 	                                   Type: bool.
 	                                   Default: true
-	                                   
-	                                   
+
+
 	    revisionService.enabled        Enable note history.
 	                                   Type: bool.
 	                                   Default: true
-	                                   
+
 	    revisionService.ttlDays        Keep note history for.
 	                                   Type: int.
 	                                   Default: 90
 
 	cp <note> [notebook]
 
-	    Duplicates the notes matching <note> to [notebook]. If no notebook is 
+	    Duplicates the notes matching <note> to [notebook]. If no notebook is
 	    specified the note is duplicated in the current notebook.
 
 	done <note>
@@ -455,13 +476,13 @@ The following commands are available in [command-line mode](#command-line-mode):
 
 	e2ee <command> [path]
 
-	    Manages E2EE configuration. Commands are `enable`, `disable`, `decrypt`, 
+	    Manages E2EE configuration. Commands are `enable`, `disable`, `decrypt`,
 	    `status`, `decrypt-file` and `target-status`.
 
-	    -p, --password <password>  Use this password as master password (For 
-	                               security reasons, it is not recommended to use 
+	    -p, --password <password>  Use this password as master password (For
+	                               security reasons, it is not recommended to use
 	                               this option).
-	    -v, --verbose              More verbose output for the `target-status` 
+	    -v, --verbose              More verbose output for the `target-status`
 	                               command
 	    -o, --output <directory>   Output directory
 
@@ -471,12 +492,12 @@ The following commands are available in [command-line mode](#command-line-mode):
 
 	export <path>
 
-	    Exports Joplin data to the given path. By default, it will export the 
+	    Exports Joplin data to the given path. By default, it will export the
 	    complete database including notebooks, notes, tags and resources.
 
-	    --format <format>      Destination format: jex (Joplin Export File), raw 
-	                           (Joplin Export Directory), json (Json Export 
-	                           Directory), md (Markdown), html (HTML File), html 
+	    --format <format>      Destination format: jex (Joplin Export File), raw
+	                           (Joplin Export Directory), json (Json Export
+	                           Directory), md (Markdown), html (HTML File), html
 	                           (HTML Directory)
 	    --note <note>          Exports only the given note.
 	    --notebook <notebook>  Exports only the given notebook.
@@ -498,20 +519,20 @@ The following commands are available in [command-line mode](#command-line-mode):
 
 	ls [note-pattern]
 
-	    Displays the notes in the current notebook. Use `ls /` to display the list 
+	    Displays the notes in the current notebook. Use `ls /` to display the list
 	    of notebooks.
 
 	    -n, --limit <num>      Displays only the first top <num> notes.
-	    -s, --sort <field>     Sorts the item by <field> (eg. title, updated_time, 
+	    -s, --sort <field>     Sorts the item by <field> (eg. title, updated_time,
 	                           created_time).
 	    -r, --reverse          Reverses the sorting order.
-	    -t, --type <type>      Displays only the items of the specific type(s). 
-	                           Can be `n` for notes, `t` for to-dos, or `nt` for 
-	                           notes and to-dos (eg. `-tt` would display only the 
-	                           to-dos, while `-ttd` would display notes and 
+	    -t, --type <type>      Displays only the items of the specific type(s).
+	                           Can be `n` for notes, `t` for to-dos, or `nt` for
+	                           notes and to-dos (eg. `-tt` would display only the
+	                           to-dos, while `-ttd` would display notes and
 	                           to-dos.
 	    -f, --format <format>  Either "text" or "json"
-	    -l, --long             Use long list format. Format is ID, NOTE_COUNT (for 
+	    -l, --long             Use long list format. Format is ID, NOTE_COUNT (for
 	                           notebook), DATE, TODO_CHECKED (for to-dos), TITLE
 
 	mkbook <new-notebook>
@@ -548,24 +569,24 @@ The following commands are available in [command-line mode](#command-line-mode):
 
 	server <command>
 
-	    Start, stop or check the API server. To specify on which port it should 
-	    run, set the api.port config variable. Commands are (start|stop|status). 
-	    This is an experimental feature - use at your own risks! It is recommended 
-	    that the server runs off its own separate profile so that no two CLI 
-	    instances access that profile at the same time. Use --profile to specify 
+	    Start, stop or check the API server. To specify on which port it should
+	    run, set the api.port config variable. Commands are (start|stop|status).
+	    This is an experimental feature - use at your own risks! It is recommended
+	    that the server runs off its own separate profile so that no two CLI
+	    instances access that profile at the same time. Use --profile to specify
 	    the profile path.
 
 	set <note> <name> [value]
 
-	    Sets the property <name> of the given <note> to the given [value]. 
+	    Sets the property <name> of the given <note> to the given [value].
 	    Possible properties are:
 
-	    parent_id (text), title (text), body (text), created_time (int), 
-	    updated_time (int), is_conflict (int), latitude (numeric), longitude 
-	    (numeric), altitude (numeric), author (text), source_url (text), is_todo 
-	    (int), todo_due (int), todo_completed (int), source (text), 
-	    source_application (text), application_data (text), order (int), 
-	    user_created_time (int), user_updated_time (int), encryption_cipher_text 
+	    parent_id (text), title (text), body (text), created_time (int),
+	    updated_time (int), is_conflict (int), latitude (numeric), longitude
+	    (numeric), altitude (numeric), author (text), source_url (text), is_todo
+	    (int), todo_due (int), todo_completed (int), source (text),
+	    source_application (text), application_data (text), order (int),
+	    user_created_time (int), user_updated_time (int), encryption_cipher_text
 	    (text), encryption_applied (int), markup_language (int), is_shared (int)
 
 	status
@@ -576,24 +597,24 @@ The following commands are available in [command-line mode](#command-line-mode):
 
 	    Synchronises with remote storage.
 
-	    --target <target>  Sync to provided target (defaults to sync.target config 
+	    --target <target>  Sync to provided target (defaults to sync.target config
 	                       value)
 
 	tag <tag-command> [tag] [note]
 
-	    <tag-command> can be "add", "remove", "list", or "notetags" to assign or 
-	    remove [tag] from [note], to list notes associated with [tag], or to list 
-	    tags associated with [note]. The command `tag list` can be used to list 
+	    <tag-command> can be "add", "remove", "list", or "notetags" to assign or
+	    remove [tag] from [note], to list notes associated with [tag], or to list
+	    tags associated with [note]. The command `tag list` can be used to list
 	    all the tags (use -l for long option).
 
-	    -l, --long  Use long list format. Format is ID, NOTE_COUNT (for notebook), 
+	    -l, --long  Use long list format. Format is ID, NOTE_COUNT (for notebook),
 	                DATE, TODO_CHECKED (for to-dos), TITLE
 
 	todo <todo-command> <note-pattern>
 
-	    <todo-command> can either be "toggle" or "clear". Use "toggle" to toggle 
-	    the given to-do between completed and uncompleted state (If the target is 
-	    a regular note it will be converted to a to-do). Use "clear" to convert 
+	    <todo-command> can either be "toggle" or "clear". Use "toggle" to toggle
+	    the given to-do between completed and uncompleted state (If the target is
+	    a regular note it will be converted to a to-do). Use "clear" to convert
 	    the to-do back to a regular note.
 
 	undone <note>
@@ -602,7 +623,7 @@ The following commands are available in [command-line mode](#command-line-mode):
 
 	use <notebook>
 
-	    Switches to [notebook] - all further operations will happen within this 
+	    Switches to [notebook] - all further operations will happen within this
 	    notebook.
 
 	version
@@ -611,7 +632,7 @@ The following commands are available in [command-line mode](#command-line-mode):
 
 # License
 
-Copyright (c) 2016-2020 Laurent Cozic
+Copyright (c) 2016-2021 Laurent Cozic
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
